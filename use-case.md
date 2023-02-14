@@ -12,6 +12,7 @@
 * Is this railroad currently closed for train access?
 * Is this a toll road?
 * Does the vehicle have enough gas/charge to make it to the next gas/charge station?
+* WHat is the average number of cars traveling on the road per time period?
 
 # Potential Datasets
 * Self-Driving Sensor Data
