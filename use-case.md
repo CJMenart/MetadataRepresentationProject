@@ -8,3 +8,5 @@
   * [BDD100K https://www.bdd100k.com/]
 * Common Sense Data
   * [Wordnet https://wordnet.princeton.edu/]
+* Driving Laws Data
+  * [FindLaw (this is prose though) https://www.findlaw.com/traffic/traffic-tickets/state-traffic-laws.html]
