@@ -14,6 +14,11 @@
 * Does the vehicle have enough gas/charge to make it to the next gas/charge station?
 * What is the average number of cars traveling on the road per time period?
 * Road closures/additional traffic due to functions such as parades/protests etc...?
+* Which side of the road does the car need to drive?
+* Is the car experiencing any issues?
+* What is the possible issue depending on the symptoms?
+* Does the car need to pull off the road?
+* What are the consequences if action is not taken to take car of the issue?
 
 # Potential Datasets
 * Self-Driving Sensor Data
