@@ -1,6 +1,17 @@
 # Narrative
 
 # Competency Questions
+* Does the car need to stop or slow down?
+* Will an object move into the road?
+* What will happen if the vehicle crashes into object X?
+* Can the vehicle legally perform requested maneuver?
+* Is this street a one-way street?
+* Can this vehicle fit the size/height/weight restrictions of the road/parking spot?
+* Which object should the vehicle prefer to hit if unavoidable?
+* Is there a current restriction to speed (school zone, etc)?
+* Is this railroad currently closed for train access?
+* Is this a toll road?
+* Does the vehicle have enough gas/charge to make it to the next gas/charge station?
 
 # Potential Datasets
 * Self-Driving Sensor Data
