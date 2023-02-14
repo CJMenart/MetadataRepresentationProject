@@ -1,5 +1,5 @@
 # Narrative
-
+  The knowledge graph intends to provide information to cars and car-users to facilitate smoother(uneventful) journeys. The knowledge graph is intended to be used during the planning and middle of the trip.
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
