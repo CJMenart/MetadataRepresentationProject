@@ -38,3 +38,4 @@
 * Navigation/Trip Planning Data
   * [Alternative Fuels Data Center https://afdc.energy.gov/fuels/electricity_locations.html#/find/nearest?fuel=ELEC]
   * [TollGuru (has an API, should be scrapable) https://tollguru.com/toll-calculator]
+  * Google Maps can be scraped
