@@ -24,6 +24,7 @@
 * Self-Driving Sensor Data
   * [Cityscapes https://www.cityscapes-dataset.com/]
   * [BDD100K https://www.bdd100k.com/]
+  * [The KITTI Vision Benchmark Suite https://www.cvlibs.net/datasets/kitti/]
 * Common Sense Data
   * [Wordnet https://wordnet.princeton.edu/]
 * Driving Laws Data
