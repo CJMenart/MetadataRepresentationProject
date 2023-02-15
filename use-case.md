@@ -37,3 +37,4 @@
   * [Road Safety Database [https://github.com/todrobbins/dtcdb](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data)] 
 * Navigation/Trip Planning Data
   * [Alternative Fuels Data Center https://afdc.energy.gov/fuels/electricity_locations.html#/find/nearest?fuel=ELEC]
+  * [TollGuru (has an API, should be scrapable) https://tollguru.com/toll-calculator]
