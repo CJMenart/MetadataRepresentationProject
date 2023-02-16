@@ -13,15 +13,8 @@ Self-driving cars often utilize machine learning techniques to identify the pres
 * Which object should the vehicle prefer to hit if unavoidable?
 * Is there a current restriction to speed (school zone, etc)?
 * Is this railroad currently closed for train access?
-* Is this a toll road?
-* Does the vehicle have enough gas/charge to make it to the next gas/charge station?
 * What is the average number of cars traveling on the road per time period?
-* Road closures/additional traffic due to functions such as parades/protests etc...?
 * Which side of the road does the car need to drive?
-* Is the car experiencing any issues?
-* What is the possible issue depending on the symptoms?
-* Does the car need to pull off the road?
-* What are the consequences if action is not taken to take car of the issue?
 
 # Potential Datasets
 * Self-Driving Sensor Data
@@ -35,10 +28,23 @@ Self-driving cars often utilize machine learning techniques to identify the pres
 * Traffic Signage Data
   * [Kaggle https://www.kaggle.com/datasets/andrewmvd/road-sign-detection]
   * [Manual of Traffic Signs http://www.trafficsign.us/index.html]
-* Diagnostic and Maintenance Data  
-  * [Diagnostic and Trouble Code Database https://github.com/todrobbins/dtcdb] 
 * Road Safety Data  
   * [Road Safety Database [https://github.com/todrobbins/dtcdb](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data)] 
+
+
+# Removed for Scope Reasons
+## Competency Questions
+* Is this a toll road?
+* Does the vehicle have enough gas/charge to make it to the next gas/charge station?
+* Road closures/additional traffic due to functions such as parades/protests etc...?
+* Is the car experiencing any issues?
+* What is the possible issue depending on the symptoms?
+* Does the car need to pull off the road?
+* What are the consequences if action is not taken to take car of the issue?
+
+## Datasets
+* Diagnostic and Maintenance Data  
+  * [Diagnostic and Trouble Code Database https://github.com/todrobbins/dtcdb] 
 * Navigation/Trip Planning Data
   * [Alternative Fuels Data Center https://afdc.energy.gov/fuels/electricity_locations.html#/find/nearest?fuel=ELEC]
   * [TollGuru (has an API, should be scrapable) https://tollguru.com/toll-calculator]
