@@ -1,5 +1,5 @@
 # Narrative
-  The knowledge graph intends to provide information to cars and car-users to facilitate smoother(uneventful) journeys. The knowledge graph is intended to be used during the planning and middle of the trip.
+  The knowledge graph intends to provide information to cars and car-users to act upon data produced from the sensors to compute possible interactions. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data. 
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
