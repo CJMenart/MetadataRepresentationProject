@@ -1,5 +1,8 @@
 # Narrative
+Self-driving cars often utilize machine learning techniques to identify the presence of cars, road signs, drivable lanes, and other relevant objects and obstacles. However, this identification is not the same as knowing what driving actions are allowable. The vehicle must perform additional processing to understand what maneuvers, such as forward movement, lane switching, and turning, are safe and legal. This could potentially be done with reinforcement learning, but this may be opaque, brittle, and resistant to the inclusion or easy changing of policies and business rules. A semantic technology such as a knowledge graph, alternatively, could reason over the vehicle's knowledge about its surroundings to determine appropriate actions.
+  
   The knowledge graph intends to provide information to cars and car-users to act upon data produced from the sensors to compute possible interactions. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data. 
+  
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
