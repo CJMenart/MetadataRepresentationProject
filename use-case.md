@@ -37,8 +37,6 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 
 <br>
 <br>
-<br>
-<br>
 
 We are considering the incorporation of information about types and number of lanes in our knowledge graph, in order answer queries such as "Can I pass this stopped car by switching lanes?" Only one of the databases we are looking at includes this information.
 
