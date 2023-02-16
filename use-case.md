@@ -1,8 +1,30 @@
 # Narrative
 Self-driving cars often utilize machine learning techniques to identify the presence of cars, road signs, drivable lanes, and other relevant objects and obstacles. However, this identification is not the same as knowing what driving actions are allowable. The vehicle must perform additional processing to understand what maneuvers, such as forward movement, lane switching, and turning, are safe and legal. This could potentially be done with reinforcement learning, but this may be opaque, brittle, and resistant to the inclusion or easy changing of policies and business rules. A semantic technology such as a knowledge graph, alternatively, could reason over the vehicle's knowledge about its surroundings to determine appropriate actions.
   
-  The knowledge graph intends to provide information to cars and car-users to act upon data produced from the sensors to compute possible interactions. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data. 
+The knowledge graph intends to provide information to cars and car-users to act upon data produced from the sensors to compute possible interactions. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data. These interactions will be further filtered based on the needs of the user. For example, a car approaching an intersection has the possibilities of going dtraight, turning right or left, coming to a stop but might not have the  option of making a U-turn. If the car-user needs to go left, the car must be in appropriate lane (curb lane unless marked otherwise).
+
+<img src="Images/aachen_000057_000019_leftImg8bit.png" width="45%" align="left"/> 
+
+<img src="Images/bochum_000000_021479_leftImg8bit.png" width="45%" align="right"/>  
   
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+   
+   
+   
+---
+
+_Above are shown example scenes are system might reason over. Traffic signs are a useful source of information about what actions are allowable on the road! Left: If a sign indicates that we are on a bridge which freezes over easily, we may wish to slow down depending on our knowledge of the current temperature orseason. Right: If a sign indicates that we have the right of way, we know that we do not have to stop for vehicles proceeding down an intersecting road._ 
+
+---
+
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
