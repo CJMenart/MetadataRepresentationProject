@@ -31,7 +31,7 @@ In addition to traffic signs, our calculations can involve three-dimensional spa
 
 ---
 
-_Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras._
+_Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras. (This depth map encodes distances for the bridge image directly above.)_
 
 ---
 
@@ -39,6 +39,8 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 <br>
 <br>
 <br>
+
+We are considering the incorporation of information about types and number of lanes in our knowledge graph, in order answer queries such as "Can I pass this stopped car by switching lanes?" Only one of the databases we are looking at includes this information.
 
 
 # Competency Questions
