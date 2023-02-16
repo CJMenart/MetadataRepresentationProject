@@ -1,5 +1,8 @@
 # Narrative
-  The knowledge graph intends to provide information to cars and car-users to facilitate smoother(uneventful) journeys. The knowledge graph is intended to be used during the planning and middle of the trip.
+Self-driving cars often utilize machine learning techniques to identify the presence of cars, road signs, drivable lanes, and other relevant objects and obstacles. However, this identification is not the same as knowing what driving actions are allowable. The vehicle must perform additional processing to understand what maneuvers, such as forward movement, lane switching, and turning, are safe and legal. This could potentially be done with reinforcement learning, but this may be opaque, brittle, and resistant to the inclusion or easy changing of policies and business rules. A semantic technology such as a knowledge graph, alternatively, could reason over the vehicle's knowledge about its surroundings to determine appropriate actions.
+  
+  The knowledge graph intends to provide information to cars and car-users to act upon data produced from the sensors to compute possible interactions. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data. 
+  
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
@@ -10,15 +13,8 @@
 * Which object should the vehicle prefer to hit if unavoidable?
 * Is there a current restriction to speed (school zone, etc)?
 * Is this railroad currently closed for train access?
-* Is this a toll road?
-* Does the vehicle have enough gas/charge to make it to the next gas/charge station?
 * What is the average number of cars traveling on the road per time period?
-* Road closures/additional traffic due to functions such as parades/protests etc...?
 * Which side of the road does the car need to drive?
-* Is the car experiencing any issues?
-* What is the possible issue depending on the symptoms?
-* Does the car need to pull off the road?
-* What are the consequences if action is not taken to take car of the issue?
 
 # Potential Datasets
 * Self-Driving Sensor Data
@@ -32,10 +28,23 @@
 * Traffic Signage Data
   * [Kaggle https://www.kaggle.com/datasets/andrewmvd/road-sign-detection]
   * [Manual of Traffic Signs http://www.trafficsign.us/index.html]
-* Diagnostic and Maintenance Data  
-  * [Diagnostic and Trouble Code Database https://github.com/todrobbins/dtcdb] 
 * Road Safety Data  
   * [Road Safety Database [https://github.com/todrobbins/dtcdb](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data)] 
+
+
+# Removed for Scope Reasons
+## Competency Questions
+* Is this a toll road?
+* Does the vehicle have enough gas/charge to make it to the next gas/charge station?
+* Road closures/additional traffic due to functions such as parades/protests etc...?
+* Is the car experiencing any issues?
+* What is the possible issue depending on the symptoms?
+* Does the car need to pull off the road?
+* What are the consequences if action is not taken to take car of the issue?
+
+## Datasets
+* Diagnostic and Maintenance Data  
+  * [Diagnostic and Trouble Code Database https://github.com/todrobbins/dtcdb] 
 * Navigation/Trip Planning Data
   * [Alternative Fuels Data Center https://afdc.energy.gov/fuels/electricity_locations.html#/find/nearest?fuel=ELEC]
   * [TollGuru (has an API, should be scrapable) https://tollguru.com/toll-calculator]
