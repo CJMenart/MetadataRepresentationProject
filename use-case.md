@@ -25,6 +25,22 @@ _Above are shown example scenes are system might reason over. Traffic signs are 
 
 ---
 
+In addition to traffic signs, our calculations can involve three-dimensional spatial reasoning. The ego-distance of cars and other obstacles affects our available actions, as does whether objects are in front of or behind each other, or on drivable surfaces such as they road. 
+
+<img src="Images/aachen_000057_000019_disparity.png" width="40%" align="left"/> 
+
+---
+
+_Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras._
+
+---
+
+<br>
+<br>
+<br>
+<br>
+
+
 # Competency Questions
 * Does the car need to stop or slow down?
 * Will an object move into the road?
