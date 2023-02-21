@@ -58,3 +58,14 @@ Using lanes:
 - On Thursday:
   - Put yEd diagrams onto Github
 
+## Whiteboarding From Meeting
+
+Not proper schema
+
+<img src="wb5.jpg" width="30%" align="left"/> 
+<img src="wb3.jpg" width="30%" align="left"/> 
+<img src="wb1.jpg" width="30%" align="left"/>  
+
+<img src="wb4.jpg" width="30%"/> 
+
+
