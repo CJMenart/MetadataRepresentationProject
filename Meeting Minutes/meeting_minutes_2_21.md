@@ -52,9 +52,9 @@ Using lanes:
 
 ## Action Items
 - Take photos of Schema drafts created on board
-Before Thursday:
-- Think about schema relationships and information
-- Download yEd and familiarize self with program
-On Thursday:
-- Put yEd diagrams onto Github
+- Before Thursday:
+  - Think about schema relationships and information
+  - Download yEd and familiarize self with program
+- On Thursday:
+  - Put yEd diagrams onto Github
 
