@@ -4,3 +4,4 @@
 * Trajectory???
 * Traffic Instruction Element (such as sign, road marking, etc?)
 * Traffic Lane / Drivable Surface
+* A navigation example / scenario
