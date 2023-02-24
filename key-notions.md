@@ -20,15 +20,17 @@ Scenarios:
 * "Every physical thing is pointed to by exactly one scnenario via hasThing."
 
 Lanes:
-* "A Lane can be directLeftOf or directRightOf at most one other Lane. It has at most one visible ending."
-* "A PhysicalThing can be in at most two lanes. If it is in twoLanes, then one of those two lanes is directRightOf the other."
+* "A Lane can be directLeftOf at most one other Lane."
+* "A Lane can be directRightOf at most one other Lane."
+* "A Lane has at most one visible ending."
+* "A PhysicalThing can be in at most two lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
 * "If one Lane is directLeftOf another Lane, that Lane is directRightOf the first."
-* "A Lane can intersect any number of Lanes"
-* "An Intersection is a drivable surface which connects multiple lanes"
-* "A lane always touches one or more Intersections."
-* "If a Lane can be reached from another Lane through directRightOf and directLeftOf relationships, those two lanes are Parallel?" (But this is not the only time?)
+* "A lane always touches one or two Intersections."
+* "If a Lane can be reached from another Lane through directRightOf and directLeftOf relationships, those two lanes are Parallel?" (But this is not the only time necessarily?!)
+* If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed."
 
 Intersections:
+* "An Intersection is a drivable surface which connects multiple lanes" (not really an axiom)
 * "For every lane that touchesIntersection an Intersection, that Intersection points to that lane with one of either ingoingLane or outgoingLane."
 * "If there is a Car that is Moving on an Incoming Lane to an Intersection, any manuever which passes through that intersection from a different Lane, which is not Parallel to that Lane, is not allowed???" (Intersecting Car Axiom)
 
