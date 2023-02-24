@@ -16,6 +16,7 @@
 
 Scenarios:
 * "A scenario has exactly one Environment"
+* "An environment has (up to?) one hasTemperature."
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
 * "Every physical thing is pointed to by exactly one scnenario via hasThing."
 
@@ -44,3 +45,5 @@ Attempt to Express Traffic Instructions with Axioms (Incomplete, might not work 
 * "If there is a Speed Limit sign (in a Lane/Scenario?) the FormalSpeedLimit is equal to that sign's numerical value."
 * "If there is a Priority Lane sign at an Intersection, the Intersecting Car Axiom does not apply if we are in the Lane containing the sign or Parallel to that Lane."
 * "If a Lane contains a Turn Lane Marking, then Turn maneuvers from Parallel Lanes that do not contain Turn Lane Markings are not allowed." (?)
+  * Also need to express that turn may be allowed only in one direction at that point
+* "If a Lane contains a Turn Only Lane Marking, then Continue(?) maneuvers from that Lane are not allowed."
