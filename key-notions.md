@@ -39,7 +39,8 @@ Traffic Instructions:
 * Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
 
 Attempt to Express Traffic Instructions with Axioms (Incomplete, might not work at all):
-* "If there is a Stop Sign at an Intersection, and we are not at that intersection, any maneuver which passes through that intersection is not allowed."
-* "Ditto for red traffic lights"
+* "If there is a Stop Sign at a Lane and Intersection, and we are not at that intersection, any maneuver which passes through that intersection from that Lane is not allowed."
+* "If there is a Stop Light at a Lane and Intersection, any maneuver which passes through that intersection from that Lane is not allowed."
 * "If there is a Speed Limit sign (in a Lane/Scenario?) the FormalSpeedLimit is equal to that sign's numerical value."
 * "If there is a Priority Lane sign at an Intersection, the Intersecting Car Axiom does not apply if we are in the Lane containing the sign or Parallel to that Lane."
+* "If a Lane contains a Turn Lane Marking, then Turn maneuvers from Parallel Lanes that do not contain Turn Lane Markings are not allowed." (?)
