@@ -10,6 +10,7 @@
 * Traffic Lane / Drivable Surface
 * A navigation example / scenario
 * Intersection
+  * Originally, Intersection was a property by which Lanes pointed to each other. However, we quickly realized that Intersection needed to be reified so that more details about an intersection could be tracked--for starters, the intersection of an arbitrary number of lanes of traffic at once. An Intersection is a collection of lanes. We considered both the bag and ordered list patterns to model this strucutre, but neither were adequate. There are several intricacies specific to traffic intersection. And intersection needs to track the relative positions of the lanes it touches, so that our reasoner can determine whether manuevers are left or right turns based on the lanes they go to and from. Furthermore, a lane can touch more than one intersection.
 * Direction of lane (incoming/outgoing)
 * Position in space (but may be tracked relative to the ego-vehicle in terms the vehicle cares about)
 
