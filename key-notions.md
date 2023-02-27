@@ -1,14 +1,13 @@
 # Key Notions
 * Obstacle
+  * Obstacles (or Potential Obstalces) represent things on the road that could block our driving (or things which could potentially end up on the road and do so). Theoretically an AgentRole could be used to represent Obstalces, but it was decided this represented unnecessary overhead. All we really need to know about an obstacle is its position (and possibly movement) in space--which lanes it is obstructing and which it might obstruct. We don't care about it at all outside of this, so the Obstacle class is used directly to represent any objects which can be obstacles, as seen in "PotentialObstacle.png"
 * Maneuever (as in "allowed thing the ego vehicle can do")
 * Traffic Instruction Element (such as sign, road marking, etc?)
 * Traffic Lane / Drivable Surface
 * A navigation example / scenario
-* Status of vehicle in front of us?
-* Position in space (but may be tracked relative to the ego-vehicle in terms the vehicle cares about)
 * Intersection
 * Direction of lane (incoming/outgoing)
-* "Direction of lane is relative to the Intersection" 
+* Position in space (but may be tracked relative to the ego-vehicle in terms the vehicle cares about)
 
 
 # Axioms accompanying schema diagrams 
