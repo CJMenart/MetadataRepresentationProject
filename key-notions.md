@@ -8,12 +8,14 @@
 * Traffic Instruction Indicator
   * This key notion encompasses any physical object on the road that provides information to drivers, such as road or traffic signs, road markings, and traffic lights. (We exclude lane lines from this definition). Each Traffic Instruction Indicator is categorized using a controlled vocabulary,  
 * Traffic Lane / Drivable Surface
+   * This key notion encompases any surface that a vehicle/car can drive on. All lanes have a direction relative to an intersection, if an intersection is not within visual range an assumption is made that the lane is coming from an intersection. Lanes can have other lanes to the right and left. We are using "directlyLeftOf" and "directlyRightOf" to represent lanes that are adjacent to the lane without nothing in between. A manuever of switch lanes can be conducted if the lanes are directlyRightOF or directlyLeftOf and both lanes are in the same direction relative to the same intersection.
 * A navigation example / scenario
 * Intersection
-* Direction of lane (incoming/outgoing)
-* Position in space (but may be tracked relative to the ego-vehicle in terms the vehicle cares about)
+  * Originally, Intersection was a property by which Lanes pointed to each other. However, we quickly realized that Intersection needed to be reified so that more details about an intersection could be tracked--for starters, the intersection of an arbitrary number of lanes of traffic at once. An Intersection is a collection of lanes. We considered both the bag and ordered list patterns to model this strucutre, but neither were adequate. There are several intricacies specific to traffic intersection. And intersection needs to track the relative positions of the lanes it touches, so that our reasoner can determine whether manuevers are left or right turns based on the lanes they go to and from. Furthermore, a lane can touch more than one intersection.
 
-# Simplifying Assumption
+* Notably absent thus far is an explicity notion of position in 3-dimensional space.
+
+# Simplifying Assumptions
 * We assume that our self-driving car drives on the road and never goes off-road
 * (On probation) We assume that an intersection between no more than two roads at a time
 
