@@ -13,6 +13,9 @@
 * Direction of lane (incoming/outgoing)
 * Position in space (but may be tracked relative to the ego-vehicle in terms the vehicle cares about)
 
+# Simplifying Assumption
+* We assume that our self-driving car drives on the road and never goes off-road
+* (On probation) We assume that an intersection between no more than two roads at a time
 
 # Axioms accompanying schema diagrams 
 (May move these later)
