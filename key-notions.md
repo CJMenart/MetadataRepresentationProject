@@ -28,6 +28,8 @@
 * We assume that our self-driving car drives on the road and never goes off-road
 * (On probation) We assume that an intersection between no more than two roads at a time
 * Pedestrians do not exist in intersections
+* Cars which are required to yield to another entity with the right-of-way will always do so
+* There are no relevant differences in behavior between different classes of cars: sedans, trucks, vans, etc. behave in the same way
 
 # Axioms accompanying schema diagrams 
 (May move these later)
