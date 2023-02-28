@@ -15,9 +15,19 @@
 
 * Notably absent thus far is an explicity notion of position in 3-dimensional space.
 
+# Data Sources
+* Potential Obstacle: Self-Driving Sensor Datasets (Cityscapes, BDD100K, KITTI)
+  * WordNet could be useful if we model taxonomies of obstacles but our use cases do not appear to have necessitated this so far
+* Maneuvers: This will have to be hand-entered
+* Traffic Instruction Indicator: Traffic Signage Data, which will need to be manually translated to triples
+* Traffic Lane: This can be obtained from BDD100K only (otherwise must be hand-entered)
+* Navigation Scenarios: Self-Driving Sensor Datasets (Cityscapes, BDD100K, KITTI)
+* Intersection: These may have to be tagged by hand
+
 # Simplifying Assumptions
 * We assume that our self-driving car drives on the road and never goes off-road
 * (On probation) We assume that an intersection between no more than two roads at a time
+* Pedestrians do not exist in intersections
 
 # Axioms accompanying schema diagrams 
 (May move these later)
