@@ -30,6 +30,7 @@
 * Pedestrians do not exist in intersections
 * Cars which are required to yield to another entity with the right-of-way will always do so
 * There are no relevant differences in behavior between different classes of cars: sedans, trucks, vans, etc. behave in the same way
+* Other vehicles do not perform illegal maneuvers, such as parking permanently in the middle of a road
 
 # Axioms accompanying schema diagrams 
 (May move these later)
