@@ -34,6 +34,7 @@
 
 # Axioms accompanying schema diagrams 
 (May move these later)
+(UNDER CONSTRUCTION, and in some cases already out of date)
 
 Scenarios:
 * "A scenario has exactly one Environment"
