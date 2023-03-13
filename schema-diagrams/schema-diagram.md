@@ -5,6 +5,7 @@
 - [Potential Obstacle Schema Diagram](#potential-obstacle-schema-diagram)
 - [Scenario Schema Diagram](#scenario-schema-diagram)
 - [Traffic Instruction Indicator Schema Diagram](#traffic-instruction-indicator-schema-diagram)
+- [Total Schema Diagram](#total-schema-diagram)
 
 ## Car Schema Diagram
 ![Image of Car Schema](Car.png "Car Schema")
