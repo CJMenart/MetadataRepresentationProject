@@ -25,4 +25,5 @@
 ![Image of Traffic Instruction Indicator Schema](TrafficInstructionIndicator.png "Traffic Instruction Indicator Schema")
 
 ## Total Schema Diagram
+![Image of Full Schema](all-together.png "Total Schema")
 
