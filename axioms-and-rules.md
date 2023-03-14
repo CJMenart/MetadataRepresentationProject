@@ -5,11 +5,8 @@
 Scenarios:
 * "A scenario has exactly one Environment"
 * "An environment has (up to?) one hasTemperature."
-* "A Temperature has exactly one hasValue, an xsd:integer"
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
-* "Every physical thing is pointed to by exactly one scenario via hasThing."
-* "Every Intersection is pointed to by exactly one scenario via hasIntersection."
-* "Every Lane is pointed to by exactly one scenario via ContainsLane."
+* "Every physical thing is pointed to by exactly one scnenario via hasThing."
 
 Lanes:
 * "A Lane can be directLeftOf at most one other Lane."
@@ -31,14 +28,16 @@ Traffic Instructions:
 * Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
 
 Potential Obstacles:
-* "A Position is always in at most lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
+* "A Position is always in at most 2 lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
 * "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
-* "A motion is towardsLane at most one Lane."
-
+* "The position of a potentialObstacle is atleast one of rightOf/leftOf in one lane.
+* "If a potential obstacles is towards a lane then that motion is towards lanes that are directlyrightof/leftof and between lane that position is relative to and lane."
+* "Motion has exactly one left/right relationship relative to a lane.
+* "Motion has atleast one towardsLane"  
 
 Car:
 * "A Car is always conductingManeuever exactly one manuever."
-
+* 
 
 Attempt to Express Traffic Instructions with Axioms (Incomplete, might not work at all):
 * "If there is a Stop Sign at a Lane and Intersection, and we are not at that intersection, any maneuver which passes through that intersection from that Lane is not allowed."
