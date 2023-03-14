@@ -28,8 +28,13 @@ Traffic Instructions:
 * Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
 
 Potential Obstacles:
-* "A PhysicalThing can be in at most two lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
+* "A Position is always in at most lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
+* "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
+* "A motion is towardsLane at most one Lane."
 
+
+Car:
+* "A Car is always conductingManeuever exactly one manuever."
 
 
 Attempt to Express Traffic Instructions with Axioms (Incomplete, might not work at all):
