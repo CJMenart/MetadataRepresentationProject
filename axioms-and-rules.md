@@ -5,8 +5,11 @@
 Scenarios:
 * "A scenario has exactly one Environment"
 * "An environment has (up to?) one hasTemperature."
+* "A Temperature has exactly one hasValue, an xsd:integer"
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
-* "Every physical thing is pointed to by exactly one scnenario via hasThing."
+* "Every physical thing is pointed to by exactly one scenario via hasThing."
+* "Every Intersection is pointed to by exactly one scenario via hasIntersection."
+* "Every Lane is pointed to by exactly one scenario via ContainsLane."
 
 Lanes:
 * "A Lane can be directLeftOf at most one other Lane."
