@@ -1,5 +1,4 @@
-
-# Axioms accompanying schema diagrams 
+# (In English) Rules Accompanying Schema Diagrams 
 (May move these later)
 (UNDER CONSTRUCTION, and in some cases already out of date)
 
@@ -37,16 +36,9 @@ Attempt to Express Traffic Instructions with Axioms (Incomplete, might not work 
   * Also need to express that turn may be allowed only in one direction at that point
 * "If a Lane contains a Turn Only Lane Marking, then Continue(?) maneuvers from that Lane are not allowed."
 
-List of possible manuevers:
-* Move Forward: continue on current lane
-* Merge Left: change lanes to directlyLeftOf outgoing lane
-* Merge Right: change lanes to directlyRightOf outgoing lane
-* Turn Left: change lane to a left outgoing lane at an intersection
-* Turn Right: change lane to a right outgoing lane at an intersection
-* Stop: Come to a full stop
-* Stop at designated spot adn continue: Stop at designated area and proceed with caution
-* U-Turn: change lanes to directlyLeftOf incoming lane
-* Reverse: traverse backwards on current lane
-* Proceed with caution
-* Decrease Speed
-* Increase Speed
+
+
+# (Tentative) Rules Translated into Axioms
+
+
+# (Tentative) Rules that can only be Translated in First-Order Logic

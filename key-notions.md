@@ -33,3 +33,18 @@
 * Cars which are required to yield to another entity with the right-of-way will always do so
 * There are no relevant differences in behavior between different classes of cars: sedans, trucks, vans, etc. behave in the same way
 * Other vehicles do not perform illegal maneuvers, such as parking permanently in the middle of a road
+
+# List of possible manuevers:
+* Move Forward: continue on current lane
+* Merge Left: change lanes to directlyLeftOf outgoing lane
+* Merge Right: change lanes to directlyRightOf outgoing lane
+* Turn Left: change lane to a left outgoing lane at an intersection
+* Turn Right: change lane to a right outgoing lane at an intersection
+* Stop: Come to a full stop
+* Stop at designated spot adn continue: Stop at designated area and proceed with caution
+* U-Turn: change lanes to directlyLeftOf incoming lane
+* Reverse: traverse backwards on current lane
+* Proceed with caution
+* Decrease Speed
+* Increase Speed
+
