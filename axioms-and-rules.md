@@ -7,6 +7,7 @@ Scenarios:
 * "An environment has (up to?) one hasTemperature."
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
 * "Every physical thing is pointed to by exactly one scnenario via hasThing."
+* "A Scenario has atleast one intersection"
 
 Lanes:
 * "A Lane can be directLeftOf at most one other Lane."
@@ -14,14 +15,20 @@ Lanes:
 * "If one Lane is directLeftOf another Lane, that lane is directRightOf the first Lane."
 * "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
 * "A Lane has at most one visiblyEndsAt relationship with a Distance."
+* "A Road has atleast one lane"
+* "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
 * "A lane always touches one or two TouchingIntersections."
 
 
 Intersections:
-* If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed."
-* "An Intersection is a drivable surface which connects multiple lanes" (not really an axiom)
-* "For every lane that touchesIntersection an Intersection, that Intersection points to that lane with one of either ingoingLane or outgoingLane."
+* If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed." (not really an axiom)
+* "An Intersection is a drivable surface which connects multiple lanes"  (not really an axiom)
+* "For every lane that touchesIntersection an Intersection, that Intersection points to that lane with one of either ingoingLane or outgoingLane." 
 * "If there is a Car that is Moving on an Incoming Lane to an Intersection, any manuever which passes through that intersection from a different Lane, which is not Parallel to that Lane, is not allowed???" (Intersecting Car Axiom)
+* "A touchingIntersection has exactly one direction"
+* "A touchingIntersection has exactly one lane"
+* "A touchingIntersection has exactly one cardinality"
+* "A touchingIntersection has exactly one intersection"
 
 Traffic Instructions:
 * "Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
