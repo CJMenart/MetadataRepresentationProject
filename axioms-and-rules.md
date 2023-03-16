@@ -33,11 +33,13 @@ Intersections:
 Traffic Instructions:
 * "Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
 * Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
+* "TII can be restrictive" 
 
 Potential Obstacles:
 * "A Position is always in at most 2 lanes. If it is in two Lanes, then one of those two lanes is directRightOf the other."
+* "The position of a potentialObstacle relative to lane"
+* "The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
 * "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
-* "The position of a potentialObstacle is atleast one of rightOf/leftOf in one lane.
 * "If a potential obstacles is towards a lane then that motion is towards lanes that are directlyrightof/leftof and between lane that position is relative to and lane."
 * "Motion has exactly one left/right relationship relative to a lane.
 * "Motion has atleast one towardsLane"  
