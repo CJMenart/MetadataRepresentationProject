@@ -6,9 +6,9 @@ Scenarios:
 * "A scenario has exactly one Environment"
 * "An environment has (up to?) one hasTemperature."
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
-* "Every physical thing is pointed to by exactly one scnenario via hasThing."
+* "Every physical thing is pointed to by exactly one Scenario via hasThing."
 * "A Scenario has atleast one intersection"
-* "A Scenario has exactly one self"
+* "A Scenario has exactly one Self"
 
 Lanes:
 * "A Lane can be directLeftOf at most one other Lane."
@@ -42,7 +42,7 @@ Potential Obstacles:
 * "The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
 * "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 * "If a potential obstacles is towards a lane then that motion is towards lanes that are directlyrightof/leftof and between lane that position is relative to and lane."
-* "Motion has exactly one left/right relationship relative to a lane.
+* "Motion has exactly one left/right relationship (implicitly relative to the current road.)
 * "Motion has atleast one towardsLane"  
 
 Car:
