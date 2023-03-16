@@ -8,6 +8,7 @@ Scenarios:
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
 * "Every physical thing is pointed to by exactly one scnenario via hasThing."
 * "A Scenario has atleast one intersection"
+* "A Scenario has exactly one self"
 
 Lanes:
 * "A Lane can be directLeftOf at most one other Lane."
