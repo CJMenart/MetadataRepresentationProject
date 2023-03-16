@@ -47,4 +47,5 @@
 * Proceed with caution
 * Decrease Speed
 * Increase Speed
-
+* Passing car: Conducting a merge left/right, increase speed to pass a slower moving car.
+* Overtaking: Conducting a merge left/right into incoming lane, increase speed to pass a slower moving car and inverse merge onto previous lane.
