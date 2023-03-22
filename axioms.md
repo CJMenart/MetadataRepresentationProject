@@ -4,13 +4,19 @@
 ## Scenarios
 ![schema-diagram](schema-diagrams/Scenario.png)
 
-### Axioms
+### Axioms (English)
 * "A scenario has exactly one Environment"
 * "An environment has (up to?) one hasTemperature."
 * "A scenario has exactly one currentLane (if currentLane stays a thing)"
 * "Every physical thing is pointed to by exactly one Scenario via hasThing."
 * "A Scenario has atleast one intersection"
 * "A Scenario has exactly one Self"
+
+### Axioms (Manchester)
+* Scenario SubClassOf =1 hasEnviornment some Environment
+* Environment SubClassOf <=1 hasTemperature some Temperature
+* Scenario SubClassOf =1 currentLane some Lane 
+* PhysicalThing SubClassOf (inverse?) hasThing some Scenario
 
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
