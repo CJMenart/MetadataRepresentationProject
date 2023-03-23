@@ -75,9 +75,12 @@
 * Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction
 * Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info
 * PhysicalThing SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Instruction Indicator (TII) SubClassOf max 1 Road Marking
-* Traffic Instruction Indicator (TII) SubClassOf max 1 Traffic Sign
-* Traffic Instruction Indicator (TII) SubClassOf max 1 Traffic Light
+* Traffic Instruction Indicator (TII) SubClassOf Road Marking
+* Traffic Instruction Indicator (TII) SubClassOf Traffic Sign
+* Traffic Instruction Indicator (TII) SubClassOf Traffic Light
+* Traffic Sign DisjointWith Traffic Light
+* Traffic Light DisjointWith Road Marking
+* Traffic Sign DisjointWith Road Marking
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
