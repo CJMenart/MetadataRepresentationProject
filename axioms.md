@@ -13,10 +13,12 @@
 * "A Scenario has exactly one Self"
 
 ### Axioms (Manchester)
-* Scenario SubClassOf =1 hasEnviornment some Environment
-* Environment SubClassOf <=1 hasTemperature some Temperature
-* Scenario SubClassOf =1 currentLane some Lane 
-* PhysicalThing SubClassOf (inverse?) hasThing some Scenario
+* Scenario SubClassOf hasEnviornment exactly 1 Environment
+* Environment SubClassOf hasTemperature at most 1 Temperature
+* Scenario SubClassOf currentLane exactly 1 Lane
+* PhysicalThing SubClassOf inverse hasThing exactly 1 Scenario
+* Scenario SubClassOf hasIntersection min 1 Intersection
+* Scenario SubClassOf aboutCar exactly 1 Self
 
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
