@@ -49,10 +49,17 @@
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
 
-### Axioms
+### Axioms (English)
+* "Traffic Instruction Indicator (TII) conveys a single traffic instruction"
+* "Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
 * "Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
-* Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
+* "Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
 * "TII can be restrictive" 
+
+### Axioms (Manchester)
+* Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction
+* Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info
+* PhysicalThing SubClassOf Traffic Instruction Indicator (TII)
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
