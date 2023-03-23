@@ -46,17 +46,20 @@
 * "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
 * "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
 
-
-
 ## Intersections
 ![schema-diagram](schema-diagrams/Intersection.png)
 
-### Axioms
-* "For every lane that touchesIntersection an Intersection, that Intersection points to that lane with one of either ingoingLane or outgoingLane." 
+### Axioms (English)
 * "A touchingIntersection has exactly one direction"
 * "A touchingIntersection has exactly one lane"
 * "A touchingIntersection has exactly one cardinality"
 * "A touchingIntersection has exactly one intersection"
+
+### Axioms (Manchester)
+* TouchingIntersection SubClassOf hasDirection exactly 1 Direction
+* TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality
+* TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane
+* TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection
 
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
