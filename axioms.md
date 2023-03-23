@@ -54,12 +54,14 @@
 * "A touchingIntersection has exactly one lane"
 * "A touchingIntersection has exactly one cardinality"
 * "A touchingIntersection has exactly one intersection"
+* "A Scenario has exacty one intersection which is an Imaginary Intersection."
 
 ### Axioms (Manchester)
 * TouchingIntersection SubClassOf hasDirection exactly 1 Direction
 * TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality
 * TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane
 * TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection
+* Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection
 
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
@@ -82,13 +84,19 @@
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
 
-### Axioms
+### Axioms (English)
 * "A Position is always in at most 2 lanes."
-* "The position of a potentialObstacle relative to lane"
 * "The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
 * "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 * "Motion has exactly one left/right relationship" (implicitly relative to the current road.)
 * "Motion has atleast one towardsLane"  
+
+### Axioms (Manchester)
+* Position SubClassOf onLane max 2 Lane 
+* 
+* 
+* Motion SubClassOf direction exactly one Left/Right 
+* Motion SubClassOf towardsLane min 1 Lane
 
 ### Rules 
 * "If a Position is in two Lanes, then one of those two lanes is directRightOf the other."
