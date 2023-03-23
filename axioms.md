@@ -76,10 +76,10 @@
 ### Axioms (Manchester)
 * Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction
 * Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info
-* PhysicalThing SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Instruction Indicator (TII) SubClassOf Road Marking
-* Traffic Instruction Indicator (TII) SubClassOf Traffic Sign
-* Traffic Instruction Indicator (TII) SubClassOf Traffic Light
+* Traffic Instruction Indicator (TII) SubClassOf PhysicalThing
+* Road Marking SubClassOf Traffic Instruction Indicator (TII)
+* Traffic Sign SubClassOf Traffic Instruction Indicator (TII)
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
 * Traffic Sign DisjointWith Traffic Light
 * Traffic Light DisjointWith Road Marking
 * Traffic Sign DisjointWith Road Marking
