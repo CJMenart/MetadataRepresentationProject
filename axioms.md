@@ -4,44 +4,40 @@
 ## Scenarios
 ![schema-diagram](schema-diagrams/Scenario.png)
 
-### Axioms (English)
-* "A scenario has exactly one Environment"
-* "An environment has (up to?) one hasTemperature."
-* "A Scenario containsLane at least one Lane."
-* "Every physical thing is pointed to by exactly one Scenario via hasThing."
-* "A Scenario has atleast one intersection"
-* "A Scenario has exactly one Self"
-
-### Axioms (Manchester)
+### Axioms
 * Scenario SubClassOf hasEnviornment exactly 1 Environment
+	"A scenario has exactly one Environment"
 * Environment SubClassOf hasTemperature at most 1 Temperature
+	"An environment has up one Temperature."
 * Scenario SubClassOf containsLane min 1 Lane
+	"A Scenario containsLane at least one Lane."
 * PhysicalThing SubClassOf inverse hasThing exactly 1 Scenario
+	"Every physical thing is pointed to by exactly one Scenario via hasThing."
 * Scenario SubClassOf hasIntersection min 1 Intersection
+	"A Scenario has atleast one intersection"
 * Scenario SubClassOf aboutCar exactly 1 Self
+	"A Scenario has exactly one Self"
 
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
 
-### Axioms (English)
-* "A Lane can be directLeftOf at most one other Lane."
-* "A Lane can be directRightOf at most one other Lane."
-* "If one Lane is directLeftOf another Lane, that lane is directRightOf the first Lane."
-* "A Lane has at most one visiblyEndsAt relationship with a Distance."
-* "A Road has atleast one lane"
-* "A lane always touches one or two TouchingIntersections."
-* "Every Lane is in at most one Road"  (could this be exactly 1?)
-
-### Axioms (Manchester)
+### Axioms
 * Lane SubClassOf directLeftOf max 1 Lane
+	"A Lane can be directLeftOf at most one other Lane."
 * Lane SubClassOf directRightOf max 1 Lane 
+	"A Lane can be directRightOf at most one other Lane."
 * directLeftOf inverse of directRightOf
+	"If one Lane is directLeftOf another Lane, that lane is directRightOf the first Lane."
 * Lane SubClassOf visiblyEndsAt max 1 Distance 
+	"A Lane has at most one visiblyEndsAt relationship with a Distance."
 * Road SubClassOf inverse inRoad min 1 Lane 
+	"A Road has atleast one lane"
 * Lane SubClassOf touchesIntersection min 1 TouchingIntersection
 * Lane SubClassOf touchesIntersection max 2 TouchingIntersection
+	"A lane always touches one or two TouchingIntersections."
 * Lane SubClassOf inRoad max 1 Road
-
+	"Every Lane is in at most one Road"  (could this be exactly 1?)
+	
 ### Rules
 * "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
 * "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
@@ -49,58 +45,57 @@
 ## Intersections
 ![schema-diagram](schema-diagrams/Intersection.png)
 
-### Axioms (English)
-* "A touchingIntersection has exactly one direction"
-* "A touchingIntersection has exactly one lane"
-* "A touchingIntersection has exactly one cardinality"
-* "A touchingIntersection has exactly one intersection"
-* "A Scenario has exacty one intersection which is an Imaginary Intersection."
-
-### Axioms (Manchester)
+### Axioms
 * TouchingIntersection SubClassOf hasDirection exactly 1 Direction
+	"A touchingIntersection has exactly one direction"
 * TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality
+	"A touchingIntersection has exactly one lane"
 * TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane
+	"A touchingIntersection has exactly one cardinality"
 * TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection
+	"A touchingIntersection has exactly one intersection"
 * Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection
-
+	"A Scenario has exacty one intersection which is an Imaginary Intersection."
+	
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
 
-### Axioms (English)
-* "Traffic Instruction Indicator (TII) conveys a single traffic instruction"
-* "Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
-* "Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
-* "Every TII is exactly one of a Traffic Light, a Traffic Sign, or a Road Marking."
-* "TII can be restrictive" 
-
-### Axioms (Manchester)
+### Axioms
 * Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction
+	"Traffic Instruction Indicator (TII) conveys a single traffic instruction"
 * Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info
-* Traffic Instruction Indicator (TII) SubClassOf PhysicalThing
-* Road Marking SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Sign SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
+	"Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
 * Traffic Sign DisjointWith Traffic Light
 * Traffic Light DisjointWith Road Marking
 * Traffic Sign DisjointWith Road Marking
+	"Traffic Lights, Road Markings, and Traffic Signs are all distinct types of TIIs."
+
+### Unneeded?
+* Traffic Instruction Indicator (TII) SubClassOf PhysicalThing
+	"Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
+* Road Marking SubClassOf Traffic Instruction Indicator (TII)
+* Traffic Sign SubClassOf Traffic Instruction Indicator (TII)
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
 
-### Axioms (English)
-* "A Position is always in at most 2 lanes."
-* "The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
-* "If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
-* "Motion has exactly one left/right relationship" (implicitly relative to the current road.)
-* "Motion has atleast one towardsLane"  
 
-### Axioms (Manchester)
+### Axioms
 * Position SubClassOf onLane max 2 Lane 
+	"A Position is always in at most 2 lanes."
 * RelToLane SubClassOf relation exactly 1 Left/Right/On 
+	"The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
 * Position SubClass relToLane exactly one RelToLane
+	
 * RelToLane SubClass relToLane exactly one Lane
+
 * Motion SubClassOf direction exactly one Left/Right 
+	"Motion has exactly one left/right relationship" (implicitly relative to the current road.)
 * Motion SubClassOf towardsLane min 1 Lane
+	"Motion has atleast one towardsLane"  
+* (Missing Manchester)
+	"If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 
 ### Rules 
 * "If a Position is in two Lanes, then one of those two lanes is directRightOf the other."
@@ -109,11 +104,10 @@
 ## Cars
 ![schema-diagram](schema-diagrams/Car.png)
 
-### Axioms (English)
-* "A Car is always conductingManeuever exactly one manuever."
+### Axioms
+* Car SubClassOf conductingManeuever exactly one maneuver.
+	"A Car is always conductingManeuever exactly one manuever."
 
-### Axioms (Manchester)
-* "Car SubClassOf conductingManeuever exactly one maneuver."
 
 ## Rules about Maneuevers (not real/in graph at this time)
 * "If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed." (not really an axiom)
