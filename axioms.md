@@ -7,7 +7,7 @@
 ### Axioms (English)
 * "A scenario has exactly one Environment"
 * "An environment has (up to?) one hasTemperature."
-* "A scenario has exactly one currentLane (if currentLane stays a thing)"
+* "A Scenario containsLane at least one Lane."
 * "Every physical thing is pointed to by exactly one Scenario via hasThing."
 * "A Scenario has atleast one intersection"
 * "A Scenario has exactly one Self"
@@ -15,7 +15,7 @@
 ### Axioms (Manchester)
 * Scenario SubClassOf hasEnviornment exactly 1 Environment
 * Environment SubClassOf hasTemperature at most 1 Temperature
-* Scenario SubClassOf currentLane exactly 1 Lane
+* Scenario SubClassOf containsLane min 1 Lane
 * PhysicalThing SubClassOf inverse hasThing exactly 1 Scenario
 * Scenario SubClassOf hasIntersection min 1 Intersection
 * Scenario SubClassOf aboutCar exactly 1 Self
@@ -23,17 +23,29 @@
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
 
-### Axioms
+### Axioms (English)
 * "A Lane can be directLeftOf at most one other Lane."
 * "A Lane can be directRightOf at most one other Lane."
 * "If one Lane is directLeftOf another Lane, that lane is directRightOf the first Lane."
-* "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
 * "A Lane has at most one visiblyEndsAt relationship with a Distance."
 * "A Road has atleast one lane"
 * "A lane always touches one or two TouchingIntersections."
+* "Every Lane is in at most one Road"  (could this be exactly 1?)
+
+### Axioms (Manchester)
+* Lane SubClassOf directLeftOf max 1 Lane
+* Lane SubClassOf directRightOf max 1 Lane 
+* directLeftOf inverse of directRightOf
+* Lane SubClassOf visiblyEndsAt max 1 Distance 
+* Road SubClassOf inverse inRoad min 1 Lane 
+* Lane SubClassOf touchesIntersection min 1 TouchingIntersection
+* Lane SubClassOf touchesIntersection max 2 TouchingIntersection
+* Lane SubClassOf inRoad max 1 Road
 
 ### Rules
 * "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
+* "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
+
 
 
 ## Intersections
