@@ -96,8 +96,9 @@
 
 ### Axioms (Manchester)
 * Position SubClassOf onLane max 2 Lane 
-* 
-* 
+* RelToLane SubClassOf relation exactly 1 Left/Right/On 
+* Position SubClass relToLane exactly one RelToLane
+* RelToLane SubClass relToLane exactly one Lane
 * Motion SubClassOf direction exactly one Left/Right 
 * Motion SubClassOf towardsLane min 1 Lane
 
@@ -108,10 +109,11 @@
 ## Cars
 ![schema-diagram](schema-diagrams/Car.png)
 
-### Axioms
+### Axioms (English)
 * "A Car is always conductingManeuever exactly one manuever."
 
-
+### Axioms (Manchester)
+* "Car SubClassOf conductingManeuever exactly one maneuver."
 
 ## Rules about Maneuevers (not real/in graph at this time)
 * "If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed." (not really an axiom)
