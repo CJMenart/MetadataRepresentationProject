@@ -81,7 +81,8 @@
 	"Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
 * Road Marking SubClassOf Traffic Instruction Indicator (TII)  
 * Traffic Sign SubClassOf Traffic Instruction Indicator (TII)  
-* Traffic Light SubClassOf Traffic Instruction Indicator (TII)  
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
+	"Traffic Lights, Road Markings, and Traffic Signs are all types of TIIs."
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
