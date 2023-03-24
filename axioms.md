@@ -117,7 +117,7 @@
 * T SubClassOf for-all hasValue only xsd:AnyValue  
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
-
+<!---
 ## Rules about Maneuevers (not real/in graph at this time)
 * "If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed." (not really an axiom)
 * "If there is a Car that is Moving on an Incoming Lane to an Intersection, any manuever which passes through that intersection from a different Lane, which is not Parallel to that Lane (has the same or opposite Cardinality), is not allowed???" (Intersecting Car Axiom)
@@ -128,3 +128,4 @@
 * "If a Lane contains a Turn Lane Marking, then Turn maneuvers from Parallel Lanes that do not contain Turn Lane Markings are not allowed." (?)
   * Also need to express that turn may be allowed only in one direction at that point
 * "If a Lane contains a Turn Only Lane Marking, then Continue(?) maneuvers from that Lane are not allowed."
+--->
