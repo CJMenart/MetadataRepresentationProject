@@ -70,16 +70,19 @@
 * Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info  
 	"Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
 * Traffic Sign DisjointWith Traffic Light  
-* Traffic Light DisjointWith Road Marking  
+        "A Traffic Sign is mutually exclusive from Traffic Light"
+* Traffic Light DisjointWith Road Marking    
+        "A Traffic Light is mutually exclusive from  Road Marking"
 * Traffic Sign DisjointWith Road Marking  
-	"Traffic Lights, Road Markings, and Traffic Signs are all distinct types of TIIs."
+	"Traffic Lights, Road Markings, and Traffic Signs are all mutually exclusive types of TIIs."
 
 ### Unneeded?
 * Traffic Instruction Indicator (TII) SubClassOf PhysicalThing  
 	"Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
 * Road Marking SubClassOf Traffic Instruction Indicator (TII)  
 * Traffic Sign SubClassOf Traffic Instruction Indicator (TII)  
-* Traffic Light SubClassOf Traffic Instruction Indicator (TII)  
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
+	"Traffic Lights, Road Markings, and Traffic Signs are all types of TIIs."
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
@@ -89,16 +92,16 @@
 * Position SubClassOf onLane max 2 Lane   
 	"A Position is always in at most 2 lanes."
 * RelToLane SubClassOf relation exactly 1 Left/Right/On   
-	"The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
+	"The Position of a potential obstacle is either on a lane, or to the right or left of a lane."
 * Position SubClass hasRelativity exactly one RelToLane  
 * RelToLane SubClass relToLane exactly one Lane  
 	"A Position is always given relative to a single Lane."
-* Motion SubClassOf direction exactly one Left/Right   
-	"Motion has exactly one left/right relationship" (implicitly relative to the current road.)
+* Motion SubClassOf direction exactly one Left/Right  
+	"A Motion is either to the left or right" (implicitly relative to the current road.)
 * Motion SubClassOf towardsLane min 1 Lane  
-	"Motion has atleast one towardsLane"  
-* Obstacle SubClassOf relToLane o relativity some On   (This manchester may be wrong)  
-	"If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
+	"A Motion is always twoards at least one Lane."  
+* Obstacle SubClassOf relToLane o relativity some On  (This manchester is almost certainly wrong)  
+	"If the Position of a Potential Obstacle is not on any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 
 ### Rules 
 * "If a Position is in two Lanes, then one of those two lanes is directRightOf the other."
@@ -109,7 +112,7 @@
 
 ### Axioms
 * Car SubClassOf conductingManeuever exactly one maneuver.  
-	"A Car is always conductingManeuever exactly one manuever."
+	"A Car is always conducting exactly one manuever."
 
 ## General (Not Module-Specific)
 * T SubClassOf for-all hasValue only xsd:AnyValue  
