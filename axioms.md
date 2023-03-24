@@ -51,15 +51,15 @@
 
 ### Axioms
 * TouchingIntersection SubClassOf hasDirection exactly 1 Direction  
-	"Each relationship between a single Lane and a single Intersection has exactly one direction"
+	"A touchingIntersection has exactly one direction"
 * TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality  
-	"Each relationship between a single Lane and a single Intersection has exactly one cardinality"
+	"A touchingIntersection has exactly one lane"
 * TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane  
-	"Each relationship between a single Lane and a single Intersection has exactly one lane"
+	"A touchingIntersection has exactly one cardinality"
 * TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection  
-	"Each relationship between a single Lane and a single Intersection has exactly one intersection"
+	"A touchingIntersection has exactly one intersection"
 * Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection  
-	"A Scenario has exacty one Imaginary Intersection which is a hidden Intersection assumed to be behind Self."
+	"A Scenario has exacty one intersection which is an Imaginary Intersection."
 	
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
@@ -118,15 +118,14 @@
 * T SubClassOf for-all hasValue only xsd:AnyValue  
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
-<!---
+
 ## Rules about Maneuevers (not real/in graph at this time)
 * "If one Lane is an ingoingLane of an intersection, and another lane is an outgoingLane of the same intersection, a lane switch maneuver between those two lanes is not allowed." (not really an axiom)
 * "If there is a Car that is Moving on an Incoming Lane to an Intersection, any manuever which passes through that intersection from a different Lane, which is not Parallel to that Lane (has the same or opposite Cardinality), is not allowed???" (Intersecting Car Axiom)
-* "If there is a Stop Sign at a Lane and Intersection, and we are not at that intersection, any maneuver which passes through that intersection from that Lane is not allowed."
-* "If there is a Stop Light at a Lane and Intersection, any maneuver which passes through that intersection from that Lane is not allowed."
+* "If there is a Stop Sign at a Lane and Intersection, and we are not at that intersection, the only manuever allowed is the stop at spot and proceed."
+* "If there is a Stop Light at a Lane and Intersection, any maneuver that is not the stop maneuever from that Lane is not allowed."
 * "If there is a Speed Limit sign (in a Lane/Scenario?) the FormalSpeedLimit is equal to that sign's numerical value."
-* "If there is a Priority Lane sign at an Intersection, the Intersecting Car Axiom does not apply if we are in the Lane containing the sign or Parallel to that Lane."
+* "If there is a Priority Lane sign at an Intersection, the Intersecting Car Axiom does not apply if we are in the Lane containing the sign or Parallel to that Lane."(Gonna Keep it till later)
 * "If a Lane contains a Turn Lane Marking, then Turn maneuvers from Parallel Lanes that do not contain Turn Lane Markings are not allowed." (?)
   * Also need to express that turn may be allowed only in one direction at that point
-* "If a Lane contains a Turn Only Lane Marking, then Continue(?) maneuvers from that Lane are not allowed."
---->
+* "If a Lane contains a Left/Right Turn Only Lane Marking, then move Forwards maneuvers from that Lane are not allowed."
