@@ -5,42 +5,42 @@
 ![schema-diagram](schema-diagrams/Scenario.png)
 
 ### Axioms
-* Scenario SubClassOf hasEnviornment exactly 1 Environment
+* Scenario SubClassOf hasEnviornment exactly 1 Environment  
 	"A scenario has exactly one Environment"
-* Environment SubClassOf hasTemperature at most 1 Temperature
+* Environment SubClassOf hasTemperature at most 1 Temperature  
 	"An environment has up one Temperature."
-* Scenario SubClassOf containsLane min 1 Lane
-	"A Scenario containsLane at least one Lane."
-* PhysicalThing SubClassOf inverse hasThing exactly 1 Scenario
-	"Every physical thing is pointed to by exactly one Scenario via hasThing."
-* Scenario SubClassOf hasIntersection min 1 Intersection
-	"A Scenario has atleast one intersection"
-* Scenario SubClassOf aboutCar exactly 1 Self
-	"A Scenario has exactly one Self"
-* Temperature SubClassOf hasValue some xsd:integer
-	"A Temperature has an integer value"
+* Scenario SubClassOf containsLane min 1 Lane  
+	"A Scenario contains at least one Lane."
+* PhysicalThing SubClassOf inverse hasThing exactly 1 Scenario  
+	"Every physical thing is within exactly one Scenario."
+* Scenario SubClassOf hasIntersection min 1 Intersection  
+	"A Scenario has at least one intersection"
+* Scenario SubClassOf aboutCar exactly 1 Self  
+	"A Scenario has exactly one Self corresponding to the user's vehicle"
+* Temperature SubClassOf hasValue some xsd:integer  
+	"A Temperature is represented as an integer value"
 
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
 
 ### Axioms
-* Lane SubClassOf directLeftOf max 1 Lane
-	"A Lane can be directLeftOf at most one other Lane."
-* Lane SubClassOf directRightOf max 1 Lane 
-	"A Lane can be directRightOf at most one other Lane."
-* directLeftOf inverse of directRightOf
-	"If one Lane is directLeftOf another Lane, that lane is directRightOf the first Lane."
-* Lane SubClassOf visiblyEndsAt max 1 Distance 
-	"A Lane has at most one visiblyEndsAt relationship with a Distance."
-* Road SubClassOf inverse inRoad min 1 Lane 
-	"A Road has atleast one lane"
-* Lane SubClassOf touchesIntersection min 1 TouchingIntersection
-* Lane SubClassOf touchesIntersection max 2 TouchingIntersection
-	"A lane always touches one or two TouchingIntersections."
-* Lane SubClassOf inRoad max 1 Road
-	"Every Lane is in at most one Road"  (could this be exactly 1?)
-* Distance SubClassOf hasValue some xsd:float
-	"A Distance is defined by a floating-point value."
+* Lane SubClassOf directLeftOf max 1 Lane  
+	"A Lane can be directly left of at most one other Lane."
+* Lane SubClassOf directRightOf max 1 Lane   
+	"A Lane can be directly right of at most one other Lane."
+* directLeftOf inverse of directRightOf  
+	"If one Lane is directly left of another Lane, the second lane is directly right of the first Lane."
+* Lane SubClassOf visiblyEndsAt max 1 Distance   
+	"A Lane has at most one Distance away where it visibly ends."
+* Road SubClassOf inverse inRoad min 1 Lane   
+	"A Road has at least one Lane"
+* Lane SubClassOf touchesIntersection min 1 TouchingIntersection  
+* Lane SubClassOf touchesIntersection max 2 TouchingIntersection  
+	"A Lane always touches one or two Intersections."
+* Lane SubClassOf inRoad exactly 1 Road  
+	"Every Lane is in exactly one Road"
+* Distance SubClassOf hasValue some xsd:float  
+	"A Distance is represented by a floating-point value."
 	
 ### Rules
 * "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
@@ -50,54 +50,54 @@
 ![schema-diagram](schema-diagrams/Intersection.png)
 
 ### Axioms
-* TouchingIntersection SubClassOf hasDirection exactly 1 Direction
+* TouchingIntersection SubClassOf hasDirection exactly 1 Direction  
 	"A touchingIntersection has exactly one direction"
-* TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality
+* TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality  
 	"A touchingIntersection has exactly one lane"
-* TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane
+* TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane  
 	"A touchingIntersection has exactly one cardinality"
-* TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection
+* TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection  
 	"A touchingIntersection has exactly one intersection"
-* Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection
+* Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection  
 	"A Scenario has exacty one intersection which is an Imaginary Intersection."
 	
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
 
 ### Axioms
-* Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction
+* Traffic Instruction Indicator (TII) SubClassOf conveys exactly 1 Traffic Instruction  
 	"Traffic Instruction Indicator (TII) conveys a single traffic instruction"
-* Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info
+* Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info  
 	"Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
-* Traffic Sign DisjointWith Traffic Light
-* Traffic Light DisjointWith Road Marking
-* Traffic Sign DisjointWith Road Marking
+* Traffic Sign DisjointWith Traffic Light  
+* Traffic Light DisjointWith Road Marking  
+* Traffic Sign DisjointWith Road Marking  
 	"Traffic Lights, Road Markings, and Traffic Signs are all distinct types of TIIs."
 
 ### Unneeded?
-* Traffic Instruction Indicator (TII) SubClassOf PhysicalThing
+* Traffic Instruction Indicator (TII) SubClassOf PhysicalThing  
 	"Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
-* Road Marking SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Sign SubClassOf Traffic Instruction Indicator (TII)
-* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
+* Road Marking SubClassOf Traffic Instruction Indicator (TII)  
+* Traffic Sign SubClassOf Traffic Instruction Indicator (TII)  
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)  
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
 
 
 ### Axioms
-* Position SubClassOf onLane max 2 Lane 
+* Position SubClassOf onLane max 2 Lane   
 	"A Position is always in at most 2 lanes."
-* RelToLane SubClassOf relation exactly 1 Left/Right/On 
+* RelToLane SubClassOf relation exactly 1 Left/Right/On   
 	"The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
-* Position SubClass hasRelativity exactly one RelToLane
-* RelToLane SubClass relToLane exactly one Lane
+* Position SubClass hasRelativity exactly one RelToLane  
+* RelToLane SubClass relToLane exactly one Lane  
 	"A Position is always given relative to a single Lane."
-* Motion SubClassOf direction exactly one Left/Right 
+* Motion SubClassOf direction exactly one Left/Right   
 	"Motion has exactly one left/right relationship" (implicitly relative to the current road.)
-* Motion SubClassOf towardsLane min 1 Lane
+* Motion SubClassOf towardsLane min 1 Lane  
 	"Motion has atleast one towardsLane"  
-* Obstacle SubClassOf relToLane o relativity some On   (This manchester may be wrong)
+* Obstacle SubClassOf relToLane o relativity some On   (This manchester may be wrong)  
 	"If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 
 ### Rules 
@@ -108,11 +108,11 @@
 ![schema-diagram](schema-diagrams/Car.png)
 
 ### Axioms
-* Car SubClassOf conductingManeuever exactly one maneuver.
+* Car SubClassOf conductingManeuever exactly one maneuver.  
 	"A Car is always conductingManeuever exactly one manuever."
 
 ## General (Not Module-Specific)
-* T SubClassOf for-all hasValue only xsd:AnyValue
+* T SubClassOf for-all hasValue only xsd:AnyValue  
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
 
