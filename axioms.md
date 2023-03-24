@@ -86,7 +86,7 @@
 	"A Position is always in at most 2 lanes."
 * RelToLane SubClassOf relation exactly 1 Left/Right/On 
 	"The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
-* Position SubClass relToLane exactly one RelToLane
+* Position SubClass hasRelativity exactly one RelToLane
 * RelToLane SubClass relToLane exactly one Lane
 	"A Position is always given relative to a single Lane."
 * Motion SubClassOf direction exactly one Left/Right 
