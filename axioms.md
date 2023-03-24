@@ -70,9 +70,11 @@
 * Traffic Instruction Indicator (TII) SubClassOf hasCategory exactly 1 Restriction/Warning/Info  
 	"Traffic Instruction Indicator (TII) has exactly one category of Restriction, Warning, or Info"
 * Traffic Sign DisjointWith Traffic Light  
-* Traffic Light DisjointWith Road Marking  
+        "A Traffic Sign is mutually exclusive from Traffic Light"
+* Traffic Light DisjointWith Road Marking    
+        "A Traffic Light is mutually exclusive from  Road Marking"
 * Traffic Sign DisjointWith Road Marking  
-	"Traffic Lights, Road Markings, and Traffic Signs are all distinct types of TIIs."
+	"Traffic Lights, Road Markings, and Traffic Signs are all mutually exclusive types of TIIs."
 
 ### Unneeded?
 * Traffic Instruction Indicator (TII) SubClassOf PhysicalThing  
