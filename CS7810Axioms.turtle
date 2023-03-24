@@ -1,0 +1,609 @@
+@prefix : <http://www.semanticweb.org/rochelle/ontologies/2023/2/CS7810Metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/rochelle/ontologies/2023/2/CS7810Metadata> .
+
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/CS7810Metadata> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPosition
+<http://ontologydesignpatterns.org/opla-sd#entityPosition> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionX
+<http://ontologydesignpatterns.org/opla-sd#entityPositionX> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionY
+<http://ontologydesignpatterns.org/opla-sd#entityPositionY> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#aboutCar
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#aboutCar> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Self> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#conductingManuever
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#conductingManuever> rdf:type owl:ObjectProperty ;
+                                                                                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#direction
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#direction> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyLeftOf
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyLeftOf> rdf:type owl:ObjectProperty ;
+                                                                                           owl:inverseOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyRightOf> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyRightOf
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyRightOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasDirection
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasDirection> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> ;
+                                                                                         rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Direction> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasEnvironment
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasEnvironment> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> ;
+                                                                                           rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasIntersection
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasIntersection> rdf:type owl:ObjectProperty ;
+                                                                                            rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> ;
+                                                                                            rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasPosition
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasPosition> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasRelativity
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasRelativity> rdf:type owl:ObjectProperty ;
+                                                                                          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasThing
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasThing> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#inRoad
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#inRoad> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#onLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#onLane> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:subPropertyOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasPosition> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relToLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relToLane> rdf:type owl:ObjectProperty ;
+                                                                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relativity
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relativity> rdf:type owl:ObjectProperty ;
+                                                                                       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesIntersection
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesIntersection> rdf:type owl:ObjectProperty ;
+                                                                                                rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> ;
+                                                                                                rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesLane> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#towardsLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#towardsLane> rdf:type owl:ObjectProperty ;
+                                                                                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasWeatherType%20
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasWeatherType%20> rdf:type owl:ObjectProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Condition> ;
+                                                                                              rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Type> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#ContainsLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#ContainsLane> rdf:type owl:ObjectProperty ;
+                                                                                                             rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> ;
+                                                                                                             rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Conveys
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Conveys> rdf:type owl:ObjectProperty ;
+                                                                                                        rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> ;
+                                                                                                        rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Instruction> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCardinality
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCardinality> rdf:type owl:ObjectProperty ;
+                                                                                                               rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> ;
+                                                                                                               rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCategory
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCategory> rdf:type owl:ObjectProperty ;
+                                                                                                            rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> ;
+                                                                                                            rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Restriction/Warning/info%20> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTemperature
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTemperature> rdf:type owl:ObjectProperty ;
+                                                                                                               rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment> ;
+                                                                                                               rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature> ,
+                                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                                            owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTemperature> ;
+                                                                                                                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                            owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature>
+                                                                                                                          ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTrafficInstructionIndicator
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTrafficInstructionIndicator> rdf:type owl:ObjectProperty ;
+                                                                                                                               rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> ;
+                                                                                                                               rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasWeatherCondition
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasWeatherCondition> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment> ;
+                                                                                                                    rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Condition> .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#visiblyEndsAt
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#visiblyEndsAt> rdf:type owl:ObjectProperty ;
+                                                                                                              rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> ;
+                                                                                                              rdfs:range <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Distance> .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty owl:inverseOf owl:topObjectProperty ;
+                      rdf:type owl:SymmetricProperty ,
+                               owl:TransitiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasDT
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasDT> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment> ;
+                                                                                  rdfs:range xsd:dateTime ;
+                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "40.0"^^xsd:double ;
+                                                                                                                                               <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "120.0"^^xsd:double ;
+                                                                                                                                               rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                             ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasValue
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasValue> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature> ;
+                                                                                     rdfs:range xsd:int ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "10.0"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "200.0"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasValue
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasValue> rdf:type owl:DatatypeProperty ;
+                                                                                                         rdfs:domain <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Distance> ;
+                                                                                                         rdfs:range xsd:float ;
+                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "740.0"^^xsd:double ;
+                                                                                                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "50.0"^^xsd:double ;
+                                                                                                                                                                      rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                    ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Car
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Car> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#conductingManuever> ;
+                                                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                  owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Manuever>
+                                                                                                ] ;
+                                                                                <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "45.278431299666266"^^xsd:double ;
+                                                                                                                                             <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "153.69300874395512"^^xsd:double ;
+                                                                                                                                             rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                           ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality> rdf:type owl:Class ;
+                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "110.49201299053998"^^xsd:double ;
+                                                                                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "390.4460072662439"^^xsd:double ;
+                                                                                                                                                     rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                   ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Direction
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Direction> rdf:type owl:Class ;
+                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "119.74414669825208"^^xsd:double ;
+                                                                                                                                                   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "89.64052240713119"^^xsd:double ;
+                                                                                                                                                   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                 ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Distance
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Distance> rdf:type owl:Class ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "70.41784577187546"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "330.04596701186"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesIntersection> ;
+                                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyLeftOf> ;
+                                                                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#directlyRightOf> ;
+                                                                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#inRoad> ;
+                                                                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesIntersection> ;
+                                                                                                   owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#visiblyEndsAt> ;
+                                                                                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Distance>
+                                                                                                 ] ;
+                                                                                 <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "9.741616648750679"^^xsd:double ;
+                                                                                                                                              <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "240.42679610947275"^^xsd:double ;
+                                                                                                                                              rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                            ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Manuever
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Manuever> rdf:type owl:Class ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "85.09846875712486"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "46.89420722477664"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Obstacle
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Obstacle> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Potential%20Obstacle%20> ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "151.71108430919793"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "239.04865990590022"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Position
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Position> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasRelativity> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#RelToLane>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#onLane> ;
+                                                                                                       owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                     ] ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "53.40063874245269"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "139.80752273125188"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#RelToLane
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#RelToLane> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relToLane> ;
+                                                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                        owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#relativity> ;
+                                                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                        owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#On/Left/Right>
+                                                                                                      ] ;
+                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "167.96780044785447"^^xsd:double ;
+                                                                                                                                                   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "220.2715002483238"^^xsd:double ;
+                                                                                                                                                   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                 ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#inRoad>
+                                                                                                                  ] ;
+                                                                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                 ] ;
+                                                                                 <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "9.914788359397434"^^xsd:double ;
+                                                                                                                                              <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "409.9130745752044"^^xsd:double ;
+                                                                                                                                              rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                            ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Scenario> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasIntersection> ;
+                                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#aboutCar> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Self>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasEnvironment> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#ContainsLane> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                     ] ;
+                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "519.6016617098396"^^xsd:double ;
+                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "320.01825109865683"^^xsd:double ;
+                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature> rdf:type owl:Class ;
+                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "430.0"^^xsd:double ;
+                                                                                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "400.0"^^xsd:double ;
+                                                                                                                                                     rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                   ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#motion
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#motion> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#towardsLane> ;
+                                                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                     owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                   ] ,
+                                                                                                   [ rdf:type owl:Restriction ;
+                                                                                                     owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#direction> ;
+                                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                     owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right>
+                                                                                                   ] ;
+                                                                                   <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "68.5641738963828"^^xsd:double ;
+                                                                                                                                                <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "112.90653174104227"^^xsd:double ;
+                                                                                                                                                rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                              ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right> rdf:type owl:Class ;
+                                                                                       <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "178.14742023817328"^^xsd:double ;
+                                                                                                                                                    <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "64.32062613658148"^^xsd:double ;
+                                                                                                                                                    rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                  ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#On/Left/Right
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#On/Left/Right> rdf:type owl:Class ;
+                                                                                          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "277.64361201774676"^^xsd:double ;
+                                                                                                                                                       <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "297.12699431017614"^^xsd:double ;
+                                                                                                                                                       rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                     ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Potential%20Obstacle%20
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Potential%20Obstacle%20> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing> ;
+                                                                                                    <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "190.0"^^xsd:double ;
+                                                                                                                                                                 <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "630.0"^^xsd:double ;
+                                                                                                                                                                 rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                               ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Restriction/Warning/info%20
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Restriction/Warning/info%20> rdf:type owl:Class ;
+                                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "790.1420141771544"^^xsd:double ;
+                                                                                                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "349.73888557969235"^^xsd:double ;
+                                                                                                                                                                     rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                   ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road%20marking
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Road%20marking> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> ;
+                                                                                           owl:disjointWith <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Light> ,
+                                                                                                            <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Sign> ;
+                                                                                           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "750.271225559637"^^xsd:double ;
+                                                                                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "530.2254543075014"^^xsd:double ;
+                                                                                                                                                        rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                      ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> rdf:type owl:Class ;
+                                                                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasDirection> ;
+                                                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                         owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Direction>
+                                                                                                                       ] ,
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCardinality> ;
+                                                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                         owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality>
+                                                                                                                       ] ,
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesIntersection>
+                                                                                                                                        ] ;
+                                                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                         owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Lane>
+                                                                                                                       ] ,
+                                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                                         owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#touchesLane>
+                                                                                                                                        ] ;
+                                                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                         owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection>
+                                                                                                                       ] ;
+                                                                                                       <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "330.2441144034157"^^xsd:double ;
+                                                                                                                                                                    <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "480.0973832262427"^^xsd:double ;
+                                                                                                                                                                    rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                  ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Instruction
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Instruction> rdf:type owl:Class ;
+                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "719.6944584537058"^^xsd:double ;
+                                                                                                                                                               <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "290.42298847293637"^^xsd:double ;
+                                                                                                                                                               rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                             ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Light
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Light> rdf:type owl:Class ;
+                                                                                            rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> ;
+                                                                                            owl:disjointWith <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Sign> ;
+                                                                                            <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "699.5623848801904"^^xsd:double ;
+                                                                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "99.96747487493126"^^xsd:double ;
+                                                                                                                                                         rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                       ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Sign
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Traffic%20Sign> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> ;
+                                                                                           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "610.3195363544132"^^xsd:double ;
+                                                                                                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "210.18983017238077"^^xsd:double ;
+                                                                                                                                                        rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                      ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Environment> rdf:type owl:Class ;
+                                                                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                              owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasTemperature> ;
+                                                                                                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                              owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Temperature>
+                                                                                                                            ] ;
+                                                                                                            <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "410.0"^^xsd:double ;
+                                                                                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "140.0"^^xsd:double ;
+                                                                                                                                                                         rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                       ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Intersection> rdf:type owl:Class ;
+                                                                                                             <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "19.80753420236156"^^xsd:double ;
+                                                                                                                                                                          <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "590.1050770662569"^^xsd:double ;
+                                                                                                                                                                          rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                        ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Self
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Self> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing> ;
+                                                                                                     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "40.0962553103347"^^xsd:double ;
+                                                                                                                                                                  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "539.6043965572379"^^xsd:double ;
+                                                                                                                                                                  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#TrafficInstructionIndicator> rdf:type owl:Class ;
+                                                                                                                            rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing> ,
+                                                                                                                                            [ rdf:type owl:Restriction ;
+                                                                                                                                              owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#hasCategory> ;
+                                                                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                                              owl:onClass <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Restriction/Warning/info%20>
+                                                                                                                                            ] ;
+                                                                                                                            <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "239.5707572582793"^^xsd:double ;
+                                                                                                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "730.253513646711"^^xsd:double ;
+                                                                                                                                                                                         rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                                       ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Imaginary%20Intersection
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Imaginary%20Intersection> rdf:type owl:Class ;
+                                                                                                                         rdfs:subClassOf <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Touching%20Intersection%20> ;
+                                                                                                                         <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "339.64707669173754"^^xsd:double ;
+                                                                                                                                                                                      <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "580.4846889099082"^^xsd:double ;
+                                                                                                                                                                                      rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                                    ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Physical%20Thing> rdf:type owl:Class ;
+                                                                                                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                                   owl:onProperty <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasPosition> ;
+                                                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Position>
+                                                                                                                                 ] ;
+                                                                                                                 <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "-10.391960767823079"^^xsd:double ;
+                                                                                                                                                                              <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "49.83584662389919"^^xsd:double ;
+                                                                                                                                                                              rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                            ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Condition
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Condition> rdf:type owl:Class ;
+                                                                                                                    <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "350.0"^^xsd:double ;
+                                                                                                                                                                                 <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "40.0"^^xsd:double ;
+                                                                                                                                                                                 rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                               ] .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Type
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#Weather%20Type> rdf:type owl:Class ;
+                                                                                                               <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "140.0"^^xsd:double ;
+                                                                                                                                                                            <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "10.0"^^xsd:double ;
+                                                                                                                                                                            rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                                                                                                                          ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
