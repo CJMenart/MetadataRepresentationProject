@@ -87,14 +87,13 @@
 * RelToLane SubClassOf relation exactly 1 Left/Right/On 
 	"The position of a potentialObstacle can be exactly one onLane, rightOfLane, leftOfLane"
 * Position SubClass relToLane exactly one RelToLane
-	
 * RelToLane SubClass relToLane exactly one Lane
-
+	"A Position is always given relative to a single Lane."
 * Motion SubClassOf direction exactly one Left/Right 
 	"Motion has exactly one left/right relationship" (implicitly relative to the current road.)
 * Motion SubClassOf towardsLane min 1 Lane
 	"Motion has atleast one towardsLane"  
-* (Missing Manchester)
+* Obstacle SubClassOf relToLane o relativity some On   (This manchester may be wrong)
 	"If the Position of a PotentialObstacle is not onLane any Lanes, that PotentialObstacle is not an Obstacle. Otherwise, it is."
 
 ### Rules 
