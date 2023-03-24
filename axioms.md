@@ -51,15 +51,15 @@
 
 ### Axioms
 * TouchingIntersection SubClassOf hasDirection exactly 1 Direction  
-	"A touchingIntersection has exactly one direction"
+	"Each relationship between a single Lane and a single Intersection has exactly one direction"
 * TouchingIntersection SubClassOf hasCardinality exactly 1 Cardinality  
-	"A touchingIntersection has exactly one lane"
+	"Each relationship between a single Lane and a single Intersection has exactly one cardinality"
 * TouchingIntersection SubClassOf inverse touchesIntersection exactly 1 Lane  
-	"A touchingIntersection has exactly one cardinality"
+	"Each relationship between a single Lane and a single Intersection has exactly one lane"
 * TouchingIntersection SubClassOf inverse touchesLane exactly 1 Intersection  
-	"A touchingIntersection has exactly one intersection"
+	"Each relationship between a single Lane and a single Intersection has exactly one intersection"
 * Scenario SubClassOf hasIntersection exactly one ImaginaryIntersection  
-	"A Scenario has exacty one intersection which is an Imaginary Intersection."
+	"A Scenario has exacty one Imaginary Intersection which is a hidden Intersection assumed to be behind Self."
 	
 ## Traffic Instruction Indicators
 ![schema-diagram](schema-diagrams/TrafficInstructionIndicator.png)
@@ -81,7 +81,8 @@
 	"Every Traffic Instruction Indicator is a PhysicalThing (but only some TIIs are Potential Obstacles)"
 * Road Marking SubClassOf Traffic Instruction Indicator (TII)  
 * Traffic Sign SubClassOf Traffic Instruction Indicator (TII)  
-* Traffic Light SubClassOf Traffic Instruction Indicator (TII)  
+* Traffic Light SubClassOf Traffic Instruction Indicator (TII)
+	"Traffic Lights, Road Markings, and Traffic Signs are all types of TIIs."
 
 ## Potential Obstacles
 ![schema-diagram](schema-diagrams/PotentialObstacle.png)
