@@ -17,6 +17,8 @@
 	"A Scenario has atleast one intersection"
 * Scenario SubClassOf aboutCar exactly 1 Self
 	"A Scenario has exactly one Self"
+* Temperature SubClassOf hasValue some xsd:integer
+	"A Temperature has an integer value"
 
 ## Lanes
 ![schema-diagram](schema-diagrams/Lane.png)
@@ -37,6 +39,8 @@
 	"A lane always touches one or two TouchingIntersections."
 * Lane SubClassOf inRoad max 1 Road
 	"Every Lane is in at most one Road"  (could this be exactly 1?)
+* Distance SubClassOf hasValue some xsd:float
+	"A Distance is defined by a floating-point value."
 	
 ### Rules
 * "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
@@ -106,6 +110,10 @@
 ### Axioms
 * Car SubClassOf conductingManeuever exactly one maneuver.
 	"A Car is always conductingManeuever exactly one manuever."
+
+## General (Not Module-Specific)
+* T SubClassOf for-all hasValue only xsd:AnyValue
+	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
 
 ## Rules about Maneuevers (not real/in graph at this time)
