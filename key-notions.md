@@ -41,7 +41,7 @@
 * Turn Left: change lane to a left outgoing lane at an intersection.  What are the scenarios in which the maneuever of "Turn Left" is possible. Scenarios that Move Forward is possible and TouchingIntersection exists and no obstacle/potential Obstacle with motion into lane with direction=outgoing and cardinality = east. 
 * Turn Right: change lane to a right outgoing lane at an intersection.  What are the scenarios in which the maneuever of "Turn Right" is possible. Scenarios that Move Forward is possible and TouchingIntersection exists and no obstacle/potential Obstacle with motion into lane with direction=outgoing and cardinality = west. 
 * Stop: Come to a full stop.  What are the scenarios in which the maneuever of "Stop" has to be executed. Inverse of Move Forward.
-* Stop at designated spot adn continue: Stop at designated area and proceed with caution. 
+* Stop at designated spot and continue: Stop at designated area and proceed with caution. Scenarios that has a stop sign.
 * U-Turn: change lanes to directlyLeftOf incoming lane.   What are the scenarios in which the maneuever of "U-Turn" is possible. Scenarios that Move Forward is possible and TouchingIntersection exists and no obstacle/potential Obstacle with motion into lane with direction=incoming and cardinality = cardianlity of self.lane.
 * Proceed with caution.   What are the scenarios in which the maneuever of "Proceed With Caution" is executed. Scenarios that Move Forward is possible and ahs a yellow light or proceed with caution sign or yield or construction signs.
 * Passing car: Conducting a merge left/right, increase speed to pass a slower moving car. Scenarios in which a Merge Left or a Merge Right and a obstacle is in self.lane.
