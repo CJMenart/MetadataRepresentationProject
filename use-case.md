@@ -44,17 +44,17 @@ We are considering the incorporation of information about types and number of la
 
 
 # Competency Questions
-* Does the car need to stop or slow down?
-* Will an object move into the road?
+* Does the car need to stop or slow down? --
+* Will an object move into the road? --
 * What will happen if the vehicle crashes into object X?
 * Can the vehicle legally perform requested maneuver?
-* Is this street a one-way street?
+* Is this street a one-way street? --
 * Can this vehicle fit the size/height/weight restrictions of the road/parking spot?
 * Which object should the vehicle prefer to hit if unavoidable?
-* Is there a current restriction to speed (school zone, etc)?
-* Is this railroad currently closed for train access?
+* Is there a current restriction to speed (school zone, etc)? --
+* Is this railroad currently closed for train access? --
 * What is the average number of cars traveling on the road per time period?
-* Which side of the road does the car need to drive?
+* Which side of the road does the car need to drive? --
 
 # Potential Datasets
 * Self-Driving Sensor Data
