@@ -1,0 +1,217 @@
+bochum_00000_021479_leftImg8bit.png
+	Road A
+		Lane A
+		Lane B
+			Ends at 20m
+			Turn Lane Marking
+			1 Island Information Sign			
+		Lane C
+			Self
+			9 Priority Lane Sign
+	Road B
+		Lane A
+			26017
+			26016
+			8 Street Name
+	Road C
+		Lane A
+			26009
+			26008
+			26006
+			26007
+			12 Illegible Sign
+		Lane B
+			Bicycle Lane Information Sign	
+			10 Illegible Sign
+			11 Illegible Sign
+		Lane C
+			2 Island Information Sign
+		Lane D
+			26018
+			3 Red Light
+			4 Yield Sign	
+		Lane E
+			26015
+			26013
+			26014
+			26011
+			5 Bicycle Lane Sign
+			6 Direction Information Sign
+			7 Bicycle Lane Sign
+	Intersection A
+		South
+			Incoming
+				AB
+				AC
+			Outoing
+				AA	
+		East
+			Incoming
+				BA
+		North
+			Incoming
+				CA
+				CB
+			Outgoing
+				CC
+				CD
+				CE	
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AC
+
+bochum_000000_024524_leftImg8bit.png
+	Road A
+		Lane A
+			26002
+			26005
+			26003
+			26000
+			6 Street Name
+		Lane B
+			26001
+			1 Red Light
+			2 Illegible Sign
+			3 Illegible Sign
+			4 Children Crossing Sign
+			5 Illegible Sign
+			Self
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AB
+
+bochum_000000_024717_leftImg8bit.png
+	Road A
+		Lane A
+			Self
+			26003
+			26001
+			1 Speed Limit Sign (Illegible)
+			2 Illegible Sign
+			3 Red Light
+			4 Illegible Light
+			5 Street Name
+			6 No Stopping Sign
+	Intersection Imaginary
+		North
+			Outgoing
+				AA
+
+bochum_000000_033056_leftImg8bit.png
+	Road A
+		Lane A
+		Lane B
+			Self
+			26007
+			8 Parking Sign
+			9 Red Light
+		Lane C
+			26009
+			26008
+			15 Yield Sign
+	Road B	
+		Lane A
+			4 Facing Away Traffic Light
+			5 Red Light
+			10 Facing Away Traffic Light
+			12 Yellow Light
+			13 Facing Away Traffic Light
+		Lane B
+			26000
+			14 Green Light
+			16 Illegible Sign
+	Road C
+		Lane A
+			26004
+		Lane B
+			26005
+			1 Red Light
+			6 Facing Away Traffic Light
+			7 Facing Away Traffic Light
+			11 Illegible Traffic Light
+	Road D
+		Lane A
+			26003
+			3 Facing Away Traffic Light
+		Lane B
+			26002
+			2 Facing Away Traffic Light
+		Lane C
+			26001
+	Intersection A
+		South
+			Incoming
+				AB
+				AC
+			Outgoing
+				AA
+		East
+			Incoming
+				BA
+			Outgoing
+				BB
+		West
+			Incoming
+				CB
+			Outgoing
+				CA
+		North
+			Incoming
+				DA
+				DB	
+			Outgoing
+	
+				DC
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AB	
+				AC	
+
+# Note this one has more cars "off the road"
+# Oh actually it's a roundabout. Ontology might not handle this one well?
+bochum_000000_031687_leftImg8bit.png
+	Road A
+		Lane A
+		Lane B
+			Self
+			2 Island Information Sign
+			6 Yield Sign
+			7 Roundabout Sign
+			8 Crosswalk Sign
+	Road B
+		Lane A
+			3 Illegible Sign
+			4 Crosswalk Sign
+			5 Illegible Sign
+	Road C
+		Lane A
+			1 Illegible Sign
+	Intersection A
+		South
+			Incoming
+				AB
+			Outgoing
+				AA
+		East
+			Incoming
+				BA
+		West	
+			Outgoing
+				CA
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AB
+
+	
