@@ -1,3 +1,7 @@
+# Added imports 
+import json
+import numpy as np
+from pathlib import Path
 ##### Graph stuff
 import rdflib
 from rdflib import URIRef, Graph, Namespace, Literal
@@ -47,11 +51,12 @@ def main(markup_file, cityscapes_root):
         markup = file.readlines()
     markup = tabs_to_nest(markup)
     
+    # TODO scenario-level metadata
     for scenario in markup:
         add_scenario_markup(graph, scenario)
         add_scenario_json(graph, scenario[0], cityscapes_root)
 
-    TODO TODO TODO
+    # TODO anything that's not Cityscapes
     
 
     # Save
@@ -71,7 +76,8 @@ def tabs_to_nest(textlines):
             dest.append((line.strip(), []))
     return overall
     
-    #TODO add roads/lanes/whatever to scenario too
+
+#TODO add roads/lanes/whatever to scenario too
 def add_scenario_markup(graph, scenario):
     posInd = 0
     imname = scenario[0][:scenario[0].index('leftImg8bit.png')-1]
@@ -126,7 +132,85 @@ def add_scenario_markup(graph, scenario):
     
     
     # TODO apply Movement of moving vehicles
+    # Also Obstacle class
     
     
-add_scenario_json(graph, imname, cityscapes_root):
-    raise NotImplementedError
+def add_scenario_json(graph, imname, cityscapes_root):
+    cityscapes_root = Path(cityscapes_root)
+    split = 'train'  # TODO detect this if more data is added 
+    city = scenario[0].split('_')[0]
+    imname = scenario[0][:scenario[0].index('leftImg8bit.png')-1]
+    
+    bbox3d_json = cityscapes_root / 'gtBbox3d' / split / imname + '_gtBbox3d.json'
+    with open(bbox3d_json, 'r') as f:
+        bbox3d = json.load(f)
+    add_vehicles(graph, imname, bbox3d)
+    
+    people_json = cityscapes_root / 'gtBboxCityPersons' / split / imname + '_gtBboxCityPersons.json'
+    with open(people_json, 'r') as f:
+        people = json.load(f)
+    add_pedestrian(graph, imname, people)
+    
+    semseg_json = cityscapes_root / 'gtFine' / split / imname + '_gtFine_polygons.json'
+    with open(semseg_json, 'r') as f:
+        misc = json.load(f)
+    add_misc(graph, imname, misc)
+    
+
+def add_vehicles(graph, imname, bbox3d):
+    use_classes = ['car', 'truck', 'bus', 'train', 'motorcycle', 'bicycle', 'caravan']
+    # ignore: tunnel, dynamic, trailer
+        
+    objects = bbbox3d['objects']
+    
+    
+    for obj in objects:
+        if obj['label'] not in use_classes:
+            continue
+        oid = obj['instanceId']
+        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Car']))  # everything is a car atm
+        graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
+        # TODO could revisit handling of position 
+        if (pfs['ex'][f"{imname}_{oid}"], pfs['ex']['hasPosition'], None) in graph:
+            # I like the contains syntax. Very Pythonic
+            dist = np.linalg.norm(obj['3d']['center'])
+            graph.add((pfs['ex'][f"{imname}_{oid}"], pfs['ex']['distanceDownLane'], Literal(dist)))
+        
+
+def add_pedestrian(graph, imname, people):
+    """
+    Takes a CityPersons JSON dictionary and modified it in place
+    so classes have been mapped to the BDD100K system
+    """
+    use_classes = ['pedestrian', 'sitting person', 'person group', 'person (other)']
+    # ignored: rider, ignore 
+ 
+    for obj in people['objects']:
+        if obj['label'] not in use_classes:
+            continue 
+        oid = obj['instanceId']
+        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Pedestrian']))
+        graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
+        # positions unknown--unless TODO we parse depth maps for estimate. 
+        # Theoretically possible by extracting instance-label polygon and indexing into transformed depth map
+        
+        
+def add_misc(graph, imname, instance_labels):
+
+    use_classes = ['building', 'vegetation', 'pole', 'wall', 'traffic light', 'traffic sign']
+    # Ignored: lots of stuff. Sky, road, self, various forms of 'not actually an object', etc...
+    
+    # schema missing description literal?
+    misc_id = 0
+    tii_id = 0
+    for obj in instance_labels['objects']:
+        if obj['label'] not in use_classes:
+            continue
+        if 'traffic' in obj['label']:
+            tii_id += 1
+            graph.add((pfs['ex'][f"{imname}_{tii_id}"], a, pfs['ex']['TrafficInstructionIndicator']))
+            graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{tii_id}"]))
+        else:
+            misc_id += 1
+            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['ex']['PhysicalThing']))
+            graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{misc_id}"]))
