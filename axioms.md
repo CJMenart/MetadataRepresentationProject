@@ -44,7 +44,7 @@
 	"A Distance is represented by a floating-point value."
 	
 ### Rules
-* "All lanes that touch the same interesection and are inRoad of same road have the same cardinality"
+* "If a Lane touches the same Intersection of another Lane and both are in the same Road, both Lanes have the same cardinality."
 * "If a Lane is directRightOf another Lane, both of those Lanes are inRoad the same Road."
 
 ## Intersection
