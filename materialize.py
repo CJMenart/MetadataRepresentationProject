@@ -104,7 +104,7 @@ def add_scenario_markup(graph, scenario):
                 lanename = f"{roadname}_{no_whitespace(lane[0])}"
                 graph.add((pfs['ex'][lanename], a, pfs['ex']["Lane"]))
                 graph.add((pfs['ex'][lanename], pfs['ex']['inRoad'], pfs['ex'][roadname]))
-                graph.add((pfs['ex'][imname], pfs['ex']['containsLane'], pfs['ex'][lanename]))
+                graph.add((pfs['ex'][imname], pfs['alt']['ContainsLane'], pfs['ex'][lanename]))
                 
                 # Tie lanes together 
                 if prevlanename:
@@ -117,17 +117,20 @@ def add_scenario_markup(graph, scenario):
                     ename = f"{imname}_{e_num}"
                     if 'Self' in ename:
                         graph.add((pfs['ex'][ename], a, pfs['alt']['Self']))
-                    graph.add((pfs['ex'][ename], pfs['ex']['hasPosition'], pfs['ex'][f'{imname}_pos{posInd}']))
-                    graph.add((pfs['ex'][f'{imname}_pos{posInd}'], a, pfs['ex']['Position']))
-                    graph.add((pfs['ex'][f'{imname}_pos{posInd}'], pfs['ex']['hasRelativity'], pfs['ex'][f'{imname}_rel{posInd}']))
-                    graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relToLane'], pfs['ex'][lanename]))
-                    graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex']['On']))
-                    posInd += 1
+                    if int(e_num) < 100:  # TII
+                        graph.add((pfs['ex'][lanename], pfs['alt']['hasTrafficInstructionIndicator'], pfs['ex'][ename]))           
+                    else:  # physical stuff
+                        graph.add((pfs['ex'][ename], pfs['ex']['hasPosition'], pfs['ex'][f'{imname}_pos{posInd}']))
+                        graph.add((pfs['ex'][f'{imname}_pos{posInd}'], a, pfs['ex']['Position']))
+                        graph.add((pfs['ex'][f'{imname}_pos{posInd}'], pfs['ex']['hasRelativity'], pfs['ex'][f'{imname}_rel{posInd}']))
+                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relToLane'], pfs['ex'][lanename]))
+                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex']['On']))
+                        posInd += 1
         else:
             # Intersections
             intname = f"{imname}_{no_whitespace(road_or_intr[0])}"
             print(f"intname: {intname}")
-            graph.add((pfs['ex'][intname], a, pfs['ex']['Intersection']))
+            graph.add((pfs['ex'][intname], a, pfs['alt']['Intersection']))
             graph.add((pfs['ex'][imname], pfs['ex']['hasIntersection'], pfs['ex'][intname]))
             if 'Imaginary' in intname:
                 graph.add((pfs['ex'][intname], a, pfs['ex']['Imaginary%20Intersection']))
@@ -142,7 +145,7 @@ def add_scenario_markup(graph, scenario):
                             graph.add((pfs['ex'][touchname], a, pfs['ex']['Touching%20Intersection%20']))
                             graph.add((pfs['ex'][intname], pfs['ex']['touchesLane'], pfs['ex'][touchname]))
                             graph.add((pfs['ex'][lanename], pfs['ex']['touchesIntersection'], pfs['ex'][touchname]))
-                            graph.add((pfs['ex'][touchname], pfs['ex']['hasCardinality'], pfs['ex'][cardiname]))
+                            graph.add((pfs['ex'][touchname], pfs['alt']['hasCardinality'], pfs['ex'][cardiname]))
                             graph.add((pfs['ex'][touchname], pfs['ex']['hasDirection'], pfs['ex'][dirname]))            
     
 
@@ -230,11 +233,11 @@ def add_misc(graph, imname, instance_labels):
             continue
         if 'traffic' in obj['label']:
             tii_id += 1
-            graph.add((pfs['ex'][f"{imname}_{tii_id}"], a, pfs['ex']['TrafficInstructionIndicator']))
+            graph.add((pfs['ex'][f"{imname}_{tii_id}"], a, pfs['alt']['TrafficInstructionIndicator']))
             graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{tii_id}"]))
         else:
             misc_id += 1
-            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['ex']['Physical%20Thing']))
+            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['alt']['Physical%20Thing']))
             graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{misc_id}"]))
             
 
@@ -260,7 +263,7 @@ def guess_obstacles(graph, imname):
                     backPos = graph.value(predicate = pfs['ex']['hasRelativity'], object=backRelation, any=False)
                     otherEntity = graph.value(predicate = pfs['ex']['hasPosition'], object=backPos, any=False)
                     stopInstructions = ['StopSign', 'RedLight']
-                    if any([(otherEntity, pfs['ex']['conveys'], si) in graph for si in stopInstructions]): 
+                    if any([(otherEntity, pfs['alt']['Conveys'], si) in graph for si in stopInstructions]): 
                         graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['GoingStraight']))
                         # check for it moving over other lanes?????? Add 'Motion' to it.
                     else:
@@ -273,15 +276,15 @@ def parse_scenario_metadata(graph, imname, metadata):
     
     graph.add((pfs['ex'][f'{imname}_Self'], pfs['ex']['hasSpeed'], pfs['ex'][f'{imname}_ssp']))
     graph.add((pfs['ex'][f'{imname}_ssp'], a, pfs['ex']['SpeedMPS']))
-    graph.add((pfs['ex'][f'{imname}_ssp'], pfs['ex']['hasValue'], Literal(metadata['speed'])))
+    graph.add((pfs['ex'][f'{imname}_ssp'], pfs['alt']['hasValue'], Literal(metadata['speed'])))
     
     # Environment
     # Environment is under alt namespace
     # Weather%20Condition
     graph.add((pfs['ex'][imname], pfs['ex']['hasEnvironment'], pfs['ex'][f'{imname}_env']))
-    graph.add((pfs['ex'][f'{imname}_env'], pfs['ex']['hasTemperature'], pfs['ex'][f'{imname}_tmp']))
-    graph.add((pfs['ex'][f'{imname}_tmp'], pfs['ex']['hasValue'], Literal(metadata['outsideTemperature'])))
-    graph.add((pfs['ex'][imname], pfs['ex']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
+    graph.add((pfs['ex'][f'{imname}_env'], pfs['alt']['hasTemperature'], pfs['ex'][f'{imname}_tmp']))
+    graph.add((pfs['ex'][f'{imname}_tmp'], pfs['alt']['hasValue'], Literal(metadata['outsideTemperature'])))
+    graph.add((pfs['ex'][imname], pfs['alt']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
     graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Sunny']))
     
 
