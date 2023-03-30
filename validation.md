@@ -127,14 +127,17 @@ SELECT * WHERE {
 | Result |
 
 ## Average Number of Cars Question
-**Competency Question:** "What is the average number of cars traveling on the road?"
+**Competency Question:** "What is the average number of cars in a scenario?"
 
 **Bridged Datasets:** dataset 1, dataset 2, ...
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT (AVG(?numCars) as ?avg)
+WHERE {
+	SELECT (COUNT(?car) as ?numCars)
+	WHERE { ?numCars a ?scenario. }
+	GROUP by ?scenario
 }
 ```
 
@@ -154,8 +157,10 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT (COUNT(?car) as ?numCars)
+WHERE { 
+	?numCars a ?scenario. 
+	FILTER(?numCars > 4)
 }
 ```
 
@@ -217,8 +222,10 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT (?scenario)
+WHERE { 
+	----- something ----- 
+	FILTER(?temp > 10)
 }
 ```
 
