@@ -1,4 +1,4 @@
-bochum_00000_021479_leftImg8bit.png
+bochum_000000_021479_leftImg8bit.png
 	Road A
 		Lane A
 		Lane B
@@ -176,8 +176,6 @@ bochum_000000_033056_leftImg8bit.png
 				AB	
 				AC	
 
-# Note this one has more cars "off the road"
-# Oh actually it's a roundabout. Ontology might not handle this one well?
 bochum_000000_031687_leftImg8bit.png
 	Road A
 		Lane A
