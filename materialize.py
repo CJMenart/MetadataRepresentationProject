@@ -6,7 +6,6 @@ import os, sys
 ##### Graph stuff
 import rdflib
 from rdflib import URIRef, Graph, Namespace, Literal
-#from rdflib.extras.infixowl import EnumeratedClass
 from rdflib import OWL, RDF, RDFS, XSD, TIME
 # Prefixes
 name_space = "https://kastle-lab.org/"
@@ -32,12 +31,7 @@ pfs = {
 "owl": OWL,
 "time": TIME
 }
-"""
-traffic_instructions = EnumeratedClass(pfs['ex']['TrafficInstructions'],
-                             members=[pfs['ex']['StopSign'],
-                                      pfs['ex']['RedLight'],
-                                      pfs['ex']['GreenLight']])
-"""
+
 # Initialization shortcut(s)
 def init_kg(prefixes=pfs):
     kg = Graph()
@@ -124,7 +118,7 @@ def add_scenario_markup(graph, scenario):
                         graph.add((pfs['ex'][f'{imname}_pos{posInd}'], a, pfs['ex']['Position']))
                         graph.add((pfs['ex'][f'{imname}_pos{posInd}'], pfs['ex']['hasRelativity'], pfs['ex'][f'{imname}_rel{posInd}']))
                         graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relToLane'], pfs['ex'][lanename]))
-                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex']['On']))
+                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex']['Left/Right/On.On']))
                         posInd += 1
         else:
             # Intersections
@@ -135,9 +129,9 @@ def add_scenario_markup(graph, scenario):
             if 'Imaginary' in intname:
                 graph.add((pfs['ex'][intname], a, pfs['ex']['Imaginary%20Intersection']))
                 for cardinality in road_or_intr[1]:
-                    cardiname = cardinality[0].strip()
+                    cardiname = pfs['ex']['Cardinality.' + cardinality[0].strip()]
                     for direction in cardinality[1]:
-                        dirname = direction[0].strip()
+                        dirname = pfs['ex']['Direction.' + direction[0].strip()]
                         for lane in direction[1]:
                             letters = lane[0].strip()
                             lanename = f"{imname}_Road{letters[0]}_Lane{letters[1]}"
@@ -256,15 +250,16 @@ def guess_obstacles(graph, imname):
         if not pos:
             continue 
         for _, _, relation in graph.triples((pos, pfs['ex']['hasRelativity'], None)):
-            if graph.value(relation, pfs['ex']['relativity']) == pfs['ex']['On']:
+            if graph.value(relation, pfs['ex']['relativity']) == pfs['ex']['Left/Right/On.On']:
                 lane = graph.value(relation, pfs['ex']['relToLane'])
                 # find out if lane has a reason to stop. Otherwise assume car is moving. 
                 for backRelation, _, _ in graph.triples((None, pfs['ex']['relToLane'] , lane)):
                     backPos = graph.value(predicate = pfs['ex']['hasRelativity'], object=backRelation, any=False)
                     otherEntity = graph.value(predicate = pfs['ex']['hasPosition'], object=backPos, any=False)
-                    stopInstructions = ['StopSign', 'RedLight']
-                    if any([(otherEntity, pfs['alt']['Conveys'], si) in graph for si in stopInstructions]): 
-                        graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['GoingStraight']))
+                    stopInstructions = ['Traffic%20Instruction.StopSign', 'Traffic%20Instruction.RedLight']
+                    stopInstructions = [pfs['ex'][inst] for inst in stopInstructions]
+                    if any([(otherEntity, pfs['alt']['conveys'], si) in graph for si in stopInstructions]): 
+                        graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Manuever.GoingStraight']))
                         # check for it moving over other lanes?????? Add 'Motion' to it.
                     else:
                         graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Stopped']))
@@ -285,7 +280,7 @@ def parse_scenario_metadata(graph, imname, metadata):
     graph.add((pfs['ex'][f'{imname}_env'], pfs['alt']['hasTemperature'], pfs['ex'][f'{imname}_tmp']))
     graph.add((pfs['ex'][f'{imname}_tmp'], pfs['alt']['hasValue'], Literal(metadata['outsideTemperature'])))
     graph.add((pfs['ex'][imname], pfs['alt']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
-    graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Sunny']))
+    graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Weather%20Type.Sunny']))
     
 
 
