@@ -6,6 +6,7 @@ import os, sys
 ##### Graph stuff
 import rdflib
 from rdflib import URIRef, Graph, Namespace, Literal
+#from rdflib.extras.infixowl import EnumeratedClass
 from rdflib import OWL, RDF, RDFS, XSD, TIME
 # Prefixes
 name_space = "https://kastle-lab.org/"
@@ -24,13 +25,19 @@ pfs = {
 "sosa": Namespace("http://www.w3.org/ns/sosa/"),
 "cdt": Namespace("http://w3id.org/lindt/custom_datatypes#"),
 "ex": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#"),
-"alt": Namepsace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#"),
+"alt": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#"),
 "rdf": RDF,
 "rdfs": RDFS,
 "xsd": XSD,
 "owl": OWL,
 "time": TIME
 }
+"""
+traffic_instructions = EnumeratedClass(pfs['ex']['TrafficInstructions'],
+                             members=[pfs['ex']['StopSign'],
+                                      pfs['ex']['RedLight'],
+                                      pfs['ex']['GreenLight']])
+"""
 # Initialization shortcut(s)
 def init_kg(prefixes=pfs):
     kg = Graph()
@@ -123,7 +130,7 @@ def add_scenario_markup(graph, scenario):
             graph.add((pfs['ex'][intname], a, pfs['ex']['Intersection']))
             graph.add((pfs['ex'][imname], pfs['ex']['hasIntersection'], pfs['ex'][intname]))
             if 'Imaginary' in intname:
-                graph.add((pfs['ex'][intname], a, pfs['ex']['ImaginaryIntersection']))
+                graph.add((pfs['ex'][intname], a, pfs['ex']['Imaginary%20Intersection']))
                 for cardinality in road_or_intr[1]:
                     cardiname = cardinality[0].strip()
                     for direction in cardinality[1]:
@@ -132,7 +139,7 @@ def add_scenario_markup(graph, scenario):
                             letters = lane[0].strip()
                             lanename = f"{imname}_Road{letters[0]}_Lane{letters[1]}"
                             touchname = f"{imname}_{letters}2{intname[len('Intersection'):]}"
-                            graph.add((pfs['ex'][touchname], a, pfs['ex']['TouchingIntersection']))
+                            graph.add((pfs['ex'][touchname], a, pfs['ex']['Touching%20Intersection%20']))
                             graph.add((pfs['ex'][intname], pfs['ex']['touchesLane'], pfs['ex'][touchname]))
                             graph.add((pfs['ex'][lanename], pfs['ex']['touchesIntersection'], pfs['ex'][touchname]))
                             graph.add((pfs['ex'][touchname], pfs['ex']['hasCardinality'], pfs['ex'][cardiname]))
@@ -168,7 +175,7 @@ def add_scenario_json(graph, imname, cityscapes_root):
     meta_json = cityscapes_root / 'vehicle_sequence' / split / city / (imname + '_vehicle.json')
     with open(meta_json, 'r') as f:
         metadata = json.load(f)
-    parse_scenario_metadata(graph, scenario[0], metadata)
+    parse_scenario_metadata(graph, imname, metadata)
     
 
 def add_vehicles(graph, imname, bbox3d):
@@ -182,7 +189,7 @@ def add_vehicles(graph, imname, bbox3d):
             continue
         oid = obj['instanceId']
         graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Car']))  # every vehicle is a car atm
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['PotentialObstacle']))
+        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Potential%20Obstacle%20']))
         graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
         # TODO could revisit handling of position 
         if (pfs['ex'][f"{imname}_{oid}"], pfs['ex']['hasPosition'], None) in graph:
@@ -204,7 +211,7 @@ def add_pedestrian(graph, imname, people):
             continue 
         oid = obj['instanceId']
         graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Pedestrian']))
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['PotentialObstacle']))
+        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Potential%20Obstacle%20']))
         graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
         # positions unknown--unless TODO we parse depth maps for estimate. 
         # Theoretically possible by extracting instance-label polygon and indexing into transformed depth map
@@ -227,7 +234,7 @@ def add_misc(graph, imname, instance_labels):
             graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{tii_id}"]))
         else:
             misc_id += 1
-            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['ex']['PhysicalThing']))
+            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['ex']['Physical%20Thing']))
             graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{misc_id}"]))
             
 
@@ -264,18 +271,20 @@ def parse_scenario_metadata(graph, imname, metadata):
     metadata['speed']
     metadata['outsideTemperature']
     
-    graph.add((pfs['ex'][f'{imname}_Self'], pfs['hasSpeed'], pfs['ex'][f'{imname}_ssp']))
-    graph.add((pfs['ex'][f'{imname}_ssp'], a, pfs['SpeedMPS']))
+    graph.add((pfs['ex'][f'{imname}_Self'], pfs['ex']['hasSpeed'], pfs['ex'][f'{imname}_ssp']))
+    graph.add((pfs['ex'][f'{imname}_ssp'], a, pfs['ex']['SpeedMPS']))
     graph.add((pfs['ex'][f'{imname}_ssp'], pfs['ex']['hasValue'], Literal(metadata['speed'])))
     
     # Environment
     # Environment is under alt namespace
+    # Weather%20Condition
     graph.add((pfs['ex'][imname], pfs['ex']['hasEnvironment'], pfs['ex'][f'{imname}_env']))
     graph.add((pfs['ex'][f'{imname}_env'], pfs['ex']['hasTemperature'], pfs['ex'][f'{imname}_tmp']))
     graph.add((pfs['ex'][f'{imname}_tmp'], pfs['ex']['hasValue'], Literal(metadata['outsideTemperature'])))
     graph.add((pfs['ex'][imname], pfs['ex']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
-    graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType'], pfs['ex']['Sunny']))
+    graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Sunny']))
     
+
 
 if __name__=='__main__':
     main(sys.argv[1], sys.argv[2])

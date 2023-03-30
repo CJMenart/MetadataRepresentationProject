@@ -1,6 +1,13 @@
 @prefix ex: <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:bochum_000000_021479 a ex:Scenario ;
+    ex:hasEnvironment ex:bochum_000000_021479_env ;
+    ex:hasIntersection ex:bochum_000000_021479_IntersectionA,
+        ex:bochum_000000_021479_IntersectionImaginary,
+        ex:bochum_000000_021479_RoadA,
+        ex:bochum_000000_021479_RoadB,
+        ex:bochum_000000_021479_RoadC ;
     ex:hasThing ex:bochum_000000_021479_1,
         ex:bochum_000000_021479_10,
         ex:bochum_000000_021479_11,
@@ -42,26 +49,19 @@ ex:bochum_000000_021479 a ex:Scenario ;
         ex:bochum_000000_021479_6,
         ex:bochum_000000_021479_7,
         ex:bochum_000000_021479_8,
-        ex:bochum_000000_021479_9 .
-
-ex:bochum_000000_021479_IntersectionA a ex:Intersection .
-
-ex:bochum_000000_021479_IntersectionImaginary a ex:ImaginaryIntersection,
-        ex:Intersection ;
-    ex:touchesLane ex:bochum_000000_021479_AA20_021479_IntersectionImaginary,
-        ex:bochum_000000_021479_AC20_021479_IntersectionImaginary .
-
-ex:bochum_000000_021479_RoadA a ex:Intersection .
+        ex:bochum_000000_021479_9 ;
+    ex:hasWeatherCondition ex:bochum_000000_021479_weth .
 
 ex:bochum_000000_021479_RoadA_LaneA ex:touchesIntersection ex:bochum_000000_021479_AA20_021479_IntersectionImaginary .
 
 ex:bochum_000000_021479_RoadA_LaneC ex:touchesIntersection ex:bochum_000000_021479_AC20_021479_IntersectionImaginary .
 
-ex:bochum_000000_021479_RoadB a ex:Intersection .
-
-ex:bochum_000000_021479_RoadC a ex:Intersection .
+ex:bochum_000000_021479_Self ex:hasSpeed ex:bochum_000000_021479_ssp .
 
 ex:bochum_000000_024524 a ex:Scenario ;
+    ex:hasEnvironment ex:bochum_000000_024524_env ;
+    ex:hasIntersection ex:bochum_000000_024524_IntersectionImaginary,
+        ex:bochum_000000_024524_RoadA ;
     ex:hasThing ex:bochum_000000_024524_1,
         ex:bochum_000000_024524_10,
         ex:bochum_000000_024524_11,
@@ -100,20 +100,19 @@ ex:bochum_000000_024524 a ex:Scenario ;
         ex:bochum_000000_024524_6,
         ex:bochum_000000_024524_7,
         ex:bochum_000000_024524_8,
-        ex:bochum_000000_024524_9 .
-
-ex:bochum_000000_024524_IntersectionImaginary a ex:ImaginaryIntersection,
-        ex:Intersection ;
-    ex:touchesLane ex:bochum_000000_024524_AA20_024524_IntersectionImaginary,
-        ex:bochum_000000_024524_AB20_024524_IntersectionImaginary .
-
-ex:bochum_000000_024524_RoadA a ex:Intersection .
+        ex:bochum_000000_024524_9 ;
+    ex:hasWeatherCondition ex:bochum_000000_024524_weth .
 
 ex:bochum_000000_024524_RoadA_LaneA ex:touchesIntersection ex:bochum_000000_024524_AA20_024524_IntersectionImaginary .
 
 ex:bochum_000000_024524_RoadA_LaneB ex:touchesIntersection ex:bochum_000000_024524_AB20_024524_IntersectionImaginary .
 
+ex:bochum_000000_024524_Self ex:hasSpeed ex:bochum_000000_024524_ssp .
+
 ex:bochum_000000_024717 a ex:Scenario ;
+    ex:hasEnvironment ex:bochum_000000_024717_env ;
+    ex:hasIntersection ex:bochum_000000_024717_IntersectionImaginary,
+        ex:bochum_000000_024717_RoadA ;
     ex:hasThing ex:bochum_000000_024717_1,
         ex:bochum_000000_024717_10,
         ex:bochum_000000_024717_11,
@@ -149,17 +148,20 @@ ex:bochum_000000_024717 a ex:Scenario ;
         ex:bochum_000000_024717_6,
         ex:bochum_000000_024717_7,
         ex:bochum_000000_024717_8,
-        ex:bochum_000000_024717_9 .
-
-ex:bochum_000000_024717_IntersectionImaginary a ex:ImaginaryIntersection,
-        ex:Intersection ;
-    ex:touchesLane ex:bochum_000000_024717_AA20_024717_IntersectionImaginary .
-
-ex:bochum_000000_024717_RoadA a ex:Intersection .
+        ex:bochum_000000_024717_9 ;
+    ex:hasWeatherCondition ex:bochum_000000_024717_weth .
 
 ex:bochum_000000_024717_RoadA_LaneA ex:touchesIntersection ex:bochum_000000_024717_AA20_024717_IntersectionImaginary .
 
+ex:bochum_000000_024717_Self ex:hasSpeed ex:bochum_000000_024717_ssp .
+
 ex:bochum_000000_031687 a ex:Scenario ;
+    ex:hasEnvironment ex:bochum_000000_031687_env ;
+    ex:hasIntersection ex:bochum_000000_031687_IntersectionA,
+        ex:bochum_000000_031687_IntersectionImaginary,
+        ex:bochum_000000_031687_RoadA,
+        ex:bochum_000000_031687_RoadB,
+        ex:bochum_000000_031687_RoadC ;
     ex:hasThing ex:bochum_000000_031687_1,
         ex:bochum_000000_031687_10,
         ex:bochum_000000_031687_11,
@@ -183,26 +185,23 @@ ex:bochum_000000_031687 a ex:Scenario ;
         ex:bochum_000000_031687_6,
         ex:bochum_000000_031687_7,
         ex:bochum_000000_031687_8,
-        ex:bochum_000000_031687_9 .
-
-ex:bochum_000000_031687_IntersectionA a ex:Intersection .
-
-ex:bochum_000000_031687_IntersectionImaginary a ex:ImaginaryIntersection,
-        ex:Intersection ;
-    ex:touchesLane ex:bochum_000000_031687_AA20_031687_IntersectionImaginary,
-        ex:bochum_000000_031687_AB20_031687_IntersectionImaginary .
-
-ex:bochum_000000_031687_RoadA a ex:Intersection .
+        ex:bochum_000000_031687_9 ;
+    ex:hasWeatherCondition ex:bochum_000000_031687_weth .
 
 ex:bochum_000000_031687_RoadA_LaneA ex:touchesIntersection ex:bochum_000000_031687_AA20_031687_IntersectionImaginary .
 
 ex:bochum_000000_031687_RoadA_LaneB ex:touchesIntersection ex:bochum_000000_031687_AB20_031687_IntersectionImaginary .
 
-ex:bochum_000000_031687_RoadB a ex:Intersection .
-
-ex:bochum_000000_031687_RoadC a ex:Intersection .
+ex:bochum_000000_031687_Self ex:hasSpeed ex:bochum_000000_031687_ssp .
 
 ex:bochum_000000_033056 a ex:Scenario ;
+    ex:hasEnvironment ex:bochum_000000_033056_env ;
+    ex:hasIntersection ex:bochum_000000_033056_IntersectionA,
+        ex:bochum_000000_033056_IntersectionImaginary,
+        ex:bochum_000000_033056_RoadA,
+        ex:bochum_000000_033056_RoadB,
+        ex:bochum_000000_033056_RoadC,
+        ex:bochum_000000_033056_RoadD ;
     ex:hasThing ex:bochum_000000_033056_1,
         ex:bochum_000000_033056_10,
         ex:bochum_000000_033056_11,
@@ -234,17 +233,8 @@ ex:bochum_000000_033056 a ex:Scenario ;
         ex:bochum_000000_033056_6,
         ex:bochum_000000_033056_7,
         ex:bochum_000000_033056_8,
-        ex:bochum_000000_033056_9 .
-
-ex:bochum_000000_033056_IntersectionA a ex:Intersection .
-
-ex:bochum_000000_033056_IntersectionImaginary a ex:ImaginaryIntersection,
-        ex:Intersection ;
-    ex:touchesLane ex:bochum_000000_033056_AA20_033056_IntersectionImaginary,
-        ex:bochum_000000_033056_AB20_033056_IntersectionImaginary,
-        ex:bochum_000000_033056_AC20_033056_IntersectionImaginary .
-
-ex:bochum_000000_033056_RoadA a ex:Intersection .
+        ex:bochum_000000_033056_9 ;
+    ex:hasWeatherCondition ex:bochum_000000_033056_weth .
 
 ex:bochum_000000_033056_RoadA_LaneA ex:touchesIntersection ex:bochum_000000_033056_AA20_033056_IntersectionImaginary .
 
@@ -252,443 +242,571 @@ ex:bochum_000000_033056_RoadA_LaneB ex:touchesIntersection ex:bochum_000000_0330
 
 ex:bochum_000000_033056_RoadA_LaneC ex:touchesIntersection ex:bochum_000000_033056_AC20_033056_IntersectionImaginary .
 
+ex:bochum_000000_033056_Self ex:hasSpeed ex:bochum_000000_033056_ssp .
+
+ex:bochum_000000_021479_1 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_10 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_11 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_12 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_13 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_14 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_15 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_16 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_17 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_18 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_19 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_2 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_20 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_21 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_22 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_23 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_24 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_25 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_26 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_26006 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26007 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26008 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26009 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26011 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26013 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26014 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26015 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26016 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26017 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_26018 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_021479_27 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_28 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_29 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_3 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_30 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_31 a ex:Physical%20Thing .
+
+ex:bochum_000000_021479_4 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_5 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_6 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_7 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_8 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_9 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_021479_IntersectionA a ex:Intersection .
+
+ex:bochum_000000_021479_IntersectionImaginary a ex:Imaginary%20Intersection,
+        ex:Intersection ;
+    ex:touchesLane ex:bochum_000000_021479_AA20_021479_IntersectionImaginary,
+        ex:bochum_000000_021479_AC20_021479_IntersectionImaginary .
+
+ex:bochum_000000_021479_RoadA a ex:Intersection .
+
+ex:bochum_000000_021479_RoadB a ex:Intersection .
+
+ex:bochum_000000_021479_RoadC a ex:Intersection .
+
+ex:bochum_000000_021479_env ex:hasTemperature ex:bochum_000000_021479_tmp .
+
+ex:bochum_000000_021479_ssp a ex:SpeedMPS ;
+    ex:hasValue 6.899375e+00 .
+
+ex:bochum_000000_021479_tmp ex:hasValue 2.15e+01 .
+
+ex:bochum_000000_021479_weth ex:hasWeatherType%20 ex:Sunny .
+
+ex:bochum_000000_024524_1 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_10 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_11 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_12 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_13 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_14 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_15 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_16 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_17 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_18 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_19 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_2 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_20 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_21 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_22 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_23 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_24 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_25 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_26 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_26000 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024524_26001 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024524_26002 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024524_26003 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024524_26005 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024524_27 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_28 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_29 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_3 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_30 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_31 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_32 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_33 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_34 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_4 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_5 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_6 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024524_7 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_8 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_9 a ex:Physical%20Thing .
+
+ex:bochum_000000_024524_IntersectionImaginary a ex:Imaginary%20Intersection,
+        ex:Intersection ;
+    ex:touchesLane ex:bochum_000000_024524_AA20_024524_IntersectionImaginary,
+        ex:bochum_000000_024524_AB20_024524_IntersectionImaginary .
+
+ex:bochum_000000_024524_RoadA a ex:Intersection .
+
+ex:bochum_000000_024524_env ex:hasTemperature ex:bochum_000000_024524_tmp .
+
+ex:bochum_000000_024524_ssp a ex:SpeedMPS ;
+    ex:hasValue 6.807938e+00 .
+
+ex:bochum_000000_024524_tmp ex:hasValue 2.45e+01 .
+
+ex:bochum_000000_024524_weth ex:hasWeatherType%20 ex:Sunny .
+
+ex:bochum_000000_024717_1 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_10 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_11 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_12 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_13 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_14 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_15 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_16 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_17 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_18 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_19 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_2 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_20 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_21 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_22 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_23 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_24 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_25 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_26 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_26001 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024717_26003 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024717_26004 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_024717_27 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_28 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_29 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_3 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_30 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_31 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_32 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_33 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_4 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_5 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_6 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_024717_7 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_8 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_9 a ex:Physical%20Thing .
+
+ex:bochum_000000_024717_IntersectionImaginary a ex:Imaginary%20Intersection,
+        ex:Intersection ;
+    ex:touchesLane ex:bochum_000000_024717_AA20_024717_IntersectionImaginary .
+
+ex:bochum_000000_024717_RoadA a ex:Intersection .
+
+ex:bochum_000000_024717_env ex:hasTemperature ex:bochum_000000_024717_tmp .
+
+ex:bochum_000000_024717_ssp a ex:SpeedMPS ;
+    ex:hasValue 7.356562e+00 .
+
+ex:bochum_000000_024717_tmp ex:hasValue 2.3e+01 .
+
+ex:bochum_000000_024717_weth ex:hasWeatherType%20 ex:Sunny .
+
+ex:bochum_000000_031687_1 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_10 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_11 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_12 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_13 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_14 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_15 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_16 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_17 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_18 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_19 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_2 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_20 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_26000 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_031687_26001 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_031687_26002 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_031687_28000 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_031687_3 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_4 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_5 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_6 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_7 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_8 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_031687_9 a ex:Physical%20Thing .
+
+ex:bochum_000000_031687_IntersectionA a ex:Intersection .
+
+ex:bochum_000000_031687_IntersectionImaginary a ex:Imaginary%20Intersection,
+        ex:Intersection ;
+    ex:touchesLane ex:bochum_000000_031687_AA20_031687_IntersectionImaginary,
+        ex:bochum_000000_031687_AB20_031687_IntersectionImaginary .
+
+ex:bochum_000000_031687_RoadA a ex:Intersection .
+
+ex:bochum_000000_031687_RoadB a ex:Intersection .
+
+ex:bochum_000000_031687_RoadC a ex:Intersection .
+
+ex:bochum_000000_031687_env ex:hasTemperature ex:bochum_000000_031687_tmp .
+
+ex:bochum_000000_031687_ssp a ex:SpeedMPS ;
+    ex:hasValue 1.020775e+01 .
+
+ex:bochum_000000_031687_tmp ex:hasValue 2.05e+01 .
+
+ex:bochum_000000_031687_weth ex:hasWeatherType%20 ex:Sunny .
+
+ex:bochum_000000_033056_1 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_10 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_11 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_12 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_13 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_14 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_15 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_16 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_17 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_18 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_19 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_2 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_20 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_21 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_22 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_23 a ex:Physical%20Thing .
+
+ex:bochum_000000_033056_26000 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26001 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26002 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26003 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26004 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26005 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26007 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26008 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_26009 a ex:Car,
+        ex:Potential%20Obstacle%20 .
+
+ex:bochum_000000_033056_3 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_4 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_5 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_6 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_7 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_8 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_9 a ex:Physical%20Thing,
+        ex:TrafficInstructionIndicator .
+
+ex:bochum_000000_033056_IntersectionA a ex:Intersection .
+
+ex:bochum_000000_033056_IntersectionImaginary a ex:Imaginary%20Intersection,
+        ex:Intersection ;
+    ex:touchesLane ex:bochum_000000_033056_AA20_033056_IntersectionImaginary,
+        ex:bochum_000000_033056_AB20_033056_IntersectionImaginary,
+        ex:bochum_000000_033056_AC20_033056_IntersectionImaginary .
+
+ex:bochum_000000_033056_RoadA a ex:Intersection .
+
 ex:bochum_000000_033056_RoadB a ex:Intersection .
 
 ex:bochum_000000_033056_RoadC a ex:Intersection .
 
 ex:bochum_000000_033056_RoadD a ex:Intersection .
 
-ex:bochum_000000_021479_1 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
+ex:bochum_000000_033056_env ex:hasTemperature ex:bochum_000000_033056_tmp .
 
-ex:bochum_000000_021479_10 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
+ex:bochum_000000_033056_ssp a ex:SpeedMPS ;
+    ex:hasValue 8.536938e+00 .
 
-ex:bochum_000000_021479_11 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
+ex:bochum_000000_033056_tmp ex:hasValue 2.05e+01 .
 
-ex:bochum_000000_021479_12 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
+ex:bochum_000000_033056_weth ex:hasWeatherType%20 ex:Sunny .
 
-ex:bochum_000000_021479_13 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_14 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_15 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_16 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_17 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_18 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_19 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_2 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_20 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_21 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_22 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_23 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_24 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_25 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_26 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_26006 a ex:Car .
-
-ex:bochum_000000_021479_26007 a ex:Car .
-
-ex:bochum_000000_021479_26008 a ex:Car .
-
-ex:bochum_000000_021479_26009 a ex:Car .
-
-ex:bochum_000000_021479_26011 a ex:Car .
-
-ex:bochum_000000_021479_26013 a ex:Car .
-
-ex:bochum_000000_021479_26014 a ex:Car .
-
-ex:bochum_000000_021479_26015 a ex:Car .
-
-ex:bochum_000000_021479_26016 a ex:Car .
-
-ex:bochum_000000_021479_26017 a ex:Car .
-
-ex:bochum_000000_021479_26018 a ex:Car .
-
-ex:bochum_000000_021479_27 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_28 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_29 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_3 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_30 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_31 a ex:PhysicalThing .
-
-ex:bochum_000000_021479_4 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_5 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_6 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_7 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_8 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_9 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_1 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_10 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_11 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_12 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_13 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_14 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_15 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_16 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_17 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_18 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_19 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_2 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_20 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_21 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_22 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_23 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_24 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_25 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_26 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_26000 a ex:Car .
-
-ex:bochum_000000_024524_26001 a ex:Car .
-
-ex:bochum_000000_024524_26002 a ex:Car .
-
-ex:bochum_000000_024524_26003 a ex:Car .
-
-ex:bochum_000000_024524_26005 a ex:Car .
-
-ex:bochum_000000_024524_27 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_28 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_29 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_3 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_30 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_31 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_32 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_33 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_34 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_4 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_5 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_6 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024524_7 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_8 a ex:PhysicalThing .
-
-ex:bochum_000000_024524_9 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_1 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_10 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_11 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_12 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_13 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_14 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_15 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_16 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_17 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_18 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_19 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_2 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_20 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_21 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_22 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_23 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_24 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_25 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_26 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_26001 a ex:Car .
-
-ex:bochum_000000_024717_26003 a ex:Car .
-
-ex:bochum_000000_024717_26004 a ex:Car .
-
-ex:bochum_000000_024717_27 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_28 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_29 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_3 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_30 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_31 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_32 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_33 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_4 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_5 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_6 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_024717_7 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_8 a ex:PhysicalThing .
-
-ex:bochum_000000_024717_9 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_1 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_10 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_11 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_12 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_13 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_14 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_15 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_16 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_17 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_18 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_19 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_2 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_20 a ex:PhysicalThing .
-
-ex:bochum_000000_031687_26000 a ex:Car .
-
-ex:bochum_000000_031687_26001 a ex:Car .
-
-ex:bochum_000000_031687_26002 a ex:Car .
-
-ex:bochum_000000_031687_28000 a ex:Car .
-
-ex:bochum_000000_031687_3 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_4 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_5 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_6 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_7 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_8 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_031687_9 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_1 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_10 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_11 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_12 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_13 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_14 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_15 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_16 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_17 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_18 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_19 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_2 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_20 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_21 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_22 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_23 a ex:PhysicalThing .
-
-ex:bochum_000000_033056_26000 a ex:Car .
-
-ex:bochum_000000_033056_26001 a ex:Car .
-
-ex:bochum_000000_033056_26002 a ex:Car .
-
-ex:bochum_000000_033056_26003 a ex:Car .
-
-ex:bochum_000000_033056_26004 a ex:Car .
-
-ex:bochum_000000_033056_26005 a ex:Car .
-
-ex:bochum_000000_033056_26007 a ex:Car .
-
-ex:bochum_000000_033056_26008 a ex:Car .
-
-ex:bochum_000000_033056_26009 a ex:Car .
-
-ex:bochum_000000_033056_3 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_4 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_5 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_6 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_7 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_8 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_033056_9 a ex:PhysicalThing,
-        ex:TrafficInstructionIndicator .
-
-ex:bochum_000000_021479_AA20_021479_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_021479_AA20_021479_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Incoming .
 
-ex:bochum_000000_021479_AC20_021479_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_021479_AC20_021479_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
-ex:bochum_000000_024524_AA20_024524_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_024524_AA20_024524_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Incoming .
 
-ex:bochum_000000_024524_AB20_024524_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_024524_AB20_024524_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
-ex:bochum_000000_024717_AA20_024717_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_024717_AA20_024717_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
-ex:bochum_000000_031687_AA20_031687_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_031687_AA20_031687_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Incoming .
 
-ex:bochum_000000_031687_AB20_031687_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_031687_AB20_031687_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
-ex:bochum_000000_033056_AA20_033056_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_033056_AA20_033056_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Incoming .
 
-ex:bochum_000000_033056_AB20_033056_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_033056_AB20_033056_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
-ex:bochum_000000_033056_AC20_033056_IntersectionImaginary a ex:TouchingIntersection ;
+ex:bochum_000000_033056_AC20_033056_IntersectionImaginary a ex:Touching%20Intersection%20 ;
     ex:hasCardinality ex:North ;
     ex:hasDirection ex:Outgoing .
 
