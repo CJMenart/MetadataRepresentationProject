@@ -1549,8 +1549,7 @@ ex:bremen_000288_000019_tmp alt:hasValue 2.4e+01 .
 
 ex:bremen_000288_000019_weth ex:hasWeatherType%20 ex:Weather%20Type.Sunny .
 
-alt:bremen_000288_000019_motion0 ex:direction <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right.(movingright)> ;
-    ex:towardsLane ex:bremen_000288_000019_RoadB_LaneB .
+alt:bremen_000288_000019_motion0 ex:direction <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right.Right> .
 
 ex:bochum_000000_021479_1 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
@@ -1569,7 +1568,7 @@ ex:bochum_000000_021479_12 a alt:Physical%20Thing,
     alt:conveys alt:Traffic%20Instruction.IllegibleSign .
 
 ex:bochum_000000_021479_13 a alt:Physical%20Thing ;
-    alt:conveys alt:Traffic%20Instruction.BicycleLaneInformationSign .
+    alt:conveys alt:Traffic%20Instruction.BicycleLaneSign .
 
 ex:bochum_000000_021479_2 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
@@ -1658,7 +1657,7 @@ ex:bochum_000000_024524_RoadA a ex:Road .
 
 ex:bochum_000000_024717_1 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
-    alt:conveys alt:Traffic%20Instruction.SpeedLimitSign\(Illegible\) .
+    alt:conveys alt:Traffic%20Instruction.SpeedLimitSign .
 
 ex:bochum_000000_024717_2 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
@@ -1690,7 +1689,7 @@ ex:bochum_000000_031687_1 a alt:Physical%20Thing,
 
 ex:bochum_000000_031687_2 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
-    alt:conveys alt:Traffic%20Instruction.IslandInformationSign .
+    alt:conveys alt:Traffic%20Instruction.LaneInfoSign .
 
 ex:bochum_000000_031687_3 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
@@ -2110,6 +2109,16 @@ ex:bremen_000288_000019_RoadB_LaneA a ex:Lane ;
     ex:directlyLeftOf ex:bremen_000288_000019_RoadB_LaneB ;
     ex:inRoad ex:bremen_000288_000019_RoadB .
 
+ex:bremen_000288_000019_RoadB_LaneB a ex:Lane ;
+    ex:directlyRightOf ex:bremen_000288_000019_RoadB_LaneA ;
+    ex:inRoad ex:bremen_000288_000019_RoadB ;
+    alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_1,
+        ex:bremen_000288_000019_10,
+        ex:bremen_000288_000019_3,
+        ex:bremen_000288_000019_4,
+        ex:bremen_000288_000019_5,
+        ex:bremen_000288_000019_9 .
+
 ex:bochum_000000_021479_RoadC_LaneD a ex:Lane ;
     ex:directlyLeftOf ex:bochum_000000_021479_RoadC_LaneE ;
     ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneC ;
@@ -2142,16 +2151,6 @@ ex:bremen_000003_000019_RoadA_LaneA a ex:Lane ;
     ex:inRoad ex:bremen_000003_000019_RoadA ;
     ex:touchesIntersection ex:bremen_000003_000019_AA2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bremen_000003_000019_8 .
-
-ex:bremen_000288_000019_RoadB_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000288_000019_RoadB_LaneA ;
-    ex:inRoad ex:bremen_000288_000019_RoadB ;
-    alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_1,
-        ex:bremen_000288_000019_10,
-        ex:bremen_000288_000019_3,
-        ex:bremen_000288_000019_4,
-        ex:bremen_000288_000019_5,
-        ex:bremen_000288_000019_9 .
 
 ex:bremen_000288_000019_RoadC_LaneA a ex:Lane ;
     ex:directlyLeftOf ex:bremen_000288_000019_RoadC_LaneB ;

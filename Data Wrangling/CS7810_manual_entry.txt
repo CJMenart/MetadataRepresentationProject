@@ -21,7 +21,7 @@ bochum_000000_021479_leftImg8bit.png
 			26007
 			12 Illegible Sign
 		Lane B
-			13 Bicycle Lane Information Sign	
+			13 Bicycle Lane Sign	
 			10 Illegible Sign
 			11 Illegible Sign
 		Lane C
@@ -92,7 +92,7 @@ bochum_000000_024717_leftImg8bit.png
 			Self
 			26003
 			26001
-			1 Speed Limit Sign (Illegible)
+			1 Speed Limit Sign
 			2 Illegible Sign
 			3 Red Light
 			4 Illegible Light
@@ -181,7 +181,7 @@ bochum_000000_031687_leftImg8bit.png
 		Lane A
 		Lane B
 			Self
-			2 Island Information Sign
+			2 Lane Info Sign
 			6 Yield Sign
 			7 Roundabout Sign
 			8 Crosswalk Sign
@@ -291,7 +291,7 @@ bremen_000288_000019_leftImg8bit.png
 			15 Inactive Light
 	Road B
 		Lane A
-			24001 (moving right)
+			24001 Right
 		Lane B
 			R24000
 			1 Illegible Sign
