@@ -1,4 +1,19 @@
-# Added imports 
+"""
+Instructions to download data before running:
+Cityscapes data downloaded from https://www.cityscapes-dataset.com/downloads/
+You will need an academic account, so be a student or researcher
+
+There are a list of products on this page. Each comes as a zipped directory containing files with similar formatting (usually)
+Unzip all downloaded products in a file which you will pass to this program as the cityscapes_root argument
+Products used (all from the training partition) are:
+gtFine (semantic segmentation labels)
+Cityscapes 3D Bounding Boxes
+CityscapesPersons
+'vehicle_sequence', aka scenario-level metadata
+
+TODO use Depth
+"""
+
 import json
 import numpy as np
 from pathlib import Path
@@ -9,7 +24,7 @@ from rdflib import URIRef, Graph, Namespace, Literal
 from rdflib import OWL, RDF, RDFS, XSD, TIME
 # Prefixes
 name_space = "https://kastle-lab.org/"
-# TODO edit these
+# TODO maybe delete prefixes we aren't actually using
 pfs = {
 "kl-res": Namespace(f"{name_space}lod/resource/"),
 "kl-ont": Namespace(f"{name_space}lod/ontology/"),
@@ -73,6 +88,8 @@ def tabs_to_nest(textlines):
     overall=[]
     for line in textlines:
         line = line.rstrip()
+        if line.startswith("#"):
+            continue
         ntabs = line.count('\t')
         line = line.lstrip()
         print(f"ntabs, line: {ntabs}, {line}")
@@ -103,22 +120,47 @@ def add_scenario_markup(graph, scenario):
                 # Tie lanes together 
                 if prevlanename:
                     graph.add((pfs['ex'][lanename], pfs['ex']['directlyRightOf'], pfs['ex'][prevlanename]))
+                    graph.add((pfs['ex'][prevlanename], pfs['ex']['directlyRightOf'], pfs['ex'][lanename]))
                 prevlanename = lanename
                 
                 for entity in lane[1]:
+                    beside = None
                     # only records position rn. Type comes from other method
-                    e_num = entity[0].lstrip().split()[0]
+                    entity_str = entity[0]
+                    if 'Ends at' in entity_str:
+                       distance = entity_str.lstrip().split()[2]
+                       # TODO get better automatically-extracted depth
+                       graph.add((pfs['ex'][lanename], pfs['ex']['visiblyEndsAt'], Literal(distance) ))
+                       continue
+                    
+                    if entity_str.startswith('L'):
+                        beside = 1
+                        entity_str = entity_str[1:]
+                    if entity_str.startswith('R'):
+                        beside = 2
+                        entity_str = entity_str[1:]
+                    
+                    e_num = entity_str.lstrip().split()[0]
                     ename = f"{imname}_{e_num}"
+                    description = "".join(entity_str.lstrip().split()[1:])
                     if 'Self' in ename:
                         graph.add((pfs['ex'][ename], a, pfs['alt']['Self']))
-                    if int(e_num) < 100:  # TII
-                        graph.add((pfs['ex'][lanename], pfs['alt']['hasTrafficInstructionIndicator'], pfs['ex'][ename]))           
+                    elif int(e_num) < 100:  # TII
+                        graph.add((pfs['ex'][lanename], pfs['alt']['hasTrafficInstructionIndicator'], pfs['ex'][ename])) 
+                        graph.add((pfs['ex'][ename], pfs['alt']['conveys'], pfs['alt'][f'Traffic%20Instruction.{description}']))
                     else:  # physical stuff
                         graph.add((pfs['ex'][ename], pfs['ex']['hasPosition'], pfs['ex'][f'{imname}_pos{posInd}']))
                         graph.add((pfs['ex'][f'{imname}_pos{posInd}'], a, pfs['ex']['Position']))
                         graph.add((pfs['ex'][f'{imname}_pos{posInd}'], pfs['ex']['hasRelativity'], pfs['ex'][f'{imname}_rel{posInd}']))
                         graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relToLane'], pfs['ex'][lanename]))
-                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex']['Left/Right/On.On']))
+                        relativity = 'On' if beside is None else ('Left' if beside == 1 else 'Right')
+                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex'][f'Left/Right/On.{relativity}']))
+                        
+                        if int(e_num) < 26000 and description:  # , probably pedestrian
+                            graph.add((pfs['ex'][ename], pfs['ex']['hasMotion'], pfs['alt'][f'{imname}_motion{posInd}']))
+                            graph.add((pfs['alt'][f'{imname}_motion{posInd}'], pfs['ex']['direction'], pfs['ex'][f'Left/Right.{description}']))
+                        elif description:  # vehicle
+                            graph.add(( pfs['ex'][ename], pfs['ex']['conductingManuever'], pfs['ex'][f'Manuever.{description}']))
                         posInd += 1
         else:
             # Intersections
@@ -141,10 +183,6 @@ def add_scenario_markup(graph, scenario):
                             graph.add((pfs['ex'][lanename], pfs['ex']['touchesIntersection'], pfs['ex'][touchname]))
                             graph.add((pfs['ex'][touchname], pfs['alt']['hasCardinality'], pfs['ex'][cardiname]))
                             graph.add((pfs['ex'][touchname], pfs['ex']['hasDirection'], pfs['ex'][dirname]))            
-    
-
-    # TODO apply Movement of moving vehicles
-    # Also Obstacle class
     
     
 def add_scenario_json(graph, imname, cityscapes_root):
@@ -178,9 +216,8 @@ def add_scenario_json(graph, imname, cityscapes_root):
 def add_vehicles(graph, imname, bbox3d):
     use_classes = ['car', 'truck', 'bus', 'train', 'motorcycle', 'bicycle', 'caravan']
     # ignore: tunnel, dynamic, trailer
-        
-    objects = bbox3d['objects']
     
+    objects = bbox3d['objects']  
     for obj in objects:
         if obj['label'] not in use_classes:
             continue
@@ -236,7 +273,7 @@ def add_misc(graph, imname, instance_labels):
             
 
 def guess_obstacles(graph, imname):
-    # an attempt to apply materialization rules...written, unwritten, and hazarded at :P
+    # attempt to apply some materialization rules...written, unwritten, and hazarded at :P
     
     # Obstacles are PotentialObstacles that are on Lanes.
     # or can we just have the Reasoner do that?
@@ -256,6 +293,9 @@ def guess_obstacles(graph, imname):
                 for backRelation, _, _ in graph.triples((None, pfs['ex']['relToLane'] , lane)):
                     backPos = graph.value(predicate = pfs['ex']['hasRelativity'], object=backRelation, any=False)
                     otherEntity = graph.value(predicate = pfs['ex']['hasPosition'], object=backPos, any=False)
+                    # If car already conducting a maneuver, don't auto-decide it
+                    if (otherEntity, pfs['ex']['conductingManuever'], None) in graph:
+                        continue  # TODO apply Motions to this depending
                     stopInstructions = ['Traffic%20Instruction.StopSign', 'Traffic%20Instruction.RedLight']
                     stopInstructions = [pfs['ex'][inst] for inst in stopInstructions]
                     if any([(otherEntity, pfs['alt']['conveys'], si) in graph for si in stopInstructions]): 
@@ -263,7 +303,17 @@ def guess_obstacles(graph, imname):
                         # check for it moving over other lanes?????? Add 'Motion' to it.
                     else:
                         graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Stopped']))
-            
+    for pedestrian, p, o in graph.triples((None, a, pfs['ex']['Pedestrian'])):
+        for _, _, motion in graph.triples((pedestrian, pfs['ex']['hasMotion'], None)):
+            for _, _, direction in graph.triples((motions, pfs['ex']['direction'], None)):
+                pos = graph.value(pedestrian, pfs['ex']['hasPosition'])
+                rel = graph.value(pos, pfs['ex']['hasRelativity'])
+                lane = graph.value(rel, pfs['ex']['relToLane'])
+                dirRel = pfs['ex']['directlyRightOf'] if direction == pfs['ex']['Left/Right.Right'] else pfs['ex']['directlyLeftOf']
+                lane = graph.value(lane, dirRel)
+                while lane is not None:
+                    graph.add((motion, pfs['ex']['towardsLane'], lane))
+                    lane = graph.value(lane, dirRel)
 
 def parse_scenario_metadata(graph, imname, metadata):
     metadata['speed']
@@ -281,7 +331,6 @@ def parse_scenario_metadata(graph, imname, metadata):
     graph.add((pfs['ex'][f'{imname}_tmp'], pfs['alt']['hasValue'], Literal(metadata['outsideTemperature'])))
     graph.add((pfs['ex'][imname], pfs['alt']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
     graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Weather%20Type.Sunny']))
-    
 
 
 if __name__=='__main__':

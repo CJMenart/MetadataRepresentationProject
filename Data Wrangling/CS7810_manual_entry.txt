@@ -2,7 +2,7 @@ bochum_000000_021479_leftImg8bit.png
 	Road A
 		Lane A
 		Lane B
-			Ends at 20m
+			Ends at 20
 			Turn Lane Marking
 			1 Island Information Sign			
 		Lane C
@@ -212,4 +212,123 @@ bochum_000000_031687_leftImg8bit.png
 			Outgoing
 				AB
 
-	
+
+# New ones start here: Haven't edited above
+bremen_000003_000019_leftImg8bit.png
+	Road A
+		Lane A
+			L26004
+			31000
+			8 Do Not Walk Sign
+		Lane B
+			31000
+	Road B
+		Lane A
+			26003
+			26002
+			31000
+			1 Railroad Crossing Active
+			8 Street Name
+		Lane B
+			Self
+			R25000
+			R33000
+			26001
+			26000
+			2 Facing Away Traffic Light
+			3 Lane Info Sign
+			4 Illegible Sign
+			5 Railroad Crossing Active
+			6 Illegible Sign
+			7 Inactive Traffic Light
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+				AB
+			Outgoing
+				BA
+				BB
+
+# no entry sign in an 'alley' off-road
+# Also a light
+bremen_000193_000019_leftImg8bit.png
+	Road A
+		Lane A
+			L24000
+			26003
+			26000
+		Lane B
+			26006
+			26005
+			26004
+		Lane C
+			Self
+			2 Facing Away Traffic Light
+			3 Green Light
+			4 Green Light
+			5 Parking Sign
+			7 Lane Info Sign
+	Intersection Imaginary
+		North
+			Outgoing
+				AC
+			Incoming
+				AA
+				AB
+
+bremen_000288_000019_leftImg8bit.png
+	Road A
+		Lane A
+			6 Street Name
+		Lane B
+			Self
+			2 Street Name
+			8 Green Light
+			12 Green Light
+			13 Inactive Light
+			14 Unknown Light
+			15 Inactive Light
+	Road B
+		Lane A
+			24001 (moving right)
+		Lane B
+			R24000
+			1 Illegible Sign
+			3 Street Name
+			4 Warning Sign
+			5 Street Name
+			9 Facing Away Light
+			10 Facing Away Light
+	Road C
+		Lane A
+			26017
+			26015
+			7 Facing Away Light
+		Lane B
+			R26010 Merging Left
+			26007
+			26009
+			11 Illegible Sign
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AB
+	Intersection A
+		South
+			Incoming
+				AB
+			Outgoing
+				AA
+		East
+			Incoming
+				BA
+			Outgoing
+				BB
+		North
+			Incoming
+				CA
+			Outgoing
+				CB
