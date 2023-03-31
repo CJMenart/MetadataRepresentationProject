@@ -3,8 +3,8 @@ bochum_000000_021479_leftImg8bit.png
 		Lane A
 		Lane B
 			Ends at 20
-			Turn Lane Marking
-			1 Island Information Sign			
+			-1 Turn Lane Marking
+			1 Lane Info Sign
 		Lane C
 			Self
 			9 Priority Lane Sign
@@ -21,7 +21,7 @@ bochum_000000_021479_leftImg8bit.png
 			26007
 			12 Illegible Sign
 		Lane B
-			Bicycle Lane Information Sign	
+			13 Bicycle Lane Information Sign	
 			10 Illegible Sign
 			11 Illegible Sign
 		Lane C

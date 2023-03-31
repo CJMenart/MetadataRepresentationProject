@@ -106,7 +106,7 @@ def add_scenario_markup(graph, scenario):
     imname = scenario[0][:scenario[0].index('leftImg8bit.png')-1]
     graph.add((pfs['ex'][imname], a, pfs['ex']['Scenario']))
     for road_or_intr in scenario[1]:
-        if 'Road' in road_or_intr:
+        if 'Road' in road_or_intr[0]:
             # Road
             roadname = f"{imname}_{no_whitespace(road_or_intr[0])}"
             graph.add((pfs['ex'][roadname], a, pfs['ex']["Road"]))
@@ -177,7 +177,7 @@ def add_scenario_markup(graph, scenario):
                         for lane in direction[1]:
                             letters = lane[0].strip()
                             lanename = f"{imname}_Road{letters[0]}_Lane{letters[1]}"
-                            touchname = f"{imname}_{letters}2{intname[len('Intersection'):]}"
+                            touchname = f"{imname}_{letters}2{no_whitespace(road_or_intr[0])}"
                             graph.add((pfs['ex'][touchname], a, pfs['ex']['Touching%20Intersection%20']))
                             graph.add((pfs['ex'][intname], pfs['ex']['touchesLane'], pfs['ex'][touchname]))
                             graph.add((pfs['ex'][lanename], pfs['ex']['touchesIntersection'], pfs['ex'][touchname]))
@@ -305,7 +305,7 @@ def guess_obstacles(graph, imname):
                         graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Stopped']))
     for pedestrian, p, o in graph.triples((None, a, pfs['ex']['Pedestrian'])):
         for _, _, motion in graph.triples((pedestrian, pfs['ex']['hasMotion'], None)):
-            for _, _, direction in graph.triples((motions, pfs['ex']['direction'], None)):
+            for _, _, direction in graph.triples((motion, pfs['ex']['direction'], None)):
                 pos = graph.value(pedestrian, pfs['ex']['hasPosition'])
                 rel = graph.value(pos, pfs['ex']['hasRelativity'])
                 lane = graph.value(rel, pfs['ex']['relToLane'])
