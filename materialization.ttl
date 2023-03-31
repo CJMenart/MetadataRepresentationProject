@@ -1549,7 +1549,8 @@ ex:bremen_000288_000019_tmp alt:hasValue 2.4e+01 .
 
 ex:bremen_000288_000019_weth ex:hasWeatherType%20 ex:Weather%20Type.Sunny .
 
-alt:bremen_000288_000019_motion0 ex:direction <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right.(movingright)> .
+alt:bremen_000288_000019_motion0 ex:direction <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Left/Right.(movingright)> ;
+    ex:towardsLane ex:bremen_000288_000019_RoadB_LaneB .
 
 ex:bochum_000000_021479_1 a alt:Physical%20Thing,
         alt:TrafficInstructionIndicator ;
@@ -1611,7 +1612,7 @@ ex:bochum_000000_021479_AC2IntersectionImaginary a ex:Touching%20Intersection%20
     alt:hasCardinality <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality.North> .
 
 ex:bochum_000000_021479_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadA_LaneB ;
     ex:inRoad ex:bochum_000000_021479_RoadA ;
     ex:touchesIntersection ex:bochum_000000_021479_AA2IntersectionImaginary .
 
@@ -1726,7 +1727,7 @@ ex:bochum_000000_031687_AB2IntersectionImaginary a ex:Touching%20Intersection%20
 ex:bochum_000000_031687_RoadA a ex:Road .
 
 ex:bochum_000000_031687_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_031687_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_031687_RoadA_LaneB ;
     ex:inRoad ex:bochum_000000_031687_RoadA ;
     ex:touchesIntersection ex:bochum_000000_031687_AA2IntersectionImaginary .
 
@@ -1816,14 +1817,14 @@ ex:bochum_000000_033056_AC2IntersectionImaginary a ex:Touching%20Intersection%20
     alt:hasCardinality <http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#Cardinality.North> .
 
 ex:bochum_000000_033056_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadA_LaneB ;
     ex:inRoad ex:bochum_000000_033056_RoadA ;
     ex:touchesIntersection ex:bochum_000000_033056_AA2IntersectionImaginary .
 
 ex:bochum_000000_033056_RoadB a ex:Road .
 
 ex:bochum_000000_033056_RoadB_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadB_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadB_LaneB ;
     ex:inRoad ex:bochum_000000_033056_RoadB ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_033056_10,
         ex:bochum_000000_033056_12,
@@ -1994,7 +1995,7 @@ ex:bremen_000288_000019_AB2IntersectionImaginary a ex:Touching%20Intersection%20
 ex:bremen_000288_000019_RoadA a ex:Road .
 
 ex:bremen_000288_000019_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000288_000019_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bremen_000288_000019_RoadA_LaneB ;
     ex:inRoad ex:bremen_000288_000019_RoadA ;
     ex:touchesIntersection ex:bremen_000288_000019_AA2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_6 .
@@ -2017,8 +2018,8 @@ ex:bremen_000288_000019_RoadC a ex:Road .
 ex:bochum_000000_021479_RoadA a ex:Road .
 
 ex:bochum_000000_021479_RoadA_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadA_LaneA,
-        ex:bochum_000000_021479_RoadA_LaneC ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadA_LaneC ;
+    ex:directlyRightOf ex:bochum_000000_021479_RoadA_LaneA ;
     ex:inRoad ex:bochum_000000_021479_RoadA ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_-1,
         ex:bochum_000000_021479_1 ;
@@ -2029,16 +2030,16 @@ ex:bochum_000000_021479_RoadB_LaneA a ex:Lane ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_8 .
 
 ex:bochum_000000_021479_RoadC_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneA,
-        ex:bochum_000000_021479_RoadC_LaneC ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadC_LaneC ;
+    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneA ;
     ex:inRoad ex:bochum_000000_021479_RoadC ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_10,
         ex:bochum_000000_021479_11,
         ex:bochum_000000_021479_13 .
 
 ex:bochum_000000_021479_RoadC_LaneC a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneB,
-        ex:bochum_000000_021479_RoadC_LaneD ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadC_LaneD ;
+    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneB ;
     ex:inRoad ex:bochum_000000_021479_RoadC ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_2 .
 
@@ -2071,7 +2072,7 @@ ex:bochum_000000_033056_RoadB_LaneB a ex:Lane ;
         ex:bochum_000000_033056_16 .
 
 ex:bochum_000000_033056_RoadC_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadC_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadC_LaneB ;
     ex:inRoad ex:bochum_000000_033056_RoadC .
 
 ex:bochum_000000_033056_RoadC_LaneB a ex:Lane ;
@@ -2085,7 +2086,7 @@ ex:bochum_000000_033056_RoadC_LaneB a ex:Lane ;
 ex:bochum_000000_033056_RoadD a ex:Road .
 
 ex:bochum_000000_033056_RoadD_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadD_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadD_LaneB ;
     ex:inRoad ex:bochum_000000_033056_RoadD ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_033056_3 .
 
@@ -2106,29 +2107,19 @@ ex:bremen_000003_000019_RoadA_LaneB a ex:Lane ;
 ex:bremen_000193_000019_RoadA a ex:Road .
 
 ex:bremen_000288_000019_RoadB_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000288_000019_RoadB_LaneB ;
+    ex:directlyLeftOf ex:bremen_000288_000019_RoadB_LaneB ;
     ex:inRoad ex:bremen_000288_000019_RoadB .
 
-ex:bremen_000288_000019_RoadB_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000288_000019_RoadB_LaneA ;
-    ex:inRoad ex:bremen_000288_000019_RoadB ;
-    alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_1,
-        ex:bremen_000288_000019_10,
-        ex:bremen_000288_000019_3,
-        ex:bremen_000288_000019_4,
-        ex:bremen_000288_000019_5,
-        ex:bremen_000288_000019_9 .
-
 ex:bochum_000000_021479_RoadC_LaneD a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneC,
-        ex:bochum_000000_021479_RoadC_LaneE ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadC_LaneE ;
+    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneC ;
     ex:inRoad ex:bochum_000000_021479_RoadC ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_3,
         ex:bochum_000000_021479_4 .
 
 ex:bochum_000000_033056_RoadA_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadA_LaneA,
-        ex:bochum_000000_033056_RoadA_LaneC ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadA_LaneC ;
+    ex:directlyRightOf ex:bochum_000000_033056_RoadA_LaneA ;
     ex:inRoad ex:bochum_000000_033056_RoadA ;
     ex:touchesIntersection ex:bochum_000000_033056_AB2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_033056_8,
@@ -2141,33 +2132,43 @@ ex:bochum_000000_033056_RoadA_LaneC a ex:Lane ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_033056_15 .
 
 ex:bochum_000000_033056_RoadD_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_033056_RoadD_LaneA,
-        ex:bochum_000000_033056_RoadD_LaneC ;
+    ex:directlyLeftOf ex:bochum_000000_033056_RoadD_LaneC ;
+    ex:directlyRightOf ex:bochum_000000_033056_RoadD_LaneA ;
     ex:inRoad ex:bochum_000000_033056_RoadD ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_033056_2 .
 
 ex:bremen_000003_000019_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000003_000019_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bremen_000003_000019_RoadA_LaneB ;
     ex:inRoad ex:bremen_000003_000019_RoadA ;
     ex:touchesIntersection ex:bremen_000003_000019_AA2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bremen_000003_000019_8 .
 
+ex:bremen_000288_000019_RoadB_LaneB a ex:Lane ;
+    ex:directlyRightOf ex:bremen_000288_000019_RoadB_LaneA ;
+    ex:inRoad ex:bremen_000288_000019_RoadB ;
+    alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_1,
+        ex:bremen_000288_000019_10,
+        ex:bremen_000288_000019_3,
+        ex:bremen_000288_000019_4,
+        ex:bremen_000288_000019_5,
+        ex:bremen_000288_000019_9 .
+
 ex:bremen_000288_000019_RoadC_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000288_000019_RoadC_LaneB ;
+    ex:directlyLeftOf ex:bremen_000288_000019_RoadC_LaneB ;
     ex:inRoad ex:bremen_000288_000019_RoadC ;
     alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_7 .
 
 ex:bochum_000000_021479_RoadC a ex:Road .
 
 ex:bremen_000003_000019_RoadB_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000003_000019_RoadB_LaneB ;
+    ex:directlyLeftOf ex:bremen_000003_000019_RoadB_LaneB ;
     ex:inRoad ex:bremen_000003_000019_RoadB ;
     ex:touchesIntersection ex:bremen_000003_000019_BA2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bremen_000003_000019_1,
         ex:bremen_000003_000019_8 .
 
 ex:bremen_000193_000019_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000193_000019_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bremen_000193_000019_RoadA_LaneB ;
     ex:inRoad ex:bremen_000193_000019_RoadA ;
     ex:touchesIntersection ex:bremen_000193_000019_AA2IntersectionImaginary .
 
@@ -2177,7 +2178,7 @@ ex:bremen_000288_000019_RoadC_LaneB a ex:Lane ;
     alt:hasTrafficInstructionIndicator ex:bremen_000288_000019_11 .
 
 ex:bochum_000000_021479_RoadC_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_021479_RoadC_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_021479_RoadC_LaneB ;
     ex:inRoad ex:bochum_000000_021479_RoadC ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_021479_12 .
 
@@ -2189,7 +2190,7 @@ ex:bochum_000000_021479_RoadC_LaneE a ex:Lane ;
         ex:bochum_000000_021479_7 .
 
 ex:bochum_000000_024524_RoadA_LaneA a ex:Lane ;
-    ex:directlyRightOf ex:bochum_000000_024524_RoadA_LaneB ;
+    ex:directlyLeftOf ex:bochum_000000_024524_RoadA_LaneB ;
     ex:inRoad ex:bochum_000000_024524_RoadA ;
     ex:touchesIntersection ex:bochum_000000_024524_AA2IntersectionImaginary ;
     alt:hasTrafficInstructionIndicator ex:bochum_000000_024524_6 .
@@ -2206,8 +2207,8 @@ ex:bremen_000003_000019_RoadB_LaneB a ex:Lane ;
         ex:bremen_000003_000019_7 .
 
 ex:bremen_000193_000019_RoadA_LaneB a ex:Lane ;
-    ex:directlyRightOf ex:bremen_000193_000019_RoadA_LaneA,
-        ex:bremen_000193_000019_RoadA_LaneC ;
+    ex:directlyLeftOf ex:bremen_000193_000019_RoadA_LaneC ;
+    ex:directlyRightOf ex:bremen_000193_000019_RoadA_LaneA ;
     ex:inRoad ex:bremen_000193_000019_RoadA ;
     ex:touchesIntersection ex:bremen_000193_000019_AB2IntersectionImaginary .
 

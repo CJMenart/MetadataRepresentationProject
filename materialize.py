@@ -120,7 +120,7 @@ def add_scenario_markup(graph, scenario):
                 # Tie lanes together 
                 if prevlanename:
                     graph.add((pfs['ex'][lanename], pfs['ex']['directlyRightOf'], pfs['ex'][prevlanename]))
-                    graph.add((pfs['ex'][prevlanename], pfs['ex']['directlyRightOf'], pfs['ex'][lanename]))
+                    graph.add((pfs['ex'][prevlanename], pfs['ex']['directlyLeftOf'], pfs['ex'][lanename]))
                 prevlanename = lanename
                 
                 for entity in lane[1]:
