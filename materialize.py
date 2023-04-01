@@ -12,6 +12,7 @@ CityscapesPersons
 'vehicle_sequence', aka scenario-level metadata
 
 TODO use Depth
+Disparity->Depth computation constants posted by dataset authors here (https://github.com/mcordts/cityscapesScripts)
 """
 
 import json
@@ -92,7 +93,7 @@ def tabs_to_nest(textlines):
             continue
         ntabs = line.count('\t')
         line = line.lstrip()
-        print(f"ntabs, line: {ntabs}, {line}")
+        #print(f"ntabs, line: {ntabs}, {line}")
         dest = overall
         for t in range(ntabs):
             dest = dest[-1][1]
