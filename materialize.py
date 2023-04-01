@@ -41,6 +41,7 @@ pfs = {
 "cdt": Namespace("http://w3id.org/lindt/custom_datatypes#"),
 "ex": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#"),
 "alt": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#"),
+"project": Namespace("http://www.semanticweb.org/CS7810/Driving/Project"),
 "rdf": RDF,
 "rdfs": RDFS,
 "xsd": XSD,
@@ -56,6 +57,7 @@ def init_kg(prefixes=pfs):
     return kg
 # rdf:type shortcut
 a = pfs["rdf"]["type"]
+pre = pfs["project"]
 
 def no_whitespace(line):
     return "".join(line.split())
@@ -105,23 +107,23 @@ def tabs_to_nest(textlines):
 def add_scenario_markup(graph, scenario):
     posInd = 0
     imname = scenario[0][:scenario[0].index('leftImg8bit.png')-1]
-    graph.add((pfs['ex'][imname], a, pfs['ex']['Scenario']))
+    graph.add((pre[imname], a, pre['Scenario']))
     for road_or_intr in scenario[1]:
         if 'Road' in road_or_intr[0]:
             # Road
             roadname = f"{imname}_{no_whitespace(road_or_intr[0])}"
-            graph.add((pfs['ex'][roadname], a, pfs['ex']["Road"]))
+            graph.add((pre[roadname], a, pre["Road"]))
             prevlanename = None
             for lane in road_or_intr[1]:
                 lanename = f"{roadname}_{no_whitespace(lane[0])}"
-                graph.add((pfs['ex'][lanename], a, pfs['ex']["Lane"]))
-                graph.add((pfs['ex'][lanename], pfs['ex']['inRoad'], pfs['ex'][roadname]))
-                graph.add((pfs['ex'][imname], pfs['alt']['ContainsLane'], pfs['ex'][lanename]))
+                graph.add((pre[lanename], a, pre["Lane"]))
+                graph.add((pre[lanename], pre['inRoad'], pre[roadname]))
+                graph.add((pre[imname], pre['containsLane'], pre[lanename]))
                 
                 # Tie lanes together 
                 if prevlanename:
-                    graph.add((pfs['ex'][lanename], pfs['ex']['directlyRightOf'], pfs['ex'][prevlanename]))
-                    graph.add((pfs['ex'][prevlanename], pfs['ex']['directlyLeftOf'], pfs['ex'][lanename]))
+                    graph.add((pre[lanename], pre['directlyRightOf'], pre[prevlanename]))
+                    graph.add((pre[prevlanename], pre['directlyLeftOf'], pre[lanename]))
                 prevlanename = lanename
                 
                 for entity in lane[1]:
@@ -131,7 +133,7 @@ def add_scenario_markup(graph, scenario):
                     if 'Ends at' in entity_str:
                        distance = entity_str.lstrip().split()[2]
                        # TODO get better automatically-extracted depth
-                       graph.add((pfs['ex'][lanename], pfs['ex']['visiblyEndsAt'], Literal(distance) ))
+                       graph.add((pre[lanename], pre['visiblyEndsAt'], Literal(distance) ))
                        continue
                     
                     if entity_str.startswith('L'):
@@ -145,45 +147,45 @@ def add_scenario_markup(graph, scenario):
                     ename = f"{imname}_{e_num}"
                     description = "".join(entity_str.lstrip().split()[1:])
                     if 'Self' in ename:
-                        graph.add((pfs['ex'][ename], a, pfs['alt']['Self']))
+                        graph.add((pre[ename], a, pre['Self']))
                     elif int(e_num) < 100:  # TII
-                        graph.add((pfs['ex'][lanename], pfs['alt']['hasTrafficInstructionIndicator'], pfs['ex'][ename])) 
-                        graph.add((pfs['ex'][ename], pfs['alt']['conveys'], pfs['alt'][f'Traffic%20Instruction.{description}']))
+                        graph.add((pre[lanename], pre['hasTrafficInstructionIndicator'], pre[ename])) 
+                        graph.add((pre[ename], pre['conveys'], pre[f'TrafficInstruction.{description}']))
                     else:  # physical stuff
-                        graph.add((pfs['ex'][ename], pfs['ex']['hasPosition'], pfs['ex'][f'{imname}_pos{posInd}']))
-                        graph.add((pfs['ex'][f'{imname}_pos{posInd}'], a, pfs['ex']['Position']))
-                        graph.add((pfs['ex'][f'{imname}_pos{posInd}'], pfs['ex']['hasRelativity'], pfs['ex'][f'{imname}_rel{posInd}']))
-                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relToLane'], pfs['ex'][lanename]))
+                        graph.add((pre[ename], pre['hasPosition'], pre[f'{imname}_pos{posInd}']))
+                        graph.add((pre[f'{imname}_pos{posInd}'], a, pre['Position']))
+                        graph.add((pre[f'{imname}_pos{posInd}'], pre['hasRelativity'], pre[f'{imname}_rel{posInd}']))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relToLane'], pre[lanename]))
                         relativity = 'On' if beside is None else ('Left' if beside == 1 else 'Right')
-                        graph.add((pfs['ex'][f'{imname}_rel{posInd}'], pfs['ex']['relativity'], pfs['ex'][f'Left/Right/On.{relativity}']))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'Left-Right-On.{relativity}']))
                         
                         if int(e_num) < 26000 and description:  # , probably pedestrian
-                            graph.add((pfs['ex'][ename], pfs['ex']['hasMotion'], pfs['alt'][f'{imname}_motion{posInd}']))
-                            graph.add((pfs['alt'][f'{imname}_motion{posInd}'], pfs['ex']['direction'], pfs['ex'][f'Left/Right.{description}']))
+                            graph.add((pre[ename], pre['hasMotion'], pre[f'{imname}_motion{posInd}']))
+                            graph.add((pre[f'{imname}_motion{posInd}'], pre['direction'], pre[f'Left-Right.{description}']))
                         elif description:  # vehicle
-                            graph.add(( pfs['ex'][ename], pfs['ex']['conductingManuever'], pfs['ex'][f'Manuever.{description}']))
+                            graph.add(( pre[ename], pre['conductingManuever'], pre[f'Manuever.{description}']))
                         posInd += 1
         else:
             # Intersections
             intname = f"{imname}_{no_whitespace(road_or_intr[0])}"
             print(f"intname: {intname}")
-            graph.add((pfs['ex'][intname], a, pfs['alt']['Intersection']))
-            graph.add((pfs['ex'][imname], pfs['ex']['hasIntersection'], pfs['ex'][intname]))
+            graph.add((pre[intname], a, pre['Intersection']))
+            graph.add((pre[imname], pre['hasIntersection'], pre[intname]))
             if 'Imaginary' in intname:
-                graph.add((pfs['ex'][intname], a, pfs['ex']['Imaginary%20Intersection']))
+                graph.add((pre[intname], a, pre['ImaginaryIntersection']))
                 for cardinality in road_or_intr[1]:
-                    cardiname = pfs['ex']['Cardinality.' + cardinality[0].strip()]
+                    cardiname = pre['Cardinality.' + cardinality[0].strip()]
                     for direction in cardinality[1]:
-                        dirname = pfs['ex']['Direction.' + direction[0].strip()]
+                        dirname = pre['Direction.' + direction[0].strip()]
                         for lane in direction[1]:
                             letters = lane[0].strip()
                             lanename = f"{imname}_Road{letters[0]}_Lane{letters[1]}"
                             touchname = f"{imname}_{letters}2{no_whitespace(road_or_intr[0])}"
-                            graph.add((pfs['ex'][touchname], a, pfs['ex']['Touching%20Intersection%20']))
-                            graph.add((pfs['ex'][intname], pfs['ex']['touchesLane'], pfs['ex'][touchname]))
-                            graph.add((pfs['ex'][lanename], pfs['ex']['touchesIntersection'], pfs['ex'][touchname]))
-                            graph.add((pfs['ex'][touchname], pfs['alt']['hasCardinality'], pfs['ex'][cardiname]))
-                            graph.add((pfs['ex'][touchname], pfs['ex']['hasDirection'], pfs['ex'][dirname]))            
+                            graph.add((pre[touchname], a, pre['TouchingIntersection']))
+                            graph.add((pre[intname], pre['touchesLane'], pre[touchname]))
+                            graph.add((pre[lanename], pre['touchesIntersection'], pre[touchname]))
+                            graph.add((pre[touchname], pre['hasCardinality'], pre[cardiname]))
+                            graph.add((pre[touchname], pre['hasDirection'], pre[dirname]))            
     
     
 def add_scenario_json(graph, imname, cityscapes_root):
@@ -223,14 +225,14 @@ def add_vehicles(graph, imname, bbox3d):
         if obj['label'] not in use_classes:
             continue
         oid = obj['instanceId']
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Car']))  # every vehicle is a car atm
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Potential%20Obstacle%20']))
-        graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
+        graph.add((pre[f"{imname}_{oid}"], a, pre['Car']))  # every vehicle is a car atm
+        graph.add((pre[f"{imname}_{oid}"], a, pre['PotentialObstacle']))
+        graph.add((pre[imname], pre['hasThing'], pre[f"{imname}_{oid}"]))
         # TODO could revisit handling of position 
-        if (pfs['ex'][f"{imname}_{oid}"], pfs['ex']['hasPosition'], None) in graph:
+        if (pre[f"{imname}_{oid}"], pre['hasPosition'], None) in graph:
             # I like the contains syntax. Very Pythonic
             dist = np.linalg.norm(obj['3d']['center'])
-            graph.add((pfs['ex'][f"{imname}_{oid}"], pfs['ex']['distanceDownLane'], Literal(dist)))
+            graph.add((pre[f"{imname}_{oid}"], pre['distanceDownLane'], Literal(dist)))
         
 
 def add_pedestrian(graph, imname, people):
@@ -245,9 +247,9 @@ def add_pedestrian(graph, imname, people):
         if obj['label'] not in use_classes:
             continue 
         oid = obj['instanceId']
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Pedestrian']))
-        graph.add((pfs['ex'][f"{imname}_{oid}"], a, pfs['ex']['Potential%20Obstacle%20']))
-        graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{oid}"]))
+        graph.add((pre[f"{imname}_{oid}"], a, pre['Pedestrian']))
+        graph.add((pre[f"{imname}_{oid}"], a, pre['PotentialObstacle']))
+        graph.add((pre[imname], pre['hasThing'], pre[f"{imname}_{oid}"]))
         # positions unknown--unless TODO we parse depth maps for estimate. 
         # Theoretically possible by extracting instance-label polygon and indexing into transformed depth map
         
@@ -265,12 +267,12 @@ def add_misc(graph, imname, instance_labels):
             continue
         if 'traffic' in obj['label']:
             tii_id += 1
-            graph.add((pfs['ex'][f"{imname}_{tii_id}"], a, pfs['alt']['TrafficInstructionIndicator']))
-            graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{tii_id}"]))
+            graph.add((pre[f"{imname}_{tii_id}"], a, pre['TrafficInstructionIndicator']))
+            graph.add((pre[imname], pre['hasThing'], pre[f"{imname}_{tii_id}"]))
         else:
             misc_id += 1
-            graph.add((pfs['ex'][f"{imname}_{misc_id}"], a, pfs['alt']['Physical%20Thing']))
-            graph.add((pfs['ex'][imname], pfs['ex']['hasThing'], pfs['ex'][f"{imname}_{misc_id}"]))
+            graph.add((pre[f"{imname}_{misc_id}"], a, pre['PhysicalThing']))
+            graph.add((pre[imname], pre['hasThing'], pre[f"{imname}_{misc_id}"]))
             
 
 def guess_obstacles(graph, imname):
@@ -283,55 +285,55 @@ def guess_obstacles(graph, imname):
     # Cars we are kind of guessing. 
     # TODO pedestrians
     # find all subjects of any type
-    for car, p, o in graph.triples((None, a, pfs['ex']['Car'])):
-        pos = graph.value(car, pfs['ex']['hasPosition'])
+    for car, p, o in graph.triples((None, a, pre['Car'])):
+        pos = graph.value(car, pre['hasPosition'])
         if not pos:
             continue 
-        for _, _, relation in graph.triples((pos, pfs['ex']['hasRelativity'], None)):
-            if graph.value(relation, pfs['ex']['relativity']) == pfs['ex']['Left/Right/On.On']:
-                lane = graph.value(relation, pfs['ex']['relToLane'])
+        for _, _, relation in graph.triples((pos, pre['hasRelativity'], None)):
+            if graph.value(relation, pre['relativity']) == pre['Left-Right-On.On']:
+                lane = graph.value(relation, pre['relToLane'])
                 # find out if lane has a reason to stop. Otherwise assume car is moving. 
-                for backRelation, _, _ in graph.triples((None, pfs['ex']['relToLane'] , lane)):
-                    backPos = graph.value(predicate = pfs['ex']['hasRelativity'], object=backRelation, any=False)
-                    otherEntity = graph.value(predicate = pfs['ex']['hasPosition'], object=backPos, any=False)
+                for backRelation, _, _ in graph.triples((None, pre['relToLane'] , lane)):
+                    backPos = graph.value(predicate = pre['hasRelativity'], object=backRelation, any=False)
+                    otherEntity = graph.value(predicate = pre['hasPosition'], object=backPos, any=False)
                     # If car already conducting a maneuver, don't auto-decide it
-                    if (otherEntity, pfs['ex']['conductingManuever'], None) in graph:
+                    if (otherEntity, pre['conductingManuever'], None) in graph:
                         continue  # TODO apply Motions to this depending
-                    stopInstructions = ['Traffic%20Instruction.StopSign', 'Traffic%20Instruction.RedLight']
-                    stopInstructions = [pfs['ex'][inst] for inst in stopInstructions]
-                    if any([(otherEntity, pfs['alt']['conveys'], si) in graph for si in stopInstructions]): 
-                        graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Manuever.GoingStraight']))
+                    stopInstructions = ['TrafficInstruction.StopSign', 'TrafficInstruction.RedLight']
+                    stopInstructions = [pre[inst] for inst in stopInstructions]
+                    if any([(otherEntity, pre['conveys'], si) in graph for si in stopInstructions]): 
+                        graph.add((car, pre['conductingManuever'], pre['Manuever.GoingStraight']))
                         # check for it moving over other lanes?????? Add 'Motion' to it.
                     else:
-                        graph.add((car, pfs['ex']['conductingManuever'], pfs['ex']['Stopped']))
-    for pedestrian, p, o in graph.triples((None, a, pfs['ex']['Pedestrian'])):
-        for _, _, motion in graph.triples((pedestrian, pfs['ex']['hasMotion'], None)):
-            for _, _, direction in graph.triples((motion, pfs['ex']['direction'], None)):
-                pos = graph.value(pedestrian, pfs['ex']['hasPosition'])
-                rel = graph.value(pos, pfs['ex']['hasRelativity'])
-                lane = graph.value(rel, pfs['ex']['relToLane'])
-                dirRel = pfs['ex']['directlyRightOf'] if direction == pfs['ex']['Left/Right.Right'] else pfs['ex']['directlyLeftOf']
+                        graph.add((car, pre['conductingManuever'], pre['Stopped']))
+    for pedestrian, p, o in graph.triples((None, a, pre['Pedestrian'])):
+        for _, _, motion in graph.triples((pedestrian, pre['hasMotion'], None)):
+            for _, _, direction in graph.triples((motion, pre['direction'], None)):
+                pos = graph.value(pedestrian, pre['hasPosition'])
+                rel = graph.value(pos, pre['hasRelativity'])
+                lane = graph.value(rel, pre['relToLane'])
+                dirRel = pre['directlyRightOf'] if direction == pre['Left-Right.Right'] else pre['directlyLeftOf']
                 lane = graph.value(lane, dirRel)
                 while lane is not None:
-                    graph.add((motion, pfs['ex']['towardsLane'], lane))
+                    graph.add((motion, pre['towardsLane'], lane))
                     lane = graph.value(lane, dirRel)
 
 def parse_scenario_metadata(graph, imname, metadata):
     metadata['speed']
     metadata['outsideTemperature']
     
-    graph.add((pfs['ex'][f'{imname}_Self'], pfs['ex']['hasSpeed'], pfs['ex'][f'{imname}_ssp']))
-    graph.add((pfs['ex'][f'{imname}_ssp'], a, pfs['ex']['SpeedMPS']))
-    graph.add((pfs['ex'][f'{imname}_ssp'], pfs['alt']['hasValue'], Literal(metadata['speed'])))
+    graph.add((pre[f'{imname}_Self'], pre['hasSpeed'], pre[f'{imname}_ssp']))
+    graph.add((pre[f'{imname}_ssp'], a, pre['SpeedMPS']))
+    graph.add((pre[f'{imname}_ssp'], pre['hasValue'], Literal(metadata['speed'])))
     
     # Environment
     # Environment is under alt namespace
     # Weather%20Condition
-    graph.add((pfs['ex'][imname], pfs['ex']['hasEnvironment'], pfs['ex'][f'{imname}_env']))
-    graph.add((pfs['ex'][f'{imname}_env'], pfs['alt']['hasTemperature'], pfs['ex'][f'{imname}_tmp']))
-    graph.add((pfs['ex'][f'{imname}_tmp'], pfs['alt']['hasValue'], Literal(metadata['outsideTemperature'])))
-    graph.add((pfs['ex'][imname], pfs['alt']['hasWeatherCondition'], pfs['ex'][f'{imname}_weth']))
-    graph.add((pfs['ex'][f'{imname}_weth'], pfs['ex']['hasWeatherType%20'], pfs['ex']['Weather%20Type.Sunny']))
+    graph.add((pre[imname], pre['hasEnvironment'], pre[f'{imname}_env']))
+    graph.add((pre[f'{imname}_env'], pre['hasTemperature'], pre[f'{imname}_tmp']))
+    graph.add((pre[f'{imname}_tmp'], pre['hasValue'], Literal(metadata['outsideTemperature'])))
+    graph.add((pre[imname], pre['hasWeatherCondition'], pre[f'{imname}_weth']))
+    graph.add((pre[f'{imname}_weth'], pre['hasWeatherType'], pre['WeatherType.Sunny']))
 
 
 if __name__=='__main__':
