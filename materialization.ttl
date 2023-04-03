@@ -1390,6 +1390,7 @@ project:bremen_000288_000019_24000 a project:Pedestrian,
 
 project:bremen_000288_000019_24001 a project:Pedestrian,
         project:PotentialObstacle ;
+    project:distanceDownLane 1.256556e+01 ;
     project:hasMotion project:bremen_000288_000019_motion0 ;
     project:hasPosition project:bremen_000288_000019_pos0 .
 

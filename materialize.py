@@ -12,13 +12,14 @@ CityscapesPersons
 'vehicle_sequence', aka scenario-level metadata
 
 TODO use Depth
-Disparity->Depth computation constants posted by dataset authors here (https://github.com/mcordts/cityscapesScripts)
+
 """
 
 import json
 import numpy as np
 from pathlib import Path
 import os, sys
+import cv2
 ##### Graph stuff
 import rdflib
 from rdflib import URIRef, Graph, Namespace, Literal
@@ -132,7 +133,6 @@ def add_scenario_markup(graph, scenario):
                     entity_str = entity[0]
                     if 'Ends at' in entity_str:
                        distance = entity_str.lstrip().split()[2]
-                       # TODO get better automatically-extracted depth
                        graph.add((pre[lanename], pre['visiblyEndsAt'], Literal(distance) ))
                        continue
                     
@@ -168,7 +168,7 @@ def add_scenario_markup(graph, scenario):
         else:
             # Intersections
             intname = f"{imname}_{no_whitespace(road_or_intr[0])}"
-            print(f"intname: {intname}")
+            #print(f"intname: {intname}")
             graph.add((pre[intname], a, pre['Intersection']))
             graph.add((pre[imname], pre['hasIntersection'], pre[intname]))
             if 'Imaginary' in intname:
@@ -193,17 +193,21 @@ def add_scenario_json(graph, imname, cityscapes_root):
     split = 'train'  # TODO detect this if more data is added 
     city = imname.split('_')[0]
     imname = imname[:imname.index('leftImg8bit.png')-1]
-    print(f"add_scenario_json imname: {imname}")
+    #print(f"add_scenario_json imname: {imname}")
     
     bbox3d_json = cityscapes_root / 'gtBbox3d' / split / city / (imname + '_gtBbox3d.json')
     with open(bbox3d_json, 'r') as f:
         bbox3d = json.load(f)
     add_vehicles(graph, imname, bbox3d)
+
+    # depthmap used to localize pedestrians
+    disparity_png = cityscapes_root / 'disparity' / split / city / (imname + '_disparity.png')
+    depth = parse_depth(disparity_png)
     
     people_json = cityscapes_root / 'gtBboxCityPersons' / split / city / (imname + '_gtBboxCityPersons.json')
     with open(people_json, 'r') as f:
         people = json.load(f)
-    add_pedestrian(graph, imname, people)
+    add_pedestrian(graph, imname, people, depth)
     
     semseg_json = cityscapes_root / 'gtFine' / split / city / (imname + '_gtFine_polygons.json')
     with open(semseg_json, 'r') as f:
@@ -235,7 +239,7 @@ def add_vehicles(graph, imname, bbox3d):
             graph.add((pre[f"{imname}_{oid}"], pre['distanceDownLane'], Literal(dist)))
         
 
-def add_pedestrian(graph, imname, people):
+def add_pedestrian(graph, imname, people, depth):
     """
     Takes a CityPersons JSON dictionary and modified it in place
     so classes have been mapped to the BDD100K system
@@ -253,6 +257,14 @@ def add_pedestrian(graph, imname, people):
         # positions unknown--unless TODO we parse depth maps for estimate. 
         # Theoretically possible by extracting instance-label polygon and indexing into transformed depth map
         
+        for _, _, pos in graph.triples((pre[f"{imname}_{oid}"], pre['hasPosition'], None)):
+            rel = graph.value(pos, pre['hasRelativity'])
+            relativity = graph.value(rel, pre['relativity'])
+            if relativity == pre[f'Left-Right-On.On']:
+                depth_estimate = average_depth(depth, *obj['bbox'])
+                print(f'depth_estimate: {depth_estimate}')
+                graph.add((pre[f"{imname}_{oid}"], pre['distanceDownLane'], Literal(depth_estimate)))
+                
         
 def add_misc(graph, imname, instance_labels):
 
@@ -283,7 +295,6 @@ def guess_obstacles(graph, imname):
     
     # But motion we have to do 
     # Cars we are kind of guessing. 
-    # TODO pedestrians
     # find all subjects of any type
     for car, p, o in graph.triples((None, a, pre['Car'])):
         pos = graph.value(car, pre['hasPosition'])
@@ -318,6 +329,7 @@ def guess_obstacles(graph, imname):
                     graph.add((motion, pre['towardsLane'], lane))
                     lane = graph.value(lane, dirRel)
 
+
 def parse_scenario_metadata(graph, imname, metadata):
     metadata['speed']
     metadata['outsideTemperature']
@@ -335,6 +347,21 @@ def parse_scenario_metadata(graph, imname, metadata):
     graph.add((pre[imname], pre['hasWeatherCondition'], pre[f'{imname}_weth']))
     graph.add((pre[f'{imname}_weth'], pre['hasWeatherType'], pre['WeatherType.Sunny']))
 
+
+def parse_depth(disparity_png):
+    # Disparity->Depth computation constants posted by dataset authors here (https://github.com/mcordts/cityscapesScripts)
+    disparity = cv2.imread(str(disparity_png), cv2.IMREAD_ANYDEPTH | cv2.IMREAD_UNCHANGED)
+    #print(np.max(disparity))
+    distance = ( disparity.astype(float) - 1. ) / 256
+    distance[disparity == 0] = -1
+    return distance
+
+
+def average_depth(depth, x0, y0, w, h):
+    box = depth[y0:y0+h, x0:x0+w]
+    box = box[box!=-1]
+    return np.mean(box)
+    
 
 if __name__=='__main__':
     main(sys.argv[1], sys.argv[2])
