@@ -153,7 +153,7 @@ def add_scenario_markup(graph, scenario):
                         graph.add((pre[f'{imname}_pos{posInd}'], a, pre['Position']))
                         graph.add((pre[f'{imname}_pos{posInd}'], pre['hasRelativity'], pre[f'{imname}_rel{posInd}']))
                         graph.add((pre[f'{imname}_rel{posInd}'], pre['relToLane'], pre[lanename]))
-                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'Left-Right-On.On']))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'On-Left-Right.On']))
                         posInd += 1
                     elif int(e_num) < 100:  # TII
                         graph.add((pre[lanename], pre['hasTrafficInstructionIndicator'], pre[ename])) 
@@ -164,7 +164,7 @@ def add_scenario_markup(graph, scenario):
                         graph.add((pre[f'{imname}_pos{posInd}'], pre['hasRelativity'], pre[f'{imname}_rel{posInd}']))
                         graph.add((pre[f'{imname}_rel{posInd}'], pre['relToLane'], pre[lanename]))
                         relativity = 'On' if beside is None else ('Left' if beside == 1 else 'Right')
-                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'Left-Right-On.{relativity}']))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'On-Left-Right.{relativity}']))
                         
                         if int(e_num) < 26000 and description:  # , probably pedestrian
                             graph.add((pre[ename], pre['hasMotion'], pre[f'{imname}_motion{posInd}']))
@@ -267,7 +267,7 @@ def add_pedestrian(graph, imname, people, depth):
         for _, _, pos in graph.triples((pre[f"{imname}_{oid}"], pre['hasPosition'], None)):
             rel = graph.value(pos, pre['hasRelativity'])
             relativity = graph.value(rel, pre['relativity'])
-            if relativity == pre[f'Left-Right-On.On']:
+            if relativity == pre[f'On-Left-Right.On']:
                 depth_estimate = average_depth(depth, *obj['bbox'])
                 print(f'depth_estimate: {depth_estimate}')
                 graph.add((pre[f"{imname}_{oid}"], pre['distanceDownLane'], Literal(depth_estimate)))
@@ -308,7 +308,7 @@ def guess_obstacles(graph, imname):
         if not pos:
             continue 
         for _, _, relation in graph.triples((pos, pre['hasRelativity'], None)):
-            if graph.value(relation, pre['relativity']) == pre['Left-Right-On.On']:
+            if graph.value(relation, pre['relativity']) == pre['On-Left-Right.On']:
                 lane = graph.value(relation, pre['relToLane'])
                 # find out if lane has a reason to stop. Otherwise assume car is moving. 
                 for backRelation, _, _ in graph.triples((None, pre['relToLane'] , lane)):

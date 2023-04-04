@@ -562,40 +562,40 @@ project:bochum_000000_021479_pos9 a project:Position ;
     project:hasRelativity project:bochum_000000_021479_rel9 .
 
 project:bochum_000000_021479_rel0 project:relToLane project:bochum_000000_021479_RoadA_LaneC ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel1 project:relToLane project:bochum_000000_021479_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel10 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel11 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel2 project:relToLane project:bochum_000000_021479_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel3 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel4 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel5 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel6 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel7 project:relToLane project:bochum_000000_021479_RoadC_LaneD ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel8 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_rel9 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_021479_ssp a project:SpeedMPS ;
     project:hasValue 6.899375e+00 .
@@ -720,22 +720,22 @@ project:bochum_000000_024524_pos5 a project:Position ;
     project:hasRelativity project:bochum_000000_024524_rel5 .
 
 project:bochum_000000_024524_rel0 project:relToLane project:bochum_000000_024524_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_rel1 project:relToLane project:bochum_000000_024524_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_rel2 project:relToLane project:bochum_000000_024524_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_rel3 project:relToLane project:bochum_000000_024524_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_rel4 project:relToLane project:bochum_000000_024524_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_rel5 project:relToLane project:bochum_000000_024524_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024524_ssp a project:SpeedMPS ;
     project:hasValue 6.807938e+00 .
@@ -835,13 +835,13 @@ project:bochum_000000_024717_pos2 a project:Position ;
     project:hasRelativity project:bochum_000000_024717_rel2 .
 
 project:bochum_000000_024717_rel0 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024717_rel1 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024717_rel2 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_024717_ssp a project:SpeedMPS ;
     project:hasValue 7.356562e+00 .
@@ -917,7 +917,7 @@ project:bochum_000000_031687_pos0 a project:Position ;
     project:hasRelativity project:bochum_000000_031687_rel0 .
 
 project:bochum_000000_031687_rel0 project:relToLane project:bochum_000000_031687_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_031687_ssp a project:SpeedMPS ;
     project:hasValue 1.020775e+01 .
@@ -1039,34 +1039,34 @@ project:bochum_000000_033056_pos9 a project:Position ;
     project:hasRelativity project:bochum_000000_033056_rel9 .
 
 project:bochum_000000_033056_rel0 project:relToLane project:bochum_000000_033056_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel1 project:relToLane project:bochum_000000_033056_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel2 project:relToLane project:bochum_000000_033056_RoadA_LaneC ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel3 project:relToLane project:bochum_000000_033056_RoadA_LaneC ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel4 project:relToLane project:bochum_000000_033056_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel5 project:relToLane project:bochum_000000_033056_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel6 project:relToLane project:bochum_000000_033056_RoadC_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel7 project:relToLane project:bochum_000000_033056_RoadD_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel8 project:relToLane project:bochum_000000_033056_RoadD_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_rel9 project:relToLane project:bochum_000000_033056_RoadD_LaneC ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bochum_000000_033056_ssp a project:SpeedMPS ;
     project:hasValue 8.536938e+00 .
@@ -1206,37 +1206,37 @@ project:bremen_000003_000019_pos9 a project:Position ;
     project:hasRelativity project:bremen_000003_000019_rel9 .
 
 project:bremen_000003_000019_rel0 project:relToLane project:bremen_000003_000019_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.Left .
+    project:relativity project:On-Left-Right.Left .
 
 project:bremen_000003_000019_rel1 project:relToLane project:bremen_000003_000019_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel10 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel2 project:relToLane project:bremen_000003_000019_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel3 project:relToLane project:bremen_000003_000019_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel4 project:relToLane project:bremen_000003_000019_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel5 project:relToLane project:bremen_000003_000019_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel6 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_rel7 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.Right .
+    project:relativity project:On-Left-Right.Right .
 
 project:bremen_000003_000019_rel8 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.Right .
+    project:relativity project:On-Left-Right.Right .
 
 project:bremen_000003_000019_rel9 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000003_000019_ssp a project:SpeedMPS ;
     project:hasValue 8.9775e+00 .
@@ -1391,25 +1391,25 @@ project:bremen_000193_000019_pos6 a project:Position ;
     project:hasRelativity project:bremen_000193_000019_rel6 .
 
 project:bremen_000193_000019_rel0 project:relToLane project:bremen_000193_000019_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.Left .
+    project:relativity project:On-Left-Right.Left .
 
 project:bremen_000193_000019_rel1 project:relToLane project:bremen_000193_000019_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_rel2 project:relToLane project:bremen_000193_000019_RoadA_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_rel3 project:relToLane project:bremen_000193_000019_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_rel4 project:relToLane project:bremen_000193_000019_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_rel5 project:relToLane project:bremen_000193_000019_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_rel6 project:relToLane project:bremen_000193_000019_RoadA_LaneC ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000193_000019_ssp a project:SpeedMPS ;
     project:hasValue 6.965875e+00 .
@@ -1585,28 +1585,28 @@ project:bremen_000288_000019_pos7 a project:Position ;
     project:hasRelativity project:bremen_000288_000019_rel7 .
 
 project:bremen_000288_000019_rel0 project:relToLane project:bremen_000288_000019_RoadA_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_rel1 project:relToLane project:bremen_000288_000019_RoadB_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_rel2 project:relToLane project:bremen_000288_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.Right .
+    project:relativity project:On-Left-Right.Right .
 
 project:bremen_000288_000019_rel3 project:relToLane project:bremen_000288_000019_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_rel4 project:relToLane project:bremen_000288_000019_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_rel5 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
-    project:relativity project:Left-Right-On.Right .
+    project:relativity project:On-Left-Right.Right .
 
 project:bremen_000288_000019_rel6 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_rel7 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:On-Left-Right.On .
 
 project:bremen_000288_000019_ssp a project:SpeedMPS ;
     project:hasValue 1.128838e+01 .
