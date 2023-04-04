@@ -2,6 +2,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 project:bochum_000000_021479 a project:Scenario ;
+    project:aboutCar project:bochum_000000_021479_Self ;
     project:containsLane project:bochum_000000_021479_RoadA_LaneA,
         project:bochum_000000_021479_RoadA_LaneB,
         project:bochum_000000_021479_RoadA_LaneC,
@@ -58,10 +59,8 @@ project:bochum_000000_021479 a project:Scenario ;
         project:bochum_000000_021479_9 ;
     project:hasWeatherCondition project:bochum_000000_021479_weth .
 
-project:bochum_000000_021479_Self a project:Self ;
-    project:hasSpeed project:bochum_000000_021479_ssp .
-
 project:bochum_000000_024524 a project:Scenario ;
+    project:aboutCar project:bochum_000000_024524_Self ;
     project:containsLane project:bochum_000000_024524_RoadA_LaneA,
         project:bochum_000000_024524_RoadA_LaneB ;
     project:hasEnvironment project:bochum_000000_024524_env ;
@@ -107,10 +106,8 @@ project:bochum_000000_024524 a project:Scenario ;
         project:bochum_000000_024524_9 ;
     project:hasWeatherCondition project:bochum_000000_024524_weth .
 
-project:bochum_000000_024524_Self a project:Self ;
-    project:hasSpeed project:bochum_000000_024524_ssp .
-
 project:bochum_000000_024717 a project:Scenario ;
+    project:aboutCar project:bochum_000000_024717_Self ;
     project:containsLane project:bochum_000000_024717_RoadA_LaneA ;
     project:hasEnvironment project:bochum_000000_024717_env ;
     project:hasIntersection project:bochum_000000_024717_IntersectionImaginary ;
@@ -152,10 +149,8 @@ project:bochum_000000_024717 a project:Scenario ;
         project:bochum_000000_024717_9 ;
     project:hasWeatherCondition project:bochum_000000_024717_weth .
 
-project:bochum_000000_024717_Self a project:Self ;
-    project:hasSpeed project:bochum_000000_024717_ssp .
-
 project:bochum_000000_031687 a project:Scenario ;
+    project:aboutCar project:bochum_000000_031687_Self ;
     project:containsLane project:bochum_000000_031687_RoadA_LaneA,
         project:bochum_000000_031687_RoadA_LaneB,
         project:bochum_000000_031687_RoadB_LaneA,
@@ -189,10 +184,8 @@ project:bochum_000000_031687 a project:Scenario ;
         project:bochum_000000_031687_9 ;
     project:hasWeatherCondition project:bochum_000000_031687_weth .
 
-project:bochum_000000_031687_Self a project:Self ;
-    project:hasSpeed project:bochum_000000_031687_ssp .
-
 project:bochum_000000_033056 a project:Scenario ;
+    project:aboutCar project:bochum_000000_033056_Self ;
     project:containsLane project:bochum_000000_033056_RoadA_LaneA,
         project:bochum_000000_033056_RoadA_LaneB,
         project:bochum_000000_033056_RoadA_LaneC,
@@ -240,10 +233,8 @@ project:bochum_000000_033056 a project:Scenario ;
         project:bochum_000000_033056_9 ;
     project:hasWeatherCondition project:bochum_000000_033056_weth .
 
-project:bochum_000000_033056_Self a project:Self ;
-    project:hasSpeed project:bochum_000000_033056_ssp .
-
 project:bremen_000003_000019 a project:Scenario ;
+    project:aboutCar project:bremen_000003_000019_Self ;
     project:containsLane project:bremen_000003_000019_RoadA_LaneA,
         project:bremen_000003_000019_RoadA_LaneB,
         project:bremen_000003_000019_RoadB_LaneA,
@@ -288,10 +279,8 @@ project:bremen_000003_000019 a project:Scenario ;
 
 project:bremen_000003_000019_25000 project:hasPosition project:bremen_000003_000019_pos6 .
 
-project:bremen_000003_000019_Self a project:Self ;
-    project:hasSpeed project:bremen_000003_000019_ssp .
-
 project:bremen_000193_000019 a project:Scenario ;
+    project:aboutCar project:bremen_000193_000019_Self ;
     project:containsLane project:bremen_000193_000019_RoadA_LaneA,
         project:bremen_000193_000019_RoadA_LaneB,
         project:bremen_000193_000019_RoadA_LaneC ;
@@ -345,10 +334,8 @@ project:bremen_000193_000019 a project:Scenario ;
         project:bremen_000193_000019_9 ;
     project:hasWeatherCondition project:bremen_000193_000019_weth .
 
-project:bremen_000193_000019_Self a project:Self ;
-    project:hasSpeed project:bremen_000193_000019_ssp .
-
 project:bremen_000288_000019 a project:Scenario ;
+    project:aboutCar project:bremen_000288_000019_Self ;
     project:containsLane project:bremen_000288_000019_RoadA_LaneA,
         project:bremen_000288_000019_RoadA_LaneB,
         project:bremen_000288_000019_RoadB_LaneA,
@@ -418,9 +405,6 @@ project:bremen_000288_000019 a project:Scenario ;
         project:bremen_000288_000019_8,
         project:bremen_000288_000019_9 ;
     project:hasWeatherCondition project:bremen_000288_000019_weth .
-
-project:bremen_000288_000019_Self a project:Self ;
-    project:hasSpeed project:bremen_000288_000019_ssp .
 
 project:bochum_000000_021479_-1 project:conveys project:TrafficInstruction.TurnLaneMarking .
 
@@ -534,6 +518,9 @@ project:bochum_000000_021479_IntersectionImaginary a project:ImaginaryIntersecti
         project:bochum_000000_021479_AC2IntersectionImaginary .
 
 project:bochum_000000_021479_RoadB a project:Road .
+
+project:bochum_000000_021479_Self a project:Self ;
+    project:hasSpeed project:bochum_000000_021479_ssp .
 
 project:bochum_000000_021479_env project:hasTemperature project:bochum_000000_021479_tmp .
 
@@ -701,6 +688,9 @@ project:bochum_000000_024524_IntersectionImaginary a project:ImaginaryIntersecti
     project:touchesLane project:bochum_000000_024524_AA2IntersectionImaginary,
         project:bochum_000000_024524_AB2IntersectionImaginary .
 
+project:bochum_000000_024524_Self a project:Self ;
+    project:hasSpeed project:bochum_000000_024524_ssp .
+
 project:bochum_000000_024524_env project:hasTemperature project:bochum_000000_024524_tmp .
 
 project:bochum_000000_024524_pos0 a project:Position ;
@@ -815,6 +805,9 @@ project:bochum_000000_024717_IntersectionImaginary a project:ImaginaryIntersecti
 
 project:bochum_000000_024717_RoadA a project:Road .
 
+project:bochum_000000_024717_Self a project:Self ;
+    project:hasSpeed project:bochum_000000_024717_ssp .
+
 project:bochum_000000_024717_env project:hasTemperature project:bochum_000000_024717_tmp .
 
 project:bochum_000000_024717_pos0 a project:Position ;
@@ -892,6 +885,9 @@ project:bochum_000000_031687_RoadC a project:Road .
 project:bochum_000000_031687_RoadC_LaneA a project:Lane ;
     project:hasTrafficInstructionIndicator project:bochum_000000_031687_1 ;
     project:inRoad project:bochum_000000_031687_RoadC .
+
+project:bochum_000000_031687_Self a project:Self ;
+    project:hasSpeed project:bochum_000000_031687_ssp .
 
 project:bochum_000000_031687_env project:hasTemperature project:bochum_000000_031687_tmp .
 
@@ -977,6 +973,9 @@ project:bochum_000000_033056_IntersectionImaginary a project:ImaginaryIntersecti
     project:touchesLane project:bochum_000000_033056_AA2IntersectionImaginary,
         project:bochum_000000_033056_AB2IntersectionImaginary,
         project:bochum_000000_033056_AC2IntersectionImaginary .
+
+project:bochum_000000_033056_Self a project:Self ;
+    project:hasSpeed project:bochum_000000_033056_ssp .
 
 project:bochum_000000_033056_env project:hasTemperature project:bochum_000000_033056_tmp .
 
@@ -1131,6 +1130,9 @@ project:bremen_000003_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:bremen_000003_000019_AB2IntersectionImaginary,
         project:bremen_000003_000019_BA2IntersectionImaginary,
         project:bremen_000003_000019_BB2IntersectionImaginary .
+
+project:bremen_000003_000019_Self a project:Self ;
+    project:hasSpeed project:bremen_000003_000019_ssp .
 
 project:bremen_000003_000019_env project:hasTemperature project:bremen_000003_000019_tmp .
 
@@ -1319,6 +1321,9 @@ project:bremen_000193_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:bremen_000193_000019_AB2IntersectionImaginary,
         project:bremen_000193_000019_AC2IntersectionImaginary .
 
+project:bremen_000193_000019_Self a project:Self ;
+    project:hasSpeed project:bremen_000193_000019_ssp .
+
 project:bremen_000193_000019_env project:hasTemperature project:bremen_000193_000019_tmp .
 
 project:bremen_000193_000019_pos0 a project:Position ;
@@ -1497,6 +1502,9 @@ project:bremen_000288_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:Intersection ;
     project:touchesLane project:bremen_000288_000019_AA2IntersectionImaginary,
         project:bremen_000288_000019_AB2IntersectionImaginary .
+
+project:bremen_000288_000019_Self a project:Self ;
+    project:hasSpeed project:bremen_000288_000019_ssp .
 
 project:bremen_000288_000019_env project:hasTemperature project:bremen_000288_000019_tmp .
 

@@ -148,6 +148,7 @@ def add_scenario_markup(graph, scenario):
                     description = "".join(entity_str.lstrip().split()[1:])
                     if 'Self' in ename:
                         graph.add((pre[ename], a, pre['Self']))
+                        graph.add((pre[imname], pre['aboutCar'], pre[ename]))
                     elif int(e_num) < 100:  # TII
                         graph.add((pre[lanename], pre['hasTrafficInstructionIndicator'], pre[ename])) 
                         graph.add((pre[ename], pre['conveys'], pre[f'TrafficInstruction.{description}']))
