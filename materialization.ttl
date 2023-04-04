@@ -1667,11 +1667,11 @@ project:bochum_000000_021479_9 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.PriorityLaneSign .
 
 project:bochum_000000_021479_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bochum_000000_021479_AC2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_021479_RoadA_LaneA a project:Lane ;
@@ -1704,11 +1704,11 @@ project:bochum_000000_024524_6 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.StreetName .
 
 project:bochum_000000_024524_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bochum_000000_024524_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_024524_RoadA a project:Road .
@@ -1738,7 +1738,7 @@ project:bochum_000000_024717_6 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.NoStoppingSign .
 
 project:bochum_000000_024717_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_031687_1 a project:PhysicalThing,
@@ -1774,11 +1774,11 @@ project:bochum_000000_031687_8 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.CrosswalkSign .
 
 project:bochum_000000_031687_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bochum_000000_031687_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_031687_RoadA a project:Road .
@@ -1853,15 +1853,15 @@ project:bochum_000000_033056_9 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.RedLight .
 
 project:bochum_000000_033056_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bochum_000000_033056_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_033056_AC2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bochum_000000_033056_RoadA_LaneA a project:Lane ;
@@ -1911,19 +1911,19 @@ project:bremen_000003_000019_7 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.InactiveTrafficLight .
 
 project:bremen_000003_000019_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bremen_000003_000019_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bremen_000003_000019_BA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bremen_000003_000019_BB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bremen_000003_000019_RoadA a project:Road .
@@ -1951,15 +1951,15 @@ project:bremen_000193_000019_7 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.LaneInfoSign .
 
 project:bremen_000193_000019_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bremen_000193_000019_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bremen_000193_000019_AC2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bremen_000288_000019_1 a project:PhysicalThing,
@@ -2023,11 +2023,11 @@ project:bremen_000288_000019_9 a project:PhysicalThing,
     project:conveys project:TrafficInstruction.FacingAwayLight .
 
 project:bremen_000288_000019_AA2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
 
 project:bremen_000288_000019_AB2IntersectionImaginary a project:TouchingIntersection ;
-    project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Project#Cardinality.North> ;
+    project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Outgoing .
 
 project:bremen_000288_000019_RoadA a project:Road .
