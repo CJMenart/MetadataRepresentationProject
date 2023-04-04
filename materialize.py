@@ -149,6 +149,12 @@ def add_scenario_markup(graph, scenario):
                     if 'Self' in ename:
                         graph.add((pre[ename], a, pre['Self']))
                         graph.add((pre[imname], pre['aboutCar'], pre[ename]))
+                        graph.add((pre[ename], pre['hasPosition'], pre[f'{imname}_pos{posInd}']))
+                        graph.add((pre[f'{imname}_pos{posInd}'], a, pre['Position']))
+                        graph.add((pre[f'{imname}_pos{posInd}'], pre['hasRelativity'], pre[f'{imname}_rel{posInd}']))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relToLane'], pre[lanename]))
+                        graph.add((pre[f'{imname}_rel{posInd}'], pre['relativity'], pre[f'Left-Right-On.On']))
+                        posInd += 1
                     elif int(e_num) < 100:  # TII
                         graph.add((pre[lanename], pre['hasTrafficInstructionIndicator'], pre[ename])) 
                         graph.add((pre[ename], pre['conveys'], pre[f'TrafficInstruction.{description}']))

@@ -277,7 +277,7 @@ project:bremen_000003_000019 a project:Scenario ;
         project:bremen_000003_000019_9 ;
     project:hasWeatherCondition project:bremen_000003_000019_weth .
 
-project:bremen_000003_000019_25000 project:hasPosition project:bremen_000003_000019_pos6 .
+project:bremen_000003_000019_25000 project:hasPosition project:bremen_000003_000019_pos7 .
 
 project:bremen_000193_000019 a project:Scenario ;
     project:aboutCar project:bremen_000193_000019_Self ;
@@ -438,67 +438,67 @@ project:bochum_000000_021479_26006 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 7.586258e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos4 .
+    project:hasPosition project:bochum_000000_021479_pos5 .
 
 project:bochum_000000_021479_26007 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 6.531531e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos5 .
+    project:hasPosition project:bochum_000000_021479_pos6 .
 
 project:bochum_000000_021479_26008 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 5.831127e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos3 .
+    project:hasPosition project:bochum_000000_021479_pos4 .
 
 project:bochum_000000_021479_26009 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 5.277121e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos2 .
+    project:hasPosition project:bochum_000000_021479_pos3 .
 
 project:bochum_000000_021479_26011 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 9.178735e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos10 .
+    project:hasPosition project:bochum_000000_021479_pos11 .
 
 project:bochum_000000_021479_26013 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 7.267729e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos8 .
+    project:hasPosition project:bochum_000000_021479_pos9 .
 
 project:bochum_000000_021479_26014 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 6.350249e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos9 .
+    project:hasPosition project:bochum_000000_021479_pos10 .
 
 project:bochum_000000_021479_26015 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 4.371646e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos7 .
+    project:hasPosition project:bochum_000000_021479_pos8 .
 
 project:bochum_000000_021479_26016 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 3.320709e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos1 .
+    project:hasPosition project:bochum_000000_021479_pos2 .
 
 project:bochum_000000_021479_26017 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 3.004015e+01 ;
-    project:hasPosition project:bochum_000000_021479_pos0 .
+    project:hasPosition project:bochum_000000_021479_pos1 .
 
 project:bochum_000000_021479_26018 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.358195e+02 ;
-    project:hasPosition project:bochum_000000_021479_pos6 .
+    project:hasPosition project:bochum_000000_021479_pos7 .
 
 project:bochum_000000_021479_27 a project:PhysicalThing .
 
@@ -520,6 +520,7 @@ project:bochum_000000_021479_IntersectionImaginary a project:ImaginaryIntersecti
 project:bochum_000000_021479_RoadB a project:Road .
 
 project:bochum_000000_021479_Self a project:Self ;
+    project:hasPosition project:bochum_000000_021479_pos0 ;
     project:hasSpeed project:bochum_000000_021479_ssp .
 
 project:bochum_000000_021479_env project:hasTemperature project:bochum_000000_021479_tmp .
@@ -532,6 +533,9 @@ project:bochum_000000_021479_pos1 a project:Position ;
 
 project:bochum_000000_021479_pos10 a project:Position ;
     project:hasRelativity project:bochum_000000_021479_rel10 .
+
+project:bochum_000000_021479_pos11 a project:Position ;
+    project:hasRelativity project:bochum_000000_021479_rel11 .
 
 project:bochum_000000_021479_pos2 a project:Position ;
     project:hasRelativity project:bochum_000000_021479_rel2 .
@@ -557,7 +561,7 @@ project:bochum_000000_021479_pos8 a project:Position ;
 project:bochum_000000_021479_pos9 a project:Position ;
     project:hasRelativity project:bochum_000000_021479_rel9 .
 
-project:bochum_000000_021479_rel0 project:relToLane project:bochum_000000_021479_RoadB_LaneA ;
+project:bochum_000000_021479_rel0 project:relToLane project:bochum_000000_021479_RoadA_LaneC ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_021479_rel1 project:relToLane project:bochum_000000_021479_RoadB_LaneA ;
@@ -566,7 +570,10 @@ project:bochum_000000_021479_rel1 project:relToLane project:bochum_000000_021479
 project:bochum_000000_021479_rel10 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_021479_rel2 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
+project:bochum_000000_021479_rel11 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
+    project:relativity project:Left-Right-On.On .
+
+project:bochum_000000_021479_rel2 project:relToLane project:bochum_000000_021479_RoadB_LaneA ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_021479_rel3 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
@@ -578,10 +585,10 @@ project:bochum_000000_021479_rel4 project:relToLane project:bochum_000000_021479
 project:bochum_000000_021479_rel5 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_021479_rel6 project:relToLane project:bochum_000000_021479_RoadC_LaneD ;
+project:bochum_000000_021479_rel6 project:relToLane project:bochum_000000_021479_RoadC_LaneA ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_021479_rel7 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
+project:bochum_000000_021479_rel7 project:relToLane project:bochum_000000_021479_RoadC_LaneD ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_021479_rel8 project:relToLane project:bochum_000000_021479_RoadC_LaneE ;
@@ -689,6 +696,7 @@ project:bochum_000000_024524_IntersectionImaginary a project:ImaginaryIntersecti
         project:bochum_000000_024524_AB2IntersectionImaginary .
 
 project:bochum_000000_024524_Self a project:Self ;
+    project:hasPosition project:bochum_000000_024524_pos5 ;
     project:hasSpeed project:bochum_000000_024524_ssp .
 
 project:bochum_000000_024524_env project:hasTemperature project:bochum_000000_024524_tmp .
@@ -708,6 +716,9 @@ project:bochum_000000_024524_pos3 a project:Position ;
 project:bochum_000000_024524_pos4 a project:Position ;
     project:hasRelativity project:bochum_000000_024524_rel4 .
 
+project:bochum_000000_024524_pos5 a project:Position ;
+    project:hasRelativity project:bochum_000000_024524_rel5 .
+
 project:bochum_000000_024524_rel0 project:relToLane project:bochum_000000_024524_RoadA_LaneA ;
     project:relativity project:Left-Right-On.On .
 
@@ -721,6 +732,9 @@ project:bochum_000000_024524_rel3 project:relToLane project:bochum_000000_024524
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_024524_rel4 project:relToLane project:bochum_000000_024524_RoadA_LaneB ;
+    project:relativity project:Left-Right-On.On .
+
+project:bochum_000000_024524_rel5 project:relToLane project:bochum_000000_024524_RoadA_LaneB ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_024524_ssp a project:SpeedMPS ;
@@ -768,13 +782,13 @@ project:bochum_000000_024717_26001 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 7.214985e+01 ;
-    project:hasPosition project:bochum_000000_024717_pos1 .
+    project:hasPosition project:bochum_000000_024717_pos2 .
 
 project:bochum_000000_024717_26003 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.759678e+01 ;
-    project:hasPosition project:bochum_000000_024717_pos0 .
+    project:hasPosition project:bochum_000000_024717_pos1 .
 
 project:bochum_000000_024717_26004 a project:Car,
         project:PotentialObstacle .
@@ -806,6 +820,7 @@ project:bochum_000000_024717_IntersectionImaginary a project:ImaginaryIntersecti
 project:bochum_000000_024717_RoadA a project:Road .
 
 project:bochum_000000_024717_Self a project:Self ;
+    project:hasPosition project:bochum_000000_024717_pos0 ;
     project:hasSpeed project:bochum_000000_024717_ssp .
 
 project:bochum_000000_024717_env project:hasTemperature project:bochum_000000_024717_tmp .
@@ -816,10 +831,16 @@ project:bochum_000000_024717_pos0 a project:Position ;
 project:bochum_000000_024717_pos1 a project:Position ;
     project:hasRelativity project:bochum_000000_024717_rel1 .
 
+project:bochum_000000_024717_pos2 a project:Position ;
+    project:hasRelativity project:bochum_000000_024717_rel2 .
+
 project:bochum_000000_024717_rel0 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_024717_rel1 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
+    project:relativity project:Left-Right-On.On .
+
+project:bochum_000000_024717_rel2 project:relToLane project:bochum_000000_024717_RoadA_LaneA ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_024717_ssp a project:SpeedMPS ;
@@ -887,9 +908,16 @@ project:bochum_000000_031687_RoadC_LaneA a project:Lane ;
     project:inRoad project:bochum_000000_031687_RoadC .
 
 project:bochum_000000_031687_Self a project:Self ;
+    project:hasPosition project:bochum_000000_031687_pos0 ;
     project:hasSpeed project:bochum_000000_031687_ssp .
 
 project:bochum_000000_031687_env project:hasTemperature project:bochum_000000_031687_tmp .
+
+project:bochum_000000_031687_pos0 a project:Position ;
+    project:hasRelativity project:bochum_000000_031687_rel0 .
+
+project:bochum_000000_031687_rel0 project:relToLane project:bochum_000000_031687_RoadA_LaneB ;
+    project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_031687_ssp a project:SpeedMPS ;
     project:hasValue 1.020775e+01 .
@@ -916,55 +944,55 @@ project:bochum_000000_033056_26000 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 5.854384e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos3 .
+    project:hasPosition project:bochum_000000_033056_pos4 .
 
 project:bochum_000000_033056_26001 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 9.130964e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos8 .
+    project:hasPosition project:bochum_000000_033056_pos9 .
 
 project:bochum_000000_033056_26002 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.143159e+02 ;
-    project:hasPosition project:bochum_000000_033056_pos7 .
+    project:hasPosition project:bochum_000000_033056_pos8 .
 
 project:bochum_000000_033056_26003 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 8.574031e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos6 .
+    project:hasPosition project:bochum_000000_033056_pos7 .
 
 project:bochum_000000_033056_26004 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 6.25481e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos4 .
+    project:hasPosition project:bochum_000000_033056_pos5 .
 
 project:bochum_000000_033056_26005 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 5.758664e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos5 .
+    project:hasPosition project:bochum_000000_033056_pos6 .
 
 project:bochum_000000_033056_26007 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 2.85022e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos0 .
+    project:hasPosition project:bochum_000000_033056_pos1 .
 
 project:bochum_000000_033056_26008 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 3.947565e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos2 .
+    project:hasPosition project:bochum_000000_033056_pos3 .
 
 project:bochum_000000_033056_26009 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 3.456803e+01 ;
-    project:hasPosition project:bochum_000000_033056_pos1 .
+    project:hasPosition project:bochum_000000_033056_pos2 .
 
 project:bochum_000000_033056_IntersectionA a project:Intersection .
 
@@ -975,6 +1003,7 @@ project:bochum_000000_033056_IntersectionImaginary a project:ImaginaryIntersecti
         project:bochum_000000_033056_AC2IntersectionImaginary .
 
 project:bochum_000000_033056_Self a project:Self ;
+    project:hasPosition project:bochum_000000_033056_pos0 ;
     project:hasSpeed project:bochum_000000_033056_ssp .
 
 project:bochum_000000_033056_env project:hasTemperature project:bochum_000000_033056_tmp .
@@ -1006,31 +1035,37 @@ project:bochum_000000_033056_pos7 a project:Position ;
 project:bochum_000000_033056_pos8 a project:Position ;
     project:hasRelativity project:bochum_000000_033056_rel8 .
 
+project:bochum_000000_033056_pos9 a project:Position ;
+    project:hasRelativity project:bochum_000000_033056_rel9 .
+
 project:bochum_000000_033056_rel0 project:relToLane project:bochum_000000_033056_RoadA_LaneB ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel1 project:relToLane project:bochum_000000_033056_RoadA_LaneC ;
+project:bochum_000000_033056_rel1 project:relToLane project:bochum_000000_033056_RoadA_LaneB ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_033056_rel2 project:relToLane project:bochum_000000_033056_RoadA_LaneC ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel3 project:relToLane project:bochum_000000_033056_RoadB_LaneB ;
+project:bochum_000000_033056_rel3 project:relToLane project:bochum_000000_033056_RoadA_LaneC ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel4 project:relToLane project:bochum_000000_033056_RoadC_LaneA ;
+project:bochum_000000_033056_rel4 project:relToLane project:bochum_000000_033056_RoadB_LaneB ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel5 project:relToLane project:bochum_000000_033056_RoadC_LaneB ;
+project:bochum_000000_033056_rel5 project:relToLane project:bochum_000000_033056_RoadC_LaneA ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel6 project:relToLane project:bochum_000000_033056_RoadD_LaneA ;
+project:bochum_000000_033056_rel6 project:relToLane project:bochum_000000_033056_RoadC_LaneB ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel7 project:relToLane project:bochum_000000_033056_RoadD_LaneB ;
+project:bochum_000000_033056_rel7 project:relToLane project:bochum_000000_033056_RoadD_LaneA ;
     project:relativity project:Left-Right-On.On .
 
-project:bochum_000000_033056_rel8 project:relToLane project:bochum_000000_033056_RoadD_LaneC ;
+project:bochum_000000_033056_rel8 project:relToLane project:bochum_000000_033056_RoadD_LaneB ;
+    project:relativity project:Left-Right-On.On .
+
+project:bochum_000000_033056_rel9 project:relToLane project:bochum_000000_033056_RoadD_LaneC ;
     project:relativity project:Left-Right-On.On .
 
 project:bochum_000000_033056_ssp a project:SpeedMPS ;
@@ -1078,13 +1113,13 @@ project:bremen_000003_000019_26000 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.204907e+02 ;
-    project:hasPosition project:bremen_000003_000019_pos9 .
+    project:hasPosition project:bremen_000003_000019_pos10 .
 
 project:bremen_000003_000019_26001 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 9.987199e+01 ;
-    project:hasPosition project:bremen_000003_000019_pos8 .
+    project:hasPosition project:bremen_000003_000019_pos9 .
 
 project:bremen_000003_000019_26002 a project:Car,
         project:PotentialObstacle ;
@@ -1119,7 +1154,7 @@ project:bremen_000003_000019_31000 a project:Car,
 project:bremen_000003_000019_33000 a project:Car,
         project:PotentialObstacle ;
     project:distanceDownLane 2.990946e+01 ;
-    project:hasPosition project:bremen_000003_000019_pos7 .
+    project:hasPosition project:bremen_000003_000019_pos8 .
 
 project:bremen_000003_000019_9 a project:PhysicalThing,
         project:TrafficInstructionIndicator .
@@ -1132,6 +1167,7 @@ project:bremen_000003_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:bremen_000003_000019_BB2IntersectionImaginary .
 
 project:bremen_000003_000019_Self a project:Self ;
+    project:hasPosition project:bremen_000003_000019_pos6 ;
     project:hasSpeed project:bremen_000003_000019_ssp .
 
 project:bremen_000003_000019_env project:hasTemperature project:bremen_000003_000019_tmp .
@@ -1141,6 +1177,9 @@ project:bremen_000003_000019_pos0 a project:Position ;
 
 project:bremen_000003_000019_pos1 a project:Position ;
     project:hasRelativity project:bremen_000003_000019_rel1 .
+
+project:bremen_000003_000019_pos10 a project:Position ;
+    project:hasRelativity project:bremen_000003_000019_rel10 .
 
 project:bremen_000003_000019_pos2 a project:Position ;
     project:hasRelativity project:bremen_000003_000019_rel2 .
@@ -1172,6 +1211,9 @@ project:bremen_000003_000019_rel0 project:relToLane project:bremen_000003_000019
 project:bremen_000003_000019_rel1 project:relToLane project:bremen_000003_000019_RoadA_LaneA ;
     project:relativity project:Left-Right-On.On .
 
+project:bremen_000003_000019_rel10 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
+    project:relativity project:Left-Right-On.On .
+
 project:bremen_000003_000019_rel2 project:relToLane project:bremen_000003_000019_RoadA_LaneB ;
     project:relativity project:Left-Right-On.On .
 
@@ -1185,13 +1227,13 @@ project:bremen_000003_000019_rel5 project:relToLane project:bremen_000003_000019
     project:relativity project:Left-Right-On.On .
 
 project:bremen_000003_000019_rel6 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.Right .
+    project:relativity project:Left-Right-On.On .
 
 project:bremen_000003_000019_rel7 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
     project:relativity project:Left-Right-On.Right .
 
 project:bremen_000003_000019_rel8 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
-    project:relativity project:Left-Right-On.On .
+    project:relativity project:Left-Right-On.Right .
 
 project:bremen_000003_000019_rel9 project:relToLane project:bremen_000003_000019_RoadB_LaneB ;
     project:relativity project:Left-Right-On.On .
@@ -1322,6 +1364,7 @@ project:bremen_000193_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:bremen_000193_000019_AC2IntersectionImaginary .
 
 project:bremen_000193_000019_Self a project:Self ;
+    project:hasPosition project:bremen_000193_000019_pos6 ;
     project:hasSpeed project:bremen_000193_000019_ssp .
 
 project:bremen_000193_000019_env project:hasTemperature project:bremen_000193_000019_tmp .
@@ -1344,6 +1387,9 @@ project:bremen_000193_000019_pos4 a project:Position ;
 project:bremen_000193_000019_pos5 a project:Position ;
     project:hasRelativity project:bremen_000193_000019_rel5 .
 
+project:bremen_000193_000019_pos6 a project:Position ;
+    project:hasRelativity project:bremen_000193_000019_rel6 .
+
 project:bremen_000193_000019_rel0 project:relToLane project:bremen_000193_000019_RoadA_LaneA ;
     project:relativity project:Left-Right-On.Left .
 
@@ -1360,6 +1406,9 @@ project:bremen_000193_000019_rel4 project:relToLane project:bremen_000193_000019
     project:relativity project:Left-Right-On.On .
 
 project:bremen_000193_000019_rel5 project:relToLane project:bremen_000193_000019_RoadA_LaneB ;
+    project:relativity project:Left-Right-On.On .
+
+project:bremen_000193_000019_rel6 project:relToLane project:bremen_000193_000019_RoadA_LaneC ;
     project:relativity project:Left-Right-On.On .
 
 project:bremen_000193_000019_ssp a project:SpeedMPS ;
@@ -1391,13 +1440,13 @@ project:bremen_000288_000019_24 a project:Pedestrian,
 
 project:bremen_000288_000019_24000 a project:Pedestrian,
         project:PotentialObstacle ;
-    project:hasPosition project:bremen_000288_000019_pos1 .
+    project:hasPosition project:bremen_000288_000019_pos2 .
 
 project:bremen_000288_000019_24001 a project:Pedestrian,
         project:PotentialObstacle ;
     project:distanceDownLane 1.256556e+01 ;
-    project:hasMotion project:bremen_000288_000019_motion0 ;
-    project:hasPosition project:bremen_000288_000019_pos0 .
+    project:hasMotion project:bremen_000288_000019_motion1 ;
+    project:hasPosition project:bremen_000288_000019_pos1 .
 
 project:bremen_000288_000019_24002 a project:Pedestrian,
         project:PotentialObstacle .
@@ -1425,7 +1474,7 @@ project:bremen_000288_000019_26007 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.596693e+02 ;
-    project:hasPosition project:bremen_000288_000019_pos5 .
+    project:hasPosition project:bremen_000288_000019_pos6 .
 
 project:bremen_000288_000019_26008 a project:Car,
         project:PotentialObstacle .
@@ -1434,13 +1483,13 @@ project:bremen_000288_000019_26009 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 1.057265e+02 ;
-    project:hasPosition project:bremen_000288_000019_pos6 .
+    project:hasPosition project:bremen_000288_000019_pos7 .
 
 project:bremen_000288_000019_26010 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Manuever.MergingLeft ;
     project:distanceDownLane 1.034771e+02 ;
-    project:hasPosition project:bremen_000288_000019_pos4 .
+    project:hasPosition project:bremen_000288_000019_pos5 .
 
 project:bremen_000288_000019_26011 a project:Car,
         project:PotentialObstacle .
@@ -1455,13 +1504,13 @@ project:bremen_000288_000019_26015 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 4.593169e+01 ;
-    project:hasPosition project:bremen_000288_000019_pos3 .
+    project:hasPosition project:bremen_000288_000019_pos4 .
 
 project:bremen_000288_000019_26017 a project:Car,
         project:PotentialObstacle ;
     project:conductingManuever project:Stopped ;
     project:distanceDownLane 3.97437e+01 ;
-    project:hasPosition project:bremen_000288_000019_pos2 .
+    project:hasPosition project:bremen_000288_000019_pos3 .
 
 project:bremen_000288_000019_27 a project:PhysicalThing .
 
@@ -1504,11 +1553,12 @@ project:bremen_000288_000019_IntersectionImaginary a project:ImaginaryIntersecti
         project:bremen_000288_000019_AB2IntersectionImaginary .
 
 project:bremen_000288_000019_Self a project:Self ;
+    project:hasPosition project:bremen_000288_000019_pos0 ;
     project:hasSpeed project:bremen_000288_000019_ssp .
 
 project:bremen_000288_000019_env project:hasTemperature project:bremen_000288_000019_tmp .
 
-project:bremen_000288_000019_motion0 project:direction project:Left-Right.Right .
+project:bremen_000288_000019_motion1 project:direction project:Left-Right.Right .
 
 project:bremen_000288_000019_pos0 a project:Position ;
     project:hasRelativity project:bremen_000288_000019_rel0 .
@@ -1531,25 +1581,31 @@ project:bremen_000288_000019_pos5 a project:Position ;
 project:bremen_000288_000019_pos6 a project:Position ;
     project:hasRelativity project:bremen_000288_000019_rel6 .
 
-project:bremen_000288_000019_rel0 project:relToLane project:bremen_000288_000019_RoadB_LaneA ;
+project:bremen_000288_000019_pos7 a project:Position ;
+    project:hasRelativity project:bremen_000288_000019_rel7 .
+
+project:bremen_000288_000019_rel0 project:relToLane project:bremen_000288_000019_RoadA_LaneB ;
     project:relativity project:Left-Right-On.On .
 
-project:bremen_000288_000019_rel1 project:relToLane project:bremen_000288_000019_RoadB_LaneB ;
+project:bremen_000288_000019_rel1 project:relToLane project:bremen_000288_000019_RoadB_LaneA ;
+    project:relativity project:Left-Right-On.On .
+
+project:bremen_000288_000019_rel2 project:relToLane project:bremen_000288_000019_RoadB_LaneB ;
     project:relativity project:Left-Right-On.Right .
-
-project:bremen_000288_000019_rel2 project:relToLane project:bremen_000288_000019_RoadC_LaneA ;
-    project:relativity project:Left-Right-On.On .
 
 project:bremen_000288_000019_rel3 project:relToLane project:bremen_000288_000019_RoadC_LaneA ;
     project:relativity project:Left-Right-On.On .
 
-project:bremen_000288_000019_rel4 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
-    project:relativity project:Left-Right-On.Right .
-
-project:bremen_000288_000019_rel5 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
+project:bremen_000288_000019_rel4 project:relToLane project:bremen_000288_000019_RoadC_LaneA ;
     project:relativity project:Left-Right-On.On .
 
+project:bremen_000288_000019_rel5 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
+    project:relativity project:Left-Right-On.Right .
+
 project:bremen_000288_000019_rel6 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
+    project:relativity project:Left-Right-On.On .
+
+project:bremen_000288_000019_rel7 project:relToLane project:bremen_000288_000019_RoadC_LaneB ;
     project:relativity project:Left-Right-On.On .
 
 project:bremen_000288_000019_ssp a project:SpeedMPS ;
@@ -1622,12 +1678,6 @@ project:bochum_000000_021479_RoadA_LaneA a project:Lane ;
     project:directlyLeftOf project:bochum_000000_021479_RoadA_LaneB ;
     project:inRoad project:bochum_000000_021479_RoadA ;
     project:touchesIntersection project:bochum_000000_021479_AA2IntersectionImaginary .
-
-project:bochum_000000_021479_RoadA_LaneC a project:Lane ;
-    project:directlyRightOf project:bochum_000000_021479_RoadA_LaneB ;
-    project:hasTrafficInstructionIndicator project:bochum_000000_021479_9 ;
-    project:inRoad project:bochum_000000_021479_RoadA ;
-    project:touchesIntersection project:bochum_000000_021479_AC2IntersectionImaginary .
 
 project:bochum_000000_024524_1 a project:PhysicalThing,
         project:TrafficInstructionIndicator ;
@@ -1737,15 +1787,6 @@ project:bochum_000000_031687_RoadA_LaneA a project:Lane ;
     project:directlyLeftOf project:bochum_000000_031687_RoadA_LaneB ;
     project:inRoad project:bochum_000000_031687_RoadA ;
     project:touchesIntersection project:bochum_000000_031687_AA2IntersectionImaginary .
-
-project:bochum_000000_031687_RoadA_LaneB a project:Lane ;
-    project:directlyRightOf project:bochum_000000_031687_RoadA_LaneA ;
-    project:hasTrafficInstructionIndicator project:bochum_000000_031687_2,
-        project:bochum_000000_031687_6,
-        project:bochum_000000_031687_7,
-        project:bochum_000000_031687_8 ;
-    project:inRoad project:bochum_000000_031687_RoadA ;
-    project:touchesIntersection project:bochum_000000_031687_AB2IntersectionImaginary .
 
 project:bochum_000000_033056_1 a project:PhysicalThing,
         project:TrafficInstructionIndicator ;
@@ -1921,16 +1962,6 @@ project:bremen_000193_000019_AC2IntersectionImaginary a project:TouchingIntersec
     project:hasCardinality <http://www.semanticweb.org/CS7810/Driving/Projecthttp://www.semanticweb.org/CS7810/Driving/ProjectCardinality.North> ;
     project:hasDirection <http://www.semanticweb.org/CS7810/Driving/Projecthttp://www.semanticweb.org/CS7810/Driving/ProjectDirection.Outgoing> .
 
-project:bremen_000193_000019_RoadA_LaneC a project:Lane ;
-    project:directlyRightOf project:bremen_000193_000019_RoadA_LaneB ;
-    project:hasTrafficInstructionIndicator project:bremen_000193_000019_2,
-        project:bremen_000193_000019_3,
-        project:bremen_000193_000019_4,
-        project:bremen_000193_000019_5,
-        project:bremen_000193_000019_7 ;
-    project:inRoad project:bremen_000193_000019_RoadA ;
-    project:touchesIntersection project:bremen_000193_000019_AC2IntersectionImaginary .
-
 project:bremen_000288_000019_1 a project:PhysicalThing,
         project:TrafficInstructionIndicator ;
     project:conveys project:TrafficInstruction.IllegibleSign .
@@ -2007,17 +2038,6 @@ project:bremen_000288_000019_RoadA_LaneA a project:Lane ;
     project:inRoad project:bremen_000288_000019_RoadA ;
     project:touchesIntersection project:bremen_000288_000019_AA2IntersectionImaginary .
 
-project:bremen_000288_000019_RoadA_LaneB a project:Lane ;
-    project:directlyRightOf project:bremen_000288_000019_RoadA_LaneA ;
-    project:hasTrafficInstructionIndicator project:bremen_000288_000019_12,
-        project:bremen_000288_000019_13,
-        project:bremen_000288_000019_14,
-        project:bremen_000288_000019_15,
-        project:bremen_000288_000019_2,
-        project:bremen_000288_000019_8 ;
-    project:inRoad project:bremen_000288_000019_RoadA ;
-    project:touchesIntersection project:bremen_000288_000019_AB2IntersectionImaginary .
-
 project:bremen_000288_000019_RoadB a project:Road .
 
 project:bremen_000288_000019_RoadC a project:Road .
@@ -2031,6 +2051,12 @@ project:bochum_000000_021479_RoadA_LaneB a project:Lane ;
         project:bochum_000000_021479_1 ;
     project:inRoad project:bochum_000000_021479_RoadA ;
     project:visiblyEndsAt "20" .
+
+project:bochum_000000_021479_RoadA_LaneC a project:Lane ;
+    project:directlyRightOf project:bochum_000000_021479_RoadA_LaneB ;
+    project:hasTrafficInstructionIndicator project:bochum_000000_021479_9 ;
+    project:inRoad project:bochum_000000_021479_RoadA ;
+    project:touchesIntersection project:bochum_000000_021479_AC2IntersectionImaginary .
 
 project:bochum_000000_021479_RoadB_LaneA a project:Lane ;
     project:hasTrafficInstructionIndicator project:bochum_000000_021479_8 ;
@@ -2050,25 +2076,14 @@ project:bochum_000000_021479_RoadC_LaneC a project:Lane ;
     project:hasTrafficInstructionIndicator project:bochum_000000_021479_2 ;
     project:inRoad project:bochum_000000_021479_RoadC .
 
-project:bochum_000000_024524_RoadA_LaneB a project:Lane ;
-    project:directlyRightOf project:bochum_000000_024524_RoadA_LaneA ;
-    project:hasTrafficInstructionIndicator project:bochum_000000_024524_1,
-        project:bochum_000000_024524_2,
-        project:bochum_000000_024524_3,
-        project:bochum_000000_024524_4,
-        project:bochum_000000_024524_5 ;
-    project:inRoad project:bochum_000000_024524_RoadA ;
-    project:touchesIntersection project:bochum_000000_024524_AB2IntersectionImaginary .
-
-project:bochum_000000_024717_RoadA_LaneA a project:Lane ;
-    project:hasTrafficInstructionIndicator project:bochum_000000_024717_1,
-        project:bochum_000000_024717_2,
-        project:bochum_000000_024717_3,
-        project:bochum_000000_024717_4,
-        project:bochum_000000_024717_5,
-        project:bochum_000000_024717_6 ;
-    project:inRoad project:bochum_000000_024717_RoadA ;
-    project:touchesIntersection project:bochum_000000_024717_AA2IntersectionImaginary .
+project:bochum_000000_031687_RoadA_LaneB a project:Lane ;
+    project:directlyRightOf project:bochum_000000_031687_RoadA_LaneA ;
+    project:hasTrafficInstructionIndicator project:bochum_000000_031687_2,
+        project:bochum_000000_031687_6,
+        project:bochum_000000_031687_7,
+        project:bochum_000000_031687_8 ;
+    project:inRoad project:bochum_000000_031687_RoadA ;
+    project:touchesIntersection project:bochum_000000_031687_AB2IntersectionImaginary .
 
 project:bochum_000000_033056_RoadA a project:Road .
 
@@ -2113,6 +2128,27 @@ project:bremen_000003_000019_RoadA_LaneB a project:Lane ;
 
 project:bremen_000193_000019_RoadA a project:Road .
 
+project:bremen_000193_000019_RoadA_LaneC a project:Lane ;
+    project:directlyRightOf project:bremen_000193_000019_RoadA_LaneB ;
+    project:hasTrafficInstructionIndicator project:bremen_000193_000019_2,
+        project:bremen_000193_000019_3,
+        project:bremen_000193_000019_4,
+        project:bremen_000193_000019_5,
+        project:bremen_000193_000019_7 ;
+    project:inRoad project:bremen_000193_000019_RoadA ;
+    project:touchesIntersection project:bremen_000193_000019_AC2IntersectionImaginary .
+
+project:bremen_000288_000019_RoadA_LaneB a project:Lane ;
+    project:directlyRightOf project:bremen_000288_000019_RoadA_LaneA ;
+    project:hasTrafficInstructionIndicator project:bremen_000288_000019_12,
+        project:bremen_000288_000019_13,
+        project:bremen_000288_000019_14,
+        project:bremen_000288_000019_15,
+        project:bremen_000288_000019_2,
+        project:bremen_000288_000019_8 ;
+    project:inRoad project:bremen_000288_000019_RoadA ;
+    project:touchesIntersection project:bremen_000288_000019_AB2IntersectionImaginary .
+
 project:bremen_000288_000019_RoadB_LaneA a project:Lane ;
     project:directlyLeftOf project:bremen_000288_000019_RoadB_LaneB ;
     project:inRoad project:bremen_000288_000019_RoadB .
@@ -2134,13 +2170,25 @@ project:bochum_000000_021479_RoadC_LaneD a project:Lane ;
         project:bochum_000000_021479_4 ;
     project:inRoad project:bochum_000000_021479_RoadC .
 
-project:bochum_000000_033056_RoadA_LaneB a project:Lane ;
-    project:directlyLeftOf project:bochum_000000_033056_RoadA_LaneC ;
-    project:directlyRightOf project:bochum_000000_033056_RoadA_LaneA ;
-    project:hasTrafficInstructionIndicator project:bochum_000000_033056_8,
-        project:bochum_000000_033056_9 ;
-    project:inRoad project:bochum_000000_033056_RoadA ;
-    project:touchesIntersection project:bochum_000000_033056_AB2IntersectionImaginary .
+project:bochum_000000_024524_RoadA_LaneB a project:Lane ;
+    project:directlyRightOf project:bochum_000000_024524_RoadA_LaneA ;
+    project:hasTrafficInstructionIndicator project:bochum_000000_024524_1,
+        project:bochum_000000_024524_2,
+        project:bochum_000000_024524_3,
+        project:bochum_000000_024524_4,
+        project:bochum_000000_024524_5 ;
+    project:inRoad project:bochum_000000_024524_RoadA ;
+    project:touchesIntersection project:bochum_000000_024524_AB2IntersectionImaginary .
+
+project:bochum_000000_024717_RoadA_LaneA a project:Lane ;
+    project:hasTrafficInstructionIndicator project:bochum_000000_024717_1,
+        project:bochum_000000_024717_2,
+        project:bochum_000000_024717_3,
+        project:bochum_000000_024717_4,
+        project:bochum_000000_024717_5,
+        project:bochum_000000_024717_6 ;
+    project:inRoad project:bochum_000000_024717_RoadA ;
+    project:touchesIntersection project:bochum_000000_024717_AA2IntersectionImaginary .
 
 project:bochum_000000_033056_RoadA_LaneC a project:Lane ;
     project:directlyRightOf project:bochum_000000_033056_RoadA_LaneB ;
@@ -2166,6 +2214,14 @@ project:bremen_000288_000019_RoadC_LaneA a project:Lane ;
     project:inRoad project:bremen_000288_000019_RoadC .
 
 project:bochum_000000_021479_RoadC a project:Road .
+
+project:bochum_000000_033056_RoadA_LaneB a project:Lane ;
+    project:directlyLeftOf project:bochum_000000_033056_RoadA_LaneC ;
+    project:directlyRightOf project:bochum_000000_033056_RoadA_LaneA ;
+    project:hasTrafficInstructionIndicator project:bochum_000000_033056_8,
+        project:bochum_000000_033056_9 ;
+    project:inRoad project:bochum_000000_033056_RoadA ;
+    project:touchesIntersection project:bochum_000000_033056_AB2IntersectionImaginary .
 
 project:bremen_000003_000019_RoadB_LaneA a project:Lane ;
     project:directlyLeftOf project:bremen_000003_000019_RoadB_LaneB ;
@@ -2202,6 +2258,12 @@ project:bochum_000000_024524_RoadA_LaneA a project:Lane ;
     project:inRoad project:bochum_000000_024524_RoadA ;
     project:touchesIntersection project:bochum_000000_024524_AA2IntersectionImaginary .
 
+project:bremen_000193_000019_RoadA_LaneB a project:Lane ;
+    project:directlyLeftOf project:bremen_000193_000019_RoadA_LaneC ;
+    project:directlyRightOf project:bremen_000193_000019_RoadA_LaneA ;
+    project:inRoad project:bremen_000193_000019_RoadA ;
+    project:touchesIntersection project:bremen_000193_000019_AB2IntersectionImaginary .
+
 project:bremen_000003_000019_RoadB_LaneB a project:Lane ;
     project:directlyRightOf project:bremen_000003_000019_RoadB_LaneA ;
     project:hasTrafficInstructionIndicator project:bremen_000003_000019_2,
@@ -2212,10 +2274,4 @@ project:bremen_000003_000019_RoadB_LaneB a project:Lane ;
         project:bremen_000003_000019_7 ;
     project:inRoad project:bremen_000003_000019_RoadB ;
     project:touchesIntersection project:bremen_000003_000019_BB2IntersectionImaginary .
-
-project:bremen_000193_000019_RoadA_LaneB a project:Lane ;
-    project:directlyLeftOf project:bremen_000193_000019_RoadA_LaneC ;
-    project:directlyRightOf project:bremen_000193_000019_RoadA_LaneA ;
-    project:inRoad project:bremen_000193_000019_RoadA ;
-    project:touchesIntersection project:bremen_000193_000019_AB2IntersectionImaginary .
 
