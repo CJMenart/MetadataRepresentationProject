@@ -366,6 +366,9 @@ project:bremen_000288_000019 a project:Scenario ;
         project:bremen_000288_000019_24001,
         project:bremen_000288_000019_24002,
         project:bremen_000288_000019_24003,
+        project:bremen_000288_000019_24529,
+        project:bremen_000288_000019_24530,
+        project:bremen_000288_000019_24531,
         project:bremen_000288_000019_25,
         project:bremen_000288_000019_26,
         project:bremen_000288_000019_26002,
@@ -1434,9 +1437,7 @@ project:bremen_000288_000019_22 a project:PhysicalThing .
 
 project:bremen_000288_000019_23 a project:PhysicalThing .
 
-project:bremen_000288_000019_24 a project:Pedestrian,
-        project:PhysicalThing,
-        project:PotentialObstacle .
+project:bremen_000288_000019_24 a project:PhysicalThing .
 
 project:bremen_000288_000019_24000 a project:Pedestrian,
         project:PotentialObstacle ;
@@ -1452,6 +1453,15 @@ project:bremen_000288_000019_24002 a project:Pedestrian,
         project:PotentialObstacle .
 
 project:bremen_000288_000019_24003 a project:Pedestrian,
+        project:PotentialObstacle .
+
+project:bremen_000288_000019_24529 a project:Pedestrian,
+        project:PotentialObstacle .
+
+project:bremen_000288_000019_24530 a project:Pedestrian,
+        project:PotentialObstacle .
+
+project:bremen_000288_000019_24531 a project:Pedestrian,
         project:PotentialObstacle .
 
 project:bremen_000288_000019_25 a project:PhysicalThing .

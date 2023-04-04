@@ -254,10 +254,12 @@ def add_pedestrian(graph, imname, people, depth):
     use_classes = ['pedestrian', 'sitting person', 'person group', 'person (other)']
     # ignored: rider, ignore 
  
-    for obj in people['objects']:
+    for o, obj in enumerate(people['objects']):
         if obj['label'] not in use_classes:
             continue 
         oid = obj['instanceId']
+        if int(oid) < 100:
+            oid = oid + 24500 + o
         graph.add((pre[f"{imname}_{oid}"], a, pre['Pedestrian']))
         graph.add((pre[f"{imname}_{oid}"], a, pre['PotentialObstacle']))
         graph.add((pre[imname], pre['hasThing'], pre[f"{imname}_{oid}"]))
