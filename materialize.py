@@ -42,7 +42,7 @@ pfs = {
 "cdt": Namespace("http://w3id.org/lindt/custom_datatypes#"),
 "ex": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#"),
 "alt": Namespace("http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#untitled-ontology-5#"),
-"project": Namespace("http://www.semanticweb.org/CS7810/Driving/Project"),
+"project": Namespace("http://www.semanticweb.org/CS7810/Driving/Project#"),
 "rdf": RDF,
 "rdfs": RDFS,
 "xsd": XSD,
