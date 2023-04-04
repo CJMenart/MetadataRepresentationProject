@@ -191,7 +191,7 @@ def add_scenario_markup(graph, scenario):
                             graph.add((pre[touchname], a, pre['TouchingIntersection']))
                             graph.add((pre[intname], pre['touchesLane'], pre[touchname]))
                             graph.add((pre[lanename], pre['touchesIntersection'], pre[touchname]))
-                            graph.add((pre[touchname], pre['hasCardinality'], pre[cardiname]))
+                            graph.add((pre[touchname], pre['hasCardinality'], cardiname))
                             graph.add((pre[touchname], pre['hasDirection'], dirname))            
     
     
