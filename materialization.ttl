@@ -1159,9 +1159,6 @@ project:bremen_000003_000019_33000 a project:Car,
     project:distanceDownLane 2.990946e+01 ;
     project:hasPosition project:bremen_000003_000019_pos8 .
 
-project:bremen_000003_000019_9 a project:PhysicalThing,
-        project:TrafficInstructionIndicator .
-
 project:bremen_000003_000019_IntersectionImaginary a project:ImaginaryIntersection,
         project:Intersection ;
     project:touchesLane project:bremen_000003_000019_AA2IntersectionImaginary,
@@ -1920,6 +1917,14 @@ project:bremen_000003_000019_7 a project:PhysicalThing,
         project:TrafficInstructionIndicator ;
     project:conveys project:TrafficInstruction.InactiveTrafficLight .
 
+project:bremen_000003_000019_8 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.DoNotWalkSign .
+
+project:bremen_000003_000019_9 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.StreetName .
+
 project:bremen_000003_000019_AA2IntersectionImaginary a project:TouchingIntersection ;
     project:hasCardinality project:Cardinality.North ;
     project:hasDirection project:Direction.Incoming .
@@ -2126,11 +2131,6 @@ project:bochum_000000_033056_RoadD_LaneC a project:Lane ;
     project:directlyRightOf project:bochum_000000_033056_RoadD_LaneB ;
     project:inRoad project:bochum_000000_033056_RoadD .
 
-project:bremen_000003_000019_8 a project:PhysicalThing,
-        project:TrafficInstructionIndicator ;
-    project:conveys project:TrafficInstruction.DoNotWalkSign,
-        project:TrafficInstruction.StreetName .
-
 project:bremen_000003_000019_RoadA_LaneB a project:Lane ;
     project:directlyRightOf project:bremen_000003_000019_RoadA_LaneA ;
     project:inRoad project:bremen_000003_000019_RoadA ;
@@ -2236,7 +2236,7 @@ project:bochum_000000_033056_RoadA_LaneB a project:Lane ;
 project:bremen_000003_000019_RoadB_LaneA a project:Lane ;
     project:directlyLeftOf project:bremen_000003_000019_RoadB_LaneB ;
     project:hasTrafficInstructionIndicator project:bremen_000003_000019_1,
-        project:bremen_000003_000019_8 ;
+        project:bremen_000003_000019_9 ;
     project:inRoad project:bremen_000003_000019_RoadB ;
     project:touchesIntersection project:bremen_000003_000019_BA2IntersectionImaginary .
 

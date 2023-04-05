@@ -1,5 +1,5 @@
 # Name of the Knowledge Graph
-**Authors:** authors/contributors alphabetized.
+**Authors:** Jehan Fernando, Chris Menart, Alex Moore
 
 ## Use Case Scenario
 ### Narrative 
@@ -16,14 +16,68 @@ Adapted from `use-case.md`.
 
 ## Modules
 <!-- There should be one module section per module (essentially per key-notion) -->
-### Module X
+### Car
 **Source Pattern:** name of adapted source pattern
 **Source Data:** name(s) of dataset(s) which populate this module
 
 #### Description
-Description Text (adapted from the rationale in `key-notions.md`).
+One of the core imagined functions of our KG is reasoning over what meanuevers are possible for a self-driving vehicle to perform, and which ones it is actually allowed to do. Here, these will be represented by a controlled vocabulary, which we can iterate over and "check" against the existence of things which might make them disallowed. 
 
-![schema-diagram](./schema-diagram.png)
+Theoretically, these could use the Events pattern from MODL, but using ParticipantRoles or SpatioTemporalExtents would significantly increase the complexity of our ontolgoy and does not seem to fit directly into our use cases.
+
+![schema-diagram](../schema-diagrams/Car.png)
+
+
+### Intersection
+**Source Pattern:** name of adapted source pattern
+**Source Data:** name(s) of dataset(s) which populate this module
+
+#### Description
+Originally, Intersection was a property by which Lanes pointed to each other. However, we quickly realized that Intersection needed to be reified so that more details about an intersection could be tracked--for starters, the intersection of an arbitrary number of lanes of traffic at once. An Intersection is a collection of lanes. We considered both the bag and ordered list patterns to model this strucutre, but neither were adequate. There are several intricacies specific to traffic intersection. And intersection needs to track the relative positions of the lanes it touches, so that our reasoner can determine whether manuevers are left or right turns based on the lanes they go to and from. Furthermore, a lane can touch more than one intersection. We determined that each lane in a given intersection will have a cardinality, represented as a controlled vocabulary, with respect to the user vehicle's position. Additionally, each lane at the intersection will also have a direction it points with respect to the intersection itself.
+
+![schema-diagram](../schema-diagrams/Intersection.png)
+
+
+### Lane
+**Source Pattern:** name of adapted source pattern
+**Source Data:** name(s) of dataset(s) which populate this module
+
+#### Description
+This key notion encompases any surface that a vehicle/car can drive on. All lanes have a direction relative to an intersection, if an intersection is not within visual range an assumption is made that the lane is coming from an intersection. Lanes can have other lanes to the right and left. We are using "directlyLeftOf" and "directlyRightOf" to represent lanes that are adjacent to the lane without nothing in between. A manuever of switch lanes can be conducted if the lanes are directlyRightOF or directlyLeftOf and both lanes are in the same direction relative to the same intersection.
+
+![schema-diagram](../schema-diagrams/Lane.png)
+
+
+### Potential Obstacle
+**Source Pattern:** name of adapted source pattern
+**Source Data:** name(s) of dataset(s) which populate this module
+
+#### Description
+Obstacles (or Potential Obstacles) represent things on the road that could block our driving (or things which could potentially end up on the road and do so). Theoretically an AgentRole could be used to represent Obstalces, but it was decided this represented unnecessary overhead. All we really need to know about an obstacle is its position (and possibly movement) in space--which lanes it is obstructing and which it might obstruct. We don't care about it at all outside of this, so the Obstacle class is used directly to represent any objects which can be obstacles, as seen in "PotentialObstacle.png".
+
+![schema-diagram](../schema-diagrams/PotentialObstacle.png)
+
+
+### Scenario
+**Source Pattern:** name of adapted source pattern
+**Source Data:** name(s) of dataset(s) which populate this module
+
+#### Description
+The scenario is the key notion that combines all the other key notions using a given traffic image. Using the traffic image, we may determine the lanes and intersections, as well as all potential obstacles and traffic instruction indicators that may affect our queries regarding potential available maneuevers. Additionally, each traffic image will reveal environmental information that may be necessary such as weather conditions, outside temperature, and time of day.
+
+![schema-diagram](../schema-diagrams/Scenario.png)
+
+
+### Traffic Instruction Indicator
+**Source Pattern:** name of adapted source pattern
+**Source Data:** name(s) of dataset(s) which populate this module
+
+#### Description
+This key notion encompasses any physical object on or near the road that provides information to drivers, such as road or traffic signs, road markings, and traffic lights. (We exclude lane lines from this definition). Each Traffic Instruction Indicator conveys a traffic instruction, represented using a controlled vocabulary, applied to a given lane or lanes. These instructions will provide information and/or restrictions to the possible maneuvers for the vehicle.
+
+![schema-diagram](../schema-diagrams/TrafficInstructionIndicator.png)
+
+
 
 #### Axioms
 * `axiom in manchester syntax` <br />

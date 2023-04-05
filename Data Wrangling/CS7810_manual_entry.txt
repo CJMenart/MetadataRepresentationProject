@@ -228,7 +228,7 @@ bremen_000003_000019_leftImg8bit.png
 			26002
 			31000
 			1 Railroad Crossing Active
-			8 Street Name
+			9 Street Name
 		Lane B
 			Self
 			R25000
