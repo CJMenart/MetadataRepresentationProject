@@ -424,3 +424,43 @@ bremen_000188_000019_leftImg8bit.png
 				CA
 				CB
 				CC
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+				AB
+				AC
+			Outgoing
+				AD
+				AE		
+
+cologne_00126_000019_leftImg8bit.png
+	Road A
+		Lane A
+			L24003
+			L24005
+			L24006
+			L24007
+			L24004
+			L24008
+			26003
+			26001
+			2 Illegible Sign
+			3 Crosswalk Sign
+			5 Illegible Sign
+		Lane B
+			Self
+			24000
+			R24001
+			R24002
+			24009
+			24010
+			1 Crosswalk Sign
+			4 Illegible Sign
+	Intersection Imaginary
+		North
+			Incoming
+				AA
+			Outgoing
+				AB
+		
