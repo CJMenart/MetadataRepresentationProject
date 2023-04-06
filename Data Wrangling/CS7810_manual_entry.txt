@@ -434,7 +434,7 @@ bremen_000188_000019_leftImg8bit.png
 				AD
 				AE		
 
-cologne_00126_000019_leftImg8bit.png
+cologne_000126_000019_leftImg8bit.png
 	Road A
 		Lane A
 			L24003
@@ -463,4 +463,19 @@ cologne_00126_000019_leftImg8bit.png
 				AA
 			Outgoing
 				AB
-		
+
+cologne_000062_000019_leftImg8bit.png
+	Road A
+		Lane A
+			26008
+		Lane B
+			Self
+			26015
+		Lane C
+			1 Parking Sign
+	Intersection Imaginary
+		North
+			Outgoing
+				AA
+				AB
+				AC
