@@ -369,3 +369,58 @@ bremen_000042_000019_leftImg8bit.png
 		West
 			Outgoing
 				CA
+
+bremen_000188_000019_leftImg8bit.png
+	Road A
+		Lane A
+		Lane B
+		Lane C
+		Lane D
+		Lane E
+			Self
+	Road B
+		Lane A
+			5 Lane Info Sign
+			6 No Stopping Sign
+			7 Street Name
+	Road C
+		Lane A
+			L24000
+			L24001
+			L25000
+			L25001
+			L25002
+			L33001
+			L33002
+			L33000
+			L33003
+		Lane B
+		Lane C
+		Lane D
+			1 Illegible Sign
+		Lane E
+			R24002
+			R24003
+			2 Illegible Sign
+			3 Street Name
+			4 Illegible Sign
+	Intersection A
+		South
+			Incoming
+				AD
+				AE
+			Outgoing
+				AA
+				AB
+				AC
+		East
+			Incoming
+				BA
+		North
+			Outgoing
+				CD
+				CE
+			Incoming
+				CA
+				CB
+				CC
