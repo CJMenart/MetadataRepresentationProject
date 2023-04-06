@@ -104,3 +104,5 @@ natural language description
 
 ### Usage
 Adapted from `validation.md`, i.e., the competency questions + SPARQL queries.
+
+

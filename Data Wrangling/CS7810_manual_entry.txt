@@ -332,3 +332,40 @@ bremen_000288_000019_leftImg8bit.png
 				CA
 			Outgoing
 				CB
+
+bremen_000042_000019_leftImg8bit.png
+	Road A
+		Lane A
+			Self
+			L33002
+	Road B
+		Lane A
+			R33000
+			L33004
+			L33003
+			L33005
+			R33001
+			1 Illegible Sign
+			2 Illegible Sign
+			6 Illegible Sign
+			7 Street Name
+	Road C
+		Lane A
+			R24000
+			3 Lane Info Sign
+			4 No Bicycles Sign
+			5 Illegible Sign
+	Intersection Imaginary
+		North
+			Outgoing
+				AA
+	Intersection A
+		South
+			Incoming
+				AA
+		East
+			Incoming
+				BA
+		West
+			Outgoing
+				CA
