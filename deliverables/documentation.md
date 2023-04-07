@@ -17,8 +17,7 @@ Adapted from `use-case.md`.
 ## Modules
 <!-- There should be one module section per module (essentially per key-notion) -->
 ### Car
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Data:** Cityscapes Dataset
 
 #### Description
 Cars are of obvious interest to a system concerned with traffic and roads. One of the most obvious pieces of information to track about cars would be make, model, or other forms of classification. But after debate, we chose not to include these details, resulting in the lightest schema in the ontology. What we care about with respect to vehicles is rather where they are (which is covered by the PotentialObstacle schema) and where they are going.
@@ -31,8 +30,8 @@ Theoretically, these could use the Events pattern from MODL, but using Participa
 
 
 ### Intersection
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Pattern:** Collection
+**Source Data:** Team annotations to the Cityscapes Dataset (found under "Data Wrangling")
 
 #### Description
 Intersection was the latest addition to the ontology. At first, it was a property by which Lanes pointed to each other, a way of determining which locations in a Scenario could be reached from one another. However, we quickly realized that Intersection needed to be reified so that more details about an intersection could be tracked--to begin with, the intersection of an arbitrary number of lanes of traffic at once. 
@@ -43,8 +42,7 @@ An Intersection is a collection of lanes which tracks the direction of its atten
 
 
 ### Lane
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Data:** Team annotations to the Cityscapes Dataset (found under "Data Wrangling")
 
 #### Description
 The "Lane" class represents a drivable segment of road that vehicles may proceed along. A single Lane never crosses an intersection; all parts of the road on the far side of an intersection count as a new lane. You can picture Intersections as nodes on a graph, and Lanes as edges connecting them. 
@@ -58,28 +56,27 @@ Another natural unit of consideration for traffic-related reasoning is the "Road
 
 
 ### Potential Obstacle
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Data:** Cityscapes Dataset
 
 #### Description
-Obstacles (or Potential Obstacles) represent things on the road that could block our driving (or things which could potentially end up on the road and do so). Theoretically an AgentRole could be used to represent Obstalces, but it was decided this represented unnecessary overhead. All we really need to know about an obstacle is its position (and possibly movement) in space--which lanes it is obstructing and which it might obstruct. We don't care about it at all outside of this, so the Obstacle class is used directly to represent any objects which can be obstacles, as seen in "PotentialObstacle.png".
+Obstacles (or Potential Obstacles) represent things on the road that could block our driving (or things which could potentially end up on the road and do so). Theoretically an AgentRole could be used to represent Obstacles, but we concluded that this seemed to represent unnecessary overhead. 
+
+What we need to know about an PotentialObstacle, and what is modeld, is its position, and, if relevant, its movement in space. Specifically, positions and movements are modeled in terms of which lanes an obstalce is obstructing and which lanes it might obstruct. The Obstacle class is used to mark PotentialObstacles which have become actual Obstacles, that is, occupy space in the road. 
 
 ![schema-diagram](../schema-diagrams/PotentialObstacle.png)
 
 
 ### Scenario
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Data:** Cityscapes Dataset
 
 #### Description
-The scenario is the key notion that combines all the other key notions using a given traffic image. Using the traffic image, we may determine the lanes and intersections, as well as all potential obstacles and traffic instruction indicators that may affect our queries regarding potential available maneuevers. Additionally, each traffic image will reveal environmental information that may be necessary such as weather conditions, outside temperature, and time of day.
+The scenario is the key notion that organizes all other information in this knowledge graph. Each scenario represents a given image of a traffic situation from the point-of-view of a vehicle in it. Using the traffic image, we may determine the lanes and intersections, as well as all potential obstacles and traffic instruction indicators that may affect our queries regarding potential available maneuevers. All Lanes, Intersections, and obstacles potential or realized belong to a particular Scenario. Additionally, each traffic image will reveal environmental information that may be relevant such as weather conditions, outside temperature, and time of day. These are tracked in the Ontology via several Stub patterns.
 
 ![schema-diagram](../schema-diagrams/Scenario.png)
 
 
 ### Traffic Instruction Indicator
-**Source Pattern:** name of adapted source pattern
-**Source Data:** name(s) of dataset(s) which populate this module
+**Source Data:** The Cityscapes dataset and team annotations to it (found under "Data Wrangling")
 
 #### Description
 This key notion encompasses any physical object on or near the road that provides information to drivers, such as road or traffic signs, road markings, and traffic lights. (We exclude lane lines from this definition). Each Traffic Instruction Indicator conveys a traffic instruction, represented using a controlled vocabulary, applied to a given lane or lanes. These instructions will provide information and/or restrictions to the possible maneuvers for the vehicle.
