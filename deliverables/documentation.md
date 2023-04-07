@@ -47,7 +47,12 @@ An Intersection is a collection of lanes which tracks the direction of its atten
 **Source Data:** name(s) of dataset(s) which populate this module
 
 #### Description
-This key notion encompases any surface that a vehicle/car can drive on. All lanes have a direction relative to an intersection, if an intersection is not within visual range an assumption is made that the lane is coming from an intersection. Lanes can have other lanes to the right and left. We are using "directlyLeftOf" and "directlyRightOf" to represent lanes that are adjacent to the lane without nothing in between. A manuever of switch lanes can be conducted if the lanes are directlyRightOF or directlyLeftOf and both lanes are in the same direction relative to the same intersection.
+The "Lane" class represents a drivable segment of road that vehicles may proceed along. A single Lane never crosses an intersection; all parts of the road on the far side of an intersection count as a new lane. You can picture Intersections as nodes on a graph, and Lanes as edges connecting them. 
+
+In fact, all Lanes have a direction relative to at least one Intersection. This is how their direction is specified. If an intersection is not within visual range, in a given scenario, an assumption is made that the Lane is emanating from an Intersection some distance behind the Self vehicle, called the "Imaginary Intersection". 
+
+Another natural unit of consideration for traffic-related reasoning is the "Road". In this ontology, Lanes are the most-used fundamental unit, but Roads do exist, as a collection of Lanes. In fact, a Road is a doubly-linked list of lanes. Lanes use the "directlyLeftOf" and "directlyRightOf" to represent lanes that are adjacent to each other with no other surfaces in between. This is important for determining which lanes can be traversed by cutting across a road, whether by a car performing a lane change or a pedestrian walking through a crossing. Most of the time, these transitive relationships are enough for reasoning about Lanes. Road is technically made redundant by them, but retained not only because it may have future use but for making some rules and axioms considerably more conscise. Determining whether Lanes are in the same Road is simpler to express than checking whether two Lanes are rechable via a chain of leftOf and rightOf relationships.
+
 
 ![schema-diagram](../schema-diagrams/Lane.png)
 
