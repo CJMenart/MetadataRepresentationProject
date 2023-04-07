@@ -1,0 +1,768 @@
+@prefix : <http://www.semanticweb.org/CS7810/Driving/Project#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/CS7810/Driving/Project> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPosition
+<http://ontologydesignpatterns.org/opla-sd#entityPosition> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionX
+<http://ontologydesignpatterns.org/opla-sd#entityPositionX> rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionY
+<http://ontologydesignpatterns.org/opla-sd#entityPositionY> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#aboutCar
+:aboutCar rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Scenario ;
+          rdfs:range :Self .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#conductingManeuever
+:conductingManeuever rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Car ;
+                     rdfs:range :Maneuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#containsLane
+:containsLane rdf:type owl:ObjectProperty ;
+              rdfs:domain :Scenario ;
+              rdfs:range :Lane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#conveys
+:conveys rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:domain :TrafficInstructionIndicator ;
+         rdfs:range :TrafficInstruction .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#direction
+:direction rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Motion ;
+           rdfs:range :Left-Right .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#directlyLeftOf
+:directlyLeftOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :directlyRightOf ;
+                rdfs:domain :Lane ;
+                rdfs:range :Lane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#directlyRightOf
+:directlyRightOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Lane ;
+                 rdfs:range :Lane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasCardinality
+:hasCardinality rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Intersection ;
+                rdfs:range :Cardinality .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasCategory
+:hasCategory rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :TrafficInstructionIndicator ;
+             rdfs:range :Restriction-Warning-Info .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasDirection
+:hasDirection rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :TouchingIntersection ;
+              rdfs:range :Direction .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasEnvironment
+:hasEnvironment rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Scenario ;
+                rdfs:range :Environment .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasIntersection
+:hasIntersection rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain :Scenario ;
+                 rdfs:range :Intersection .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasMotion
+:hasMotion rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :PhysicalThing ;
+           rdfs:range :Motion .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasPosition
+:hasPosition rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :PhysicalThing ;
+             rdfs:range :Position .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasRelativity
+:hasRelativity rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Position ;
+               rdfs:range :RelToLane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasTemperature
+:hasTemperature rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Environment ;
+                rdfs:range :Temperature .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasThing
+:hasThing rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Scenario ;
+          rdfs:range :PhysicalThing .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasTrafficInstructionIndicator
+:hasTrafficInstructionIndicator rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdfs:domain :Lane ;
+                                rdfs:range :TrafficInstructionIndicator .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasWeatherCondition
+:hasWeatherCondition rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Environment ;
+                     rdfs:range :WeatherCondition .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasWeatherType
+:hasWeatherType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :WeatherCondition ;
+                rdfs:range :WeatherType .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#inRoad
+:inRoad rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :Lane ;
+        rdfs:range :Road .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#relToLane
+:relToLane rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :RelToLane ;
+           rdfs:range :Lane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#relativity
+:relativity rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :RelToLane ;
+            rdfs:range :On-Left-Right .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#touchesIntersection
+:touchesIntersection rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Lane ;
+                     rdfs:range :TouchingIntersection .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#touchesLane
+:touchesLane rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Intersection ;
+             rdfs:range :TouchingIntersection .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#towardsLane
+:towardsLane rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Motion ;
+             rdfs:range :Lane .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#visiblyEndsAt
+:visiblyEndsAt rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectaboutCar
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectaboutCar> rdf:type owl:ObjectProperty ;
+                                                                                                              rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectconductingManeuever
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectconductingManeuever> rdf:type owl:ObjectProperty ;
+                                                                                                                         rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectconveys
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectconveys> rdf:type owl:ObjectProperty ;
+                                                                                                             rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectdirection
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectdirection> rdf:type owl:ObjectProperty ;
+                                                                                                               rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdirectlyLeftOf
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdirectlyLeftOf> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdirectlyRightOf
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdirectlyRightOf> rdf:type owl:ObjectProperty ;
+                                                                                                                     rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdistanceDownLane
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectdistanceDownLane> rdf:type owl:ObjectProperty ;
+                                                                                                                      rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasCardinality
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasCardinality> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasCategory
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasCategory> rdf:type owl:ObjectProperty ;
+                                                                                                                 rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasDT
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasDT> rdf:type owl:ObjectProperty ;
+                                                                                                           rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasDirection
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasDirection> rdf:type owl:ObjectProperty ;
+                                                                                                                  rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasEnvironment
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasEnvironment> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasIntersection
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasIntersection> rdf:type owl:ObjectProperty ;
+                                                                                                                     rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasMotion
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasMotion> rdf:type owl:ObjectProperty ;
+                                                                                                               rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasPosition
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasPosition> rdf:type owl:ObjectProperty ;
+                                                                                                                 rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasRelativity
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasRelativity> rdf:type owl:ObjectProperty ;
+                                                                                                                   rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasTemperature
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasTemperature> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasThing
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasThing> rdf:type owl:ObjectProperty ;
+                                                                                                              rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasTrafficInstructionIndicator
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasTrafficInstructionIndicator> rdf:type owl:ObjectProperty ;
+                                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasValue
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasValue> rdf:type owl:ObjectProperty ;
+                                                                                                              rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasWeatherType
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecthasWeatherType> rdf:type owl:ObjectProperty ;
+                                                                                                                    rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectinRoad
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectinRoad> rdf:type owl:ObjectProperty ;
+                                                                                                            rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectrelToLane
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectrelToLane> rdf:type owl:ObjectProperty ;
+                                                                                                               rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectrelativity
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/Projectrelativity> rdf:type owl:ObjectProperty ;
+                                                                                                                rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttouchesIntersection
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttouchesIntersection> rdf:type owl:ObjectProperty ;
+                                                                                                                         rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttouchesLane
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttouchesLane> rdf:type owl:ObjectProperty ;
+                                                                                                                 rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttowardsLane
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjecttowardsLane> rdf:type owl:ObjectProperty ;
+                                                                                                                 rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectvisiblyEndsAt
+<http://www.semanticweb.org/CS7810/Driving/Project#http://www.semanticweb.org/CS7810/Driving/ProjectvisiblyEndsAt> rdf:type owl:ObjectProperty ;
+                                                                                                                   rdfs:subPropertyOf :conductingManeuever .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty owl:inverseOf owl:topObjectProperty ;
+                      rdf:type owl:SymmetricProperty ,
+                               owl:TransitiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#distanceDownLane
+:distanceDownLane rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Obstacle ;
+                  rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#hasDT
+:hasDT rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Environment ;
+       rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasValue
+<http://www.semanticweb.org/rochelle/ontologies/2023/2/untitled-ontology-5#hasValue> rdf:type owl:DatatypeProperty ;
+                                                                                     owl:equivalentProperty owl:bottomDataProperty ;
+                                                                                     rdfs:subPropertyOf :distanceDownLane ,
+                                                                                                        :hasDT ,
+                                                                                                        owl:topDataProperty ;
+                                                                                     rdf:type owl:FunctionalProperty ;
+                                                                                     rdfs:domain :Distance ,
+                                                                                                 :Temperature ;
+                                                                                     rdfs:range xsd:float ,
+                                                                                                xsd:integer .
+
+
+###  http://www.w3.org/2002/07/owl#bottomDataProperty
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Car
+:Car rdf:type owl:Class ;
+     rdfs:subClassOf :PotentialObstacle ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :conductingManeuever ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Maneuever
+                     ] ;
+     <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Cardinality
+:Cardinality rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Direction
+:Direction rdf:type owl:Class ;
+           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "300.0"^^xsd:double ;
+                                                                        <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "430.0"^^xsd:double ;
+                                                                        rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                      ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Distance
+:Distance rdf:type owl:Class ;
+          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasTemperature ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Temperature
+                             ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#ImaginaryIntersection
+:ImaginaryIntersection rdf:type owl:Class ;
+                       rdfs:subClassOf :Intersection .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Intersection
+:Intersection rdf:type owl:Class ;
+              <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Lane
+:Lane rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :touchesIntersection ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :TouchingIntersection
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :inRoad ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Road
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :directlyLeftOf ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Lane
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :directlyRightOf ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Lane
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :touchesIntersection ;
+                        owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass :TouchingIntersection
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :visiblyEndsAt ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Distance
+                      ] ;
+      <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Left-Right
+:Left-Right rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Maneuever
+:Maneuever rdf:type owl:Class ;
+           <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Motion
+:Motion rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :towardsLane ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Lane
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :direction ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Left-Right
+                        ] ;
+        <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Obstacle
+:Obstacle rdf:type owl:Class ;
+          rdfs:subClassOf :PotentialObstacle ;
+          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#On-Left-Right
+:On-Left-Right rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Pedestrian
+:Pedestrian rdf:type owl:Class ;
+            rdfs:subClassOf :PotentialObstacle .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#PhysicalThing
+:PhysicalThing rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty [ owl:inverseOf :hasThing
+                                                ] ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Scenario
+                               ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Position
+:Position rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasRelativity ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :RelToLane
+                          ] ;
+          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "360.0"^^xsd:double ;
+                                                                       <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "550.0"^^xsd:double ;
+                                                                       rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+                                                                     ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#PotentialObstacle
+:PotentialObstacle rdf:type owl:Class ;
+                   rdfs:subClassOf :PhysicalThing .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#RelToLane
+:RelToLane rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :relToLane ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Lane
+                           ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Restriction-Warning-Info
+:Restriction-Warning-Info rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Road
+:Road rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf :inRoad
+                                       ] ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Lane
+                      ] ;
+      <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#RoadMarking
+:RoadMarking rdf:type owl:Class ;
+             rdfs:subClassOf :TrafficInstructionIndicator ;
+             owl:disjointWith :TrafficLight ,
+                              :TrafficSign .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Scenario
+:Scenario rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :containsLane ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Lane
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasIntersection ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Intersection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :aboutCar ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Self
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEnvironment ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Environment
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasIntersection ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ImaginaryIntersection
+                          ] ;
+          <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Self
+:Self rdf:type owl:Class ;
+      rdfs:subClassOf :PhysicalThing .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#Temperature
+:Temperature rdf:type owl:Class ;
+             <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#TouchingIntersection
+:TouchingIntersection rdf:type owl:Class ;
+                      rdfs:subClassOf :Intersection ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasCardinality ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Cardinality
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasDirection ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Direction
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf :touchesIntersection
+                                                       ] ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Lane
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf :touchesLane
+                                                       ] ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :Intersection
+                                      ] ;
+                      <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#TrafficInstruction
+:TrafficInstruction rdf:type owl:Class ;
+                    <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#TrafficInstructionIndicator
+:TrafficInstructionIndicator rdf:type owl:Class ;
+                             rdfs:subClassOf :PhysicalThing ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :conveys ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :TrafficInstruction
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :hasCategory ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Restriction-Warning-Info
+                                             ] ;
+                             <http://ontologydesignpatterns.org/opla-sd#entityPosition> [ ] .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#TrafficLight
+:TrafficLight rdf:type owl:Class ;
+              rdfs:subClassOf :TrafficInstructionIndicator ;
+              owl:disjointWith :TrafficSign .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#TrafficSign
+:TrafficSign rdf:type owl:Class ;
+             rdfs:subClassOf :TrafficInstructionIndicator .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#WeatherCondition
+:WeatherCondition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/CS7810/Driving/Project#WeatherType
+:WeatherType rdf:type owl:Class .
+
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "370.0"^^xsd:double ;
+  <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "220.0"^^xsd:double ;
+  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "740.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "330.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "480.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "760.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "650.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "750.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "690.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "1050.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "350.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "960.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "330.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "1040.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "710.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "60.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "670.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "330.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "450.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "390.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "110.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "580.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "280.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "30.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "180.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "910.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ <http://ontologydesignpatterns.org/opla-sd#entityPositionX> "150.0"^^xsd:double ;
+   <http://ontologydesignpatterns.org/opla-sd#entityPositionY> "990.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+   owl:members ( :RoadMarking
+                 :TrafficLight
+                 :TrafficSign
+               )
+ ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
