@@ -1,5 +1,6 @@
 # Name of the Knowledge Graph
 **Authors:** Jehan Fernando, Chris Menart, Alex Moore
+NAME HERE
 
 ## Use Case Scenario
 
@@ -46,7 +47,15 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 Adapted from `use-case.md`.
 
 ### Integrated Datasets
-Adapted from `use-case.md`.
+
+* Cityscapes (https://www.cityscapes-dataset.com/)
+Cityscapes is one of the oldest and most mature datasets for self-driving car sensor data. Collected in Germany and first, published in 2016, it consists of binocular optical camera data captured from dashboard cameras on drives through several dozen German cities. The objects in those drives--especially vehicles and pedestrians--were annotated in every 30th frame of selected video segments, with varying levels of detail depending on the objects. It was expanded over time with additional annotations, such as 3d vehicle annotations, more detailed person annotations, and annotations for a limited amount of data collected in rainy weather, among others. More information can be found in [the Cityscapes technical paper](https://arxiv.org/pdf/1604.01685v2.pdf), in addition to the website.
+
+* Road Signs in Germancy (https://routetogermany.com/drivingingermany/road-signs)
+It transpires that Germany, in shocking congruence with all knowns stereotypes about Germans, has a large number of unique traffic signs with information-laden iconography. This website is a catalogue of many of the most used signs, along with explanations of their meaning. While it was not directly scraped using code, it informed the labeling process below.
+
+* Cityscapes manual additions by team (https://github.com/CJMenart/MetadataRepresentationProject/blob/main/Data%20Wrangling/CS7810_manual_entry.txt)
+Over the course of the middle week's of the Self-Driving Ontology's development, schemas developed in unexpected directions. Detailed representations of abstract traffic entities such as Intersections had to be developed in order to answer motivating questions about the flow of traffic and the legality of various driving maneuevers. As much of this abstraction is not annotated in our other data, some additional data was created manually, adding necessary information that glues together many of the physical objects in Cityscapes.
 
 ### References
 Adapted from `use-case.md`.
