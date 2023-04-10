@@ -58,7 +58,9 @@ It transpires that Germany, in shocking congruence with all knowns stereotypes a
 Over the course of the middle week's of the Self-Driving Ontology's development, schemas developed in unexpected directions. Detailed representations of abstract traffic entities such as Intersections had to be developed in order to answer motivating questions about the flow of traffic and the legality of various driving maneuevers. As much of this abstraction is not annotated in our other data, some additional data was created manually, adding necessary information that glues together many of the physical objects in Cityscapes.
 
 ### References
-Adapted from `use-case.md`.
+* Cordts et al., "The Cityscapes Dataset for Semantic Urban Scene Understanding". *CVPR 2016*. 10.1109/CVPR.2016.350
+* (Should we add any other references? To MODL??)
+
 
 ## Modules
 <!-- There should be one module section per module (essentially per key-notion) -->
