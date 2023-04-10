@@ -2,8 +2,45 @@
 **Authors:** Jehan Fernando, Chris Menart, Alex Moore
 
 ## Use Case Scenario
+
 ### Narrative 
-Adapted from `use-case.md`.
+
+Self-driving cars often utilize machine learning techniques to identify the presence of cars, road signs, drivable lanes, and other relevant objects and obstacles. However, this identification is not the same as knowing what driving actions are allowable. The vehicle must perform additional processing to understand what maneuvers, such as forward movement, lane switching, and turning, are safe and legal at any given time. This could potentially be done with reinforcement learning, but this may be opaque, brittle, and resistant to the inclusion or easy alteration of policies and business (or legal) rules. A semantic technology such as a knowledge graph, alternatively, could reason over the vehicle's knowledge about its surroundings to determine appropriate actions.
+
+The goal of this system is to use semantic and spatial reasoning to understand moment-by-moment traffic scenarios, turning the identificaiton of objects into situational awareness. We aim to create a knowledge graph which could support hand-coded determination of what maneuvers are legal and safe for a self-driving car to perform. This knowledge graph will be populated with knowledge obtained from the analysis of optical and/or lidar data, the typical data upon which self-driving systems are built. The entities and relationships it models will be those that are relevant for training, analyzing, or operating a self-driving car determining what maneuvers to make while driving among traffic and other obstacles.
+
+For example, a car approaching an intersection may have several options in the abstract: going straight, turning right or left, coming to a stop, or even making a U-turn. However, only some of these options will be allowable by the rules of the road at any given time. A stop sign or red traffic light means that a stop is required before proceeding through an intersection. If the car's route requires turning left, the car must be in the appropriate lane--usually a lane further to the left. Pedestrians crossing the intersection from any number of direcitons may render any number of these maneuvers temporarily unsafe.
+
+<img src="../Images/aachen_000057_000019_leftImg8bit.png" width="45%" align="left"/> 
+
+<img src="../Images/bochum_000000_021479_leftImg8bit.png" width="45%" align="right"/>  
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+   
+   
+   
+---
+
+_Above are shown example scenes are system might reason over. Traffic signs are a useful source of information about what actions are allowable on the road! Left: If a sign indicates that we are on a bridge which freezes over easily, we may wish to slow down depending on our knowledge of the current temperature orseason. Right: If a sign indicates that we have the right of way, we know that we do not have to stop for vehicles proceeding down an intersecting road._ 
+
+---
+
+In addition to traffic signs, our calculations can involve three-dimensional spatial reasoning. The ego-distance of cars and other obstacles affects our available actions, as does whether objects are in front of or behind each other, or on drivable surfaces such as they road. 
+
+<img src="../Images/aachen_000057_000019_disparity.png" width="40%" align="left"/> 
+
+---
+
+_Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras. (This depth map encodes distances for the bridge image directly above.)_
+
 
 ### Competency Questions
 Adapted from `use-case.md`.
@@ -181,7 +218,7 @@ This key notion encompasses any physical object on or near the road that provide
 * prefix: namespace
 
 ### Schema Diagram
-![schema-diagram](./schema-diagram.png)
+![schema-diagram](../schema-diagrams/all-together.png)
 
 ### Axioms
 * `T SubClassOf for-all hasValue only xsd:AnyValue`  
