@@ -1,4 +1,4 @@
-# Name of the Knowledge Graph
+# Driving Project
 **Authors:** Jehan Fernando, Chris Menart, Alex Moore
 
 ## Use Case Scenario
@@ -15,17 +15,7 @@ For example, a car approaching an intersection may have several options in the a
 
 <img src="../Images/bochum_000000_021479_leftImg8bit.png" width="45%" align="right"/>  
   
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-   
-   
+<br><br><br><br><br><br><br><br><br>
    
 ---
 
@@ -41,6 +31,7 @@ In addition to traffic signs, our calculations can involve three-dimensional spa
 
 _Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras. (This depth map encodes distances for the bridge image directly above.)_
 
+<br><br>
 
 ### Competency Questions
 * Does the car need to stop or slow down?
