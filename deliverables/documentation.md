@@ -1,6 +1,5 @@
 # Name of the Knowledge Graph
 **Authors:** Jehan Fernando, Chris Menart, Alex Moore
-NAME HERE
 
 ## Use Case Scenario
 
@@ -44,7 +43,19 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 
 
 ### Competency Questions
-Adapted from `use-case.md`.
+* Does the car need to stop or slow down?
+* Is there an object moving into the lane?
+* How many lanes are in the current road?
+* Is this road a one-way street?
+* Is there a current restriction to speed (school zone, etc)?
+* Is this railroad currently closed for train access?
+* What is the average number of cars traveling on the road (based on data in all scenarios)?
+* How many cars are in this scenario?
+* Which scenarios can the car merge to the right/left?
+* Does the car have permission to turn right at this intersection?
+* Which scenarios have temperatures above 10 degrees Celcius?
+* Which scenarios include restrictions based on the current temperature?
+* What is the current speed of the car?
 
 ### Integrated Datasets
 
@@ -236,6 +247,31 @@ This key notion encompasses any physical object on or near the road that provide
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
 ### Usage
-Adapted from `validation.md`, i.e., the competency questions + SPARQL queries.
+* `q1`    
+	"Does the car need to stop or slow down?"
+* `q2`    
+	"Is there an object moving into the lane?"
+* `q3`    
+	"How many lanes are in the current road?"
+* `q4`    
+	"Is this road a one-way street?"
+* `q5`    
+	"Is there a current restriction to speed (school zone, etc)?"
+* `q6`    
+	"Is this railroad currently closed for train access?"
+* `q7`    
+	"What is the average number of cars traveling on the road (based on data in all scenarios)?"
+* `q8`    
+	"How many cars are in this scenario?"
+* `q9`    
+	"Which scenarios can the car merge to the right/left?"
+* `q10`    
+	"Does the car have permission to turn right at this intersection?"
+* `q11`    
+	"Which scenarios have temperatures above 10 degrees Celcius?"
+* `q12`    
+	"Which scenarios include restrictions based on the current temperature?"
+* `q13`    
+	"What is the current speed of the car?"
 
 
