@@ -23,6 +23,7 @@ _Above are shown example scenes are system might reason over. Traffic signs are 
 
 ---
 
+<br><br>
 In addition to traffic signs, our calculations can involve three-dimensional spatial reasoning. The ego-distance of cars and other obstacles affects our available actions, as does whether objects are in front of or behind each other, or on drivable surfaces such as they road. 
 
 <img src="../Images/aachen_000057_000019_disparity.png" width="40%" align="left"/> 
@@ -226,9 +227,9 @@ This key notion encompasses any physical object on or near the road that provide
 * Any remarks re: usage
 
 ## The Overall Knowledge Graph
+
 ### Namespaces
-* prefix: namespace
-* prefix: namespace
+* project: <http://www.semanticweb.org/CS7810/Driving/Project#>
 
 ### Schema Diagram
 ![schema-diagram](../schema-diagrams/all-together.png)
