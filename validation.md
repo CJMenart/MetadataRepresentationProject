@@ -7,9 +7,34 @@
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
-}
+SELECT DISTINCT ?scenario ?potentialObstacle ?self ?tii ?distance ?trafficLight
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?potentialObstacle .
+  ?potentialObstacle :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relativity :On-Left-Right.On .
+  ?rel :relToLane ?lane .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  ?potentialObstacle :distanceDownLane ?distance .
+  FILTER(?distance < 10) .
+  }
+  UNION
+  {
+  ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  ?lane :hasTrafficInstructionIndicator ?tii .
+  ?tii :conveys :TrafficInstruction.RedLight .
+  ?tii :conveys ?trafficLight .
+  }
+} 
 ```
 
 **Results:**
@@ -28,8 +53,20 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+
+SELECT DISTINCT ?scenario ?potentialObstacle ?self 
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?potentialObstacle .
+  ?potentialObstacle a :PotentialObstacle .
+  ?potentialObstacle :hasMotion ?motion . 
+  ?motion :towardsLane ?lane .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  }
 }
 ```
 
@@ -49,9 +86,10 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
-}
+SELECT DISTINCT ?scenario (COUNT(?scenario) as ?scount) where { 
+  ?scenario :containsLane ?lane1.
+} GROUP BY ?scenario
+HAVING (?scount>2)
 ```
 
 **Results:**
@@ -133,12 +171,12 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT (AVG(?numCars) as ?avg)
-WHERE {
-	SELECT (COUNT(?car) as ?numCars)
-	WHERE { ?numCars a ?scenario. }
-	GROUP by ?scenario
-}
+SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) as ?cars)  (?cars/?scene as ?avg) where { 
+    VALUES ?const {"1"}
+    ?scenario a :Scenario .
+    ?numCars a :Car .
+   	?scenario :hasThing ?numCars . 
+}GROUP BY ?const
 ```
 
 **Results:**
@@ -157,11 +195,12 @@ WHERE {
 
 **SPARQL Query:**
 ```
-SELECT (COUNT(?car) as ?numCars)
-WHERE { 
-	?numCars a ?scenario. 
-	FILTER(?numCars > 4)
-}
+SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where { 
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?car.
+  ?car a :Car .
+} GROUP BY ?scenario
+HAVING (?scount>4)
 ```
 
 **Results:**
