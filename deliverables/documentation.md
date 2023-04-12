@@ -236,7 +236,7 @@ This key notion encompasses any physical object on or near the road that provide
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
 ### Usage
-* "Does the car need to stop or slow down?"
+* "In which scenarios does the car need to stop or slow down?"
 ```
 SELECT DISTINCT ?scenario ?potentialObstacle ?self ?tii ?distance ?trafficLight
 WHERE {
@@ -267,7 +267,7 @@ WHERE {
   }
 } 
 ```    
-* "Is there an object moving into the lane?"
+* "In which scenarios is there an object moving into the lane?"
 ```
 SELECT DISTINCT ?scenario ?potentialObstacle ?self 
 WHERE {
@@ -284,18 +284,28 @@ WHERE {
   }
 }
 ```
-* "How many lanes are in the current road?"
+* "Which scenarios have more than two lanes in the current road?"
 ```
 SELECT DISTINCT ?scenario (COUNT(?scenario) as ?scount) where { 
   ?scenario :containsLane ?lane1.
 } GROUP BY ?scenario
 HAVING (?scount>2)
 ```
-* "Is this road a one-way street?"
+* "In which scenarios is the current road a one-way street?"
 
-* "Is this railroad currently closed for train access?"
-
-* "What is the average number of cars traveling on the road (based on data in all scenarios)?"
+* "In which scenarios is there a railroad-crossing currently closed for train access?"
+```
+SELECT  DISTINCT ?scenario ?lane ?tii ?rail
+WHERE {
+  ?scenario a :Scenario .
+  ?scenario :containsLane ?lane .
+  ?lane a :Lane .
+  ?lane :hasTrafficInstructionIndicator ?tii .
+  ?tii :conveys :TrafficInstruction.RailroadCrossingActive .
+  ?tii :conveys ?rail .
+}
+```
+* "What is the average number of cars in a scenario?"
 ```
 SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) as ?cars)  (?cars/?scene as ?avg) where { 
     VALUES ?const {"1"}
@@ -304,7 +314,7 @@ SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) a
    	?scenario :hasThing ?numCars . 
 }GROUP BY ?const
 ```
-* "How many cars are in this scenario?"
+* "Which scenarios contain more than 4 cars?"
 ```
 SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where { 
   ?scenario a :Scenario .
@@ -313,11 +323,11 @@ SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where {
 } GROUP BY ?scenario
 HAVING (?scount>4)
 ```
-* "Which scenarios can the car merge to the right/left?"
+* "In which scenarios can the car merge to the right and/or left?"
 
-* "Does the car have permission to turn right at this intersection?"
+* "Does the car have permission to turn right at the intersection?"
 
-* "Which scenarios have temperatures above 10 degrees Celcius?"
+* "Which scenarios have temperatures above 10 degrees Celsius?"
 ```
 SELECT (?scenario)
 WHERE { 
