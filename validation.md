@@ -155,8 +155,14 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT  DISTINCT ?scenario ?lane ?tii ?rail
+WHERE {
+  ?scenario a :Scenario .
+  ?scenario :containsLane ?lane .
+  ?lane a :Lane .
+  ?lane :hasTrafficInstructionIndicator ?tii .
+  ?tii :conveys :TrafficInstruction.RailroadCrossingActive .
+  ?tii :conveys ?rail .
 }
 ```
 
