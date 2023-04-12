@@ -37,7 +37,6 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 * Is there an object moving into the lane?
 * How many lanes are in the current road?
 * Is this road a one-way street?
-* Is there a current restriction to speed (school zone, etc)?
 * Is this railroad currently closed for train access?
 * What is the average number of cars traveling on the road (based on data in all scenarios)?
 * How many cars are in this scenario?
@@ -237,31 +236,98 @@ This key notion encompasses any physical object on or near the road that provide
 	"All stubs (using the hasValue relationship) point to an xsd primitive."
 
 ### Usage
-* `q1`    
-	"Does the car need to stop or slow down?"
-* `q2`    
-	"Is there an object moving into the lane?"
-* `q3`    
-	"How many lanes are in the current road?"
-* `q4`    
-	"Is this road a one-way street?"
-* `q5`    
-	"Is there a current restriction to speed (school zone, etc)?"
-* `q6`    
-	"Is this railroad currently closed for train access?"
-* `q7`    
-	"What is the average number of cars traveling on the road (based on data in all scenarios)?"
-* `q8`    
-	"How many cars are in this scenario?"
-* `q9`    
-	"Which scenarios can the car merge to the right/left?"
-* `q10`    
-	"Does the car have permission to turn right at this intersection?"
-* `q11`    
-	"Which scenarios have temperatures above 10 degrees Celcius?"
-* `q12`    
-	"Which scenarios include restrictions based on the current temperature?"
-* `q13`    
-	"What is the current speed of the car?"
+* "Does the car need to stop or slow down?"
+```
+SELECT DISTINCT ?scenario ?potentialObstacle ?self ?tii ?distance ?trafficLight
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?potentialObstacle .
+  ?potentialObstacle :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relativity :On-Left-Right.On .
+  ?rel :relToLane ?lane .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  ?potentialObstacle :distanceDownLane ?distance .
+  FILTER(?distance < 10) .
+  }
+  UNION
+  {
+  ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  ?lane :hasTrafficInstructionIndicator ?tii .
+  ?tii :conveys :TrafficInstruction.RedLight .
+  ?tii :conveys ?trafficLight .
+  }
+} 
+```    
+* "Is there an object moving into the lane?"
+```
+SELECT DISTINCT ?scenario ?potentialObstacle ?self 
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?potentialObstacle .
+  ?potentialObstacle a :PotentialObstacle .
+  ?potentialObstacle :hasMotion ?motion . 
+  ?motion :towardsLane ?lane .
+  ?scenario :aboutCar ?self .
+  ?self :hasPosition ?position1 . 
+  ?position1 :hasRelativity ?rel1 .
+  ?rel1 :relToLane ?lane .
+  }
+}
+```
+* "How many lanes are in the current road?"
+```
+SELECT DISTINCT ?scenario (COUNT(?scenario) as ?scount) where { 
+  ?scenario :containsLane ?lane1.
+} GROUP BY ?scenario
+HAVING (?scount>2)
+```
+* "Is this road a one-way street?"
+
+* "Is this railroad currently closed for train access?"
+
+* "What is the average number of cars traveling on the road (based on data in all scenarios)?"
+```
+SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) as ?cars)  (?cars/?scene as ?avg) where { 
+    VALUES ?const {"1"}
+    ?scenario a :Scenario .
+    ?numCars a :Car .
+   	?scenario :hasThing ?numCars . 
+}GROUP BY ?const
+```
+* "How many cars are in this scenario?"
+```
+SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where { 
+  ?scenario a :Scenario .
+  ?scenario :hasThing ?car.
+  ?car a :Car .
+} GROUP BY ?scenario
+HAVING (?scount>4)
+```
+* "Which scenarios can the car merge to the right/left?"
+
+* "Does the car have permission to turn right at this intersection?"
+
+* "Which scenarios have temperatures above 10 degrees Celcius?"
+```
+SELECT (?scenario)
+WHERE { 
+	----- something ----- 
+	FILTER(?temp > 10)
+}
+```
+* "Which scenarios include restrictions based on the current temperature?"
+
+* "What is the current speed of the car?"
+
 
 
