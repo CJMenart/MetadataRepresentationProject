@@ -108,9 +108,14 @@ HAVING (?scount>2)
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
-}
+SELECT DISTINCT ?scenario  where { 
+   ?scenario a :Scenario .
+   FILTER NOT EXISTS {
+   ?scenario :containsLane ?lane .
+      ?lane :touchesIntersection ?touchingIntersection .
+      ?touchingIntersection :hasDirection :Direction.Incoming .
+    }
+} GROUP BY ?scenario
 ```
 
 **Results:**
