@@ -41,7 +41,6 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 * What is the average number of cars traveling on the road (based on data in all scenarios)?
 * How many cars are in this scenario?
 * Which scenarios can the car merge to the right/left?
-* Does the car have permission to turn right at this intersection?
 * Which scenarios have temperatures above 10 degrees Celcius?
 * Which scenarios include restrictions based on the current temperature?
 * What is the current speed of the car?
@@ -324,8 +323,6 @@ SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where {
 HAVING (?scount>4)
 ```
 * "In which scenarios can the car merge to the right and/or left?"
-
-* "Does the car have permission to turn right at the intersection?"
 
 * "Which scenarios have temperatures above 10 degrees Celsius?"
 ```
