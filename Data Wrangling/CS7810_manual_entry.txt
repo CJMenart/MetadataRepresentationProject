@@ -479,3 +479,22 @@ cologne_000062_000019_leftImg8bit.png
 				AA
 				AB
 				AC
+
+aachen_000057_000019_leftImg8bit.png
+	Road A
+		Lane A
+			26002
+		Lane B
+			Self
+			R24000
+			R24001
+			26000
+			2 Road Freezes Warning
+			4 Illegible Sign
+			5 Lane Info Sign
+			6 Warning Sign
+	Intersection Imaginary
+		North
+			Outgoing
+				AA
+				AB

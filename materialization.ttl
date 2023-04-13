@@ -1,6 +1,35 @@
 @prefix project: <http://www.semanticweb.org/CS7810/Driving/Project#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+project:aachen_000057_000019 a project:Scenario ;
+    project:aboutCar project:aachen_000057_000019_Self ;
+    project:containsLane project:aachen_000057_000019_RoadA_LaneA,
+        project:aachen_000057_000019_RoadA_LaneB ;
+    project:hasEnvironment project:aachen_000057_000019_env ;
+    project:hasIntersection project:aachen_000057_000019_IntersectionImaginary ;
+    project:hasThing project:aachen_000057_000019_1,
+        project:aachen_000057_000019_10,
+        project:aachen_000057_000019_11,
+        project:aachen_000057_000019_2,
+        project:aachen_000057_000019_24000,
+        project:aachen_000057_000019_24001,
+        project:aachen_000057_000019_26000,
+        project:aachen_000057_000019_26001,
+        project:aachen_000057_000019_26002,
+        project:aachen_000057_000019_26003,
+        project:aachen_000057_000019_26004,
+        project:aachen_000057_000019_26005,
+        project:aachen_000057_000019_26006,
+        project:aachen_000057_000019_26008,
+        project:aachen_000057_000019_3,
+        project:aachen_000057_000019_4,
+        project:aachen_000057_000019_5,
+        project:aachen_000057_000019_6,
+        project:aachen_000057_000019_7,
+        project:aachen_000057_000019_8,
+        project:aachen_000057_000019_9 ;
+    project:hasWeatherCondition project:aachen_000057_000019_weth .
+
 project:bochum_000000_021479 a project:Scenario ;
     project:aboutCar project:bochum_000000_021479_Self ;
     project:containsLane project:bochum_000000_021479_RoadA_LaneA,
@@ -615,6 +644,108 @@ project:cologne_000126_000019 a project:Scenario ;
         project:cologne_000126_000019_8,
         project:cologne_000126_000019_9 ;
     project:hasWeatherCondition project:cologne_000126_000019_weth .
+
+project:aachen_000057_000019_1 a project:PhysicalThing,
+        project:TrafficInstructionIndicator .
+
+project:aachen_000057_000019_10 a project:PhysicalThing .
+
+project:aachen_000057_000019_11 a project:PhysicalThing .
+
+project:aachen_000057_000019_24000 a project:Pedestrian,
+        project:PotentialObstacle ;
+    project:hasPosition project:aachen_000057_000019_pos2 .
+
+project:aachen_000057_000019_24001 a project:Pedestrian,
+        project:PotentialObstacle ;
+    project:hasPosition project:aachen_000057_000019_pos3 .
+
+project:aachen_000057_000019_26000 a project:Car,
+        project:PotentialObstacle ;
+    project:conductingManuever project:Stopped ;
+    project:distanceDownLane 5.996263e+01 ;
+    project:hasPosition project:aachen_000057_000019_pos4 .
+
+project:aachen_000057_000019_26001 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_26002 a project:Car,
+        project:PotentialObstacle ;
+    project:conductingManuever project:Stopped ;
+    project:distanceDownLane 3.500723e+01 ;
+    project:hasPosition project:aachen_000057_000019_pos0 .
+
+project:aachen_000057_000019_26003 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_26004 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_26005 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_26006 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_26008 a project:Car,
+        project:PotentialObstacle .
+
+project:aachen_000057_000019_3 a project:PhysicalThing,
+        project:TrafficInstructionIndicator .
+
+project:aachen_000057_000019_7 a project:PhysicalThing .
+
+project:aachen_000057_000019_8 a project:PhysicalThing .
+
+project:aachen_000057_000019_9 a project:PhysicalThing .
+
+project:aachen_000057_000019_IntersectionImaginary a project:ImaginaryIntersection,
+        project:Intersection ;
+    project:touchesLane project:aachen_000057_000019_AA2IntersectionImaginary,
+        project:aachen_000057_000019_AB2IntersectionImaginary .
+
+project:aachen_000057_000019_Self a project:Self ;
+    project:hasPosition project:aachen_000057_000019_pos1 ;
+    project:hasSpeed project:aachen_000057_000019_ssp .
+
+project:aachen_000057_000019_env project:hasTemperature project:aachen_000057_000019_tmp .
+
+project:aachen_000057_000019_pos0 a project:Position ;
+    project:hasRelativity project:aachen_000057_000019_rel0 .
+
+project:aachen_000057_000019_pos1 a project:Position ;
+    project:hasRelativity project:aachen_000057_000019_rel1 .
+
+project:aachen_000057_000019_pos2 a project:Position ;
+    project:hasRelativity project:aachen_000057_000019_rel2 .
+
+project:aachen_000057_000019_pos3 a project:Position ;
+    project:hasRelativity project:aachen_000057_000019_rel3 .
+
+project:aachen_000057_000019_pos4 a project:Position ;
+    project:hasRelativity project:aachen_000057_000019_rel4 .
+
+project:aachen_000057_000019_rel0 project:relToLane project:aachen_000057_000019_RoadA_LaneA ;
+    project:relativity project:On-Left-Right.On .
+
+project:aachen_000057_000019_rel1 project:relToLane project:aachen_000057_000019_RoadA_LaneB ;
+    project:relativity project:On-Left-Right.On .
+
+project:aachen_000057_000019_rel2 project:relToLane project:aachen_000057_000019_RoadA_LaneB ;
+    project:relativity project:On-Left-Right.Right .
+
+project:aachen_000057_000019_rel3 project:relToLane project:aachen_000057_000019_RoadA_LaneB ;
+    project:relativity project:On-Left-Right.Right .
+
+project:aachen_000057_000019_rel4 project:relToLane project:aachen_000057_000019_RoadA_LaneB ;
+    project:relativity project:On-Left-Right.On .
+
+project:aachen_000057_000019_ssp a project:SpeedMPS ;
+    project:hasValue 9.800437e+00 .
+
+project:aachen_000057_000019_tmp project:hasValue 1.9e+01 .
+
+project:aachen_000057_000019_weth project:hasWeatherType project:WeatherType.Sunny .
 
 project:bochum_000000_021479_-1 project:conveys project:TrafficInstruction.TurnLaneMarking .
 
@@ -2517,6 +2648,32 @@ project:cologne_000126_000019_tmp project:hasValue 2.3e+01 .
 
 project:cologne_000126_000019_weth project:hasWeatherType project:WeatherType.Sunny .
 
+project:aachen_000057_000019_2 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.RoadFreezesWarning .
+
+project:aachen_000057_000019_4 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.IllegibleSign .
+
+project:aachen_000057_000019_5 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.LaneInfoSign .
+
+project:aachen_000057_000019_6 a project:PhysicalThing,
+        project:TrafficInstructionIndicator ;
+    project:conveys project:TrafficInstruction.WarningSign .
+
+project:aachen_000057_000019_AA2IntersectionImaginary a project:TouchingIntersection ;
+    project:hasCardinality project:Cardinality.North ;
+    project:hasDirection project:Direction.Outgoing .
+
+project:aachen_000057_000019_AB2IntersectionImaginary a project:TouchingIntersection ;
+    project:hasCardinality project:Cardinality.North ;
+    project:hasDirection project:Direction.Outgoing .
+
+project:aachen_000057_000019_RoadA a project:Road .
+
 project:bochum_000000_021479_1 a project:PhysicalThing,
         project:TrafficInstructionIndicator ;
     project:conveys project:TrafficInstruction.LaneInfoSign .
@@ -3095,6 +3252,11 @@ project:cologne_000126_000019_AB2IntersectionImaginary a project:TouchingInterse
 
 project:cologne_000126_000019_RoadA a project:Road .
 
+project:aachen_000057_000019_RoadA_LaneA a project:Lane ;
+    project:directlyLeftOf project:aachen_000057_000019_RoadA_LaneB ;
+    project:inRoad project:aachen_000057_000019_RoadA ;
+    project:touchesIntersection project:aachen_000057_000019_AA2IntersectionImaginary .
+
 project:bochum_000000_021479_RoadA a project:Road .
 
 project:bochum_000000_021479_RoadA_LaneB a project:Lane ;
@@ -3354,6 +3516,15 @@ project:cologne_000062_000019_RoadA_LaneB a project:Lane ;
     project:directlyRightOf project:cologne_000062_000019_RoadA_LaneA ;
     project:inRoad project:cologne_000062_000019_RoadA ;
     project:touchesIntersection project:cologne_000062_000019_AB2IntersectionImaginary .
+
+project:aachen_000057_000019_RoadA_LaneB a project:Lane ;
+    project:directlyRightOf project:aachen_000057_000019_RoadA_LaneA ;
+    project:hasTrafficInstructionIndicator project:aachen_000057_000019_2,
+        project:aachen_000057_000019_4,
+        project:aachen_000057_000019_5,
+        project:aachen_000057_000019_6 ;
+    project:inRoad project:aachen_000057_000019_RoadA ;
+    project:touchesIntersection project:aachen_000057_000019_AB2IntersectionImaginary .
 
 project:bochum_000000_021479_RoadC_LaneA a project:Lane ;
     project:directlyLeftOf project:bochum_000000_021479_RoadC_LaneB ;
