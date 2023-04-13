@@ -223,27 +223,6 @@ SELECT * WHERE {
 | Result |
 | Result |
 
-## Right-Turn Question
-**Competency Question:** "Does the car have permission to turn right at the intersection?"
-
-**Bridged Datasets:** dataset 1, dataset 2, ...
-
-**SPARQL Query:**
-```
-SELECT * WHERE {
-	?s ?p ?o .
-}
-```
-
-**Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
-
 ## Temperature Question
 **Competency Question:** "Which scenarios have temperatures above 10 degrees Celsius?"
 
