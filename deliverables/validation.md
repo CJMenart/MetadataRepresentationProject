@@ -303,14 +303,18 @@ WHERE {
 | Result |
 
 ## Temperature Restriction Question
-**Competency Question:** "Which scenarios include restrictions based on the current temperature?"
+**Competency Question:** "Which scenarios include restrictions based on the temperature?"
 
 **Bridged Datasets:** dataset 1, dataset 2, ...
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT ?scenario ?tii ?warning
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :hasThing ?tii .
+    ?tii :conveys :TrafficInstruction.RoadFreezesWarning .
+    ?tii :conveys ?warning .
 }
 ```
 
