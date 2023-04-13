@@ -277,16 +277,19 @@ WHERE {
 | Result |
 
 ## Temperature Question
-**Competency Question:** "Which scenarios have temperatures above 10 degrees Celsius?"
+**Competency Question:** "Which scenarios have temperatures above 20 degrees Celsius?"
 
 **Bridged Datasets:** dataset 1, dataset 2, ...
 
 **SPARQL Query:**
 ```
-SELECT (?scenario)
+SELECT ?scenario ?environment ?temp ?celsius
 WHERE { 
-	----- something ----- 
-	FILTER(?temp > 10)
+    ?scenario a :Scenario .
+    ?scenario :hasEnvironment ?environment .
+    ?environment :hasTemperature ?temp .
+    ?temp :hasValue ?celsius .
+    FILTER(?celsius > 20)
 }
 ```
 
