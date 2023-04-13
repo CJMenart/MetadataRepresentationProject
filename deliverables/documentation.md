@@ -42,7 +42,7 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 * How many cars are in this scenario?
 * Which scenarios can the car merge to the right/left?
 * Which scenarios have temperatures above 20 degrees Celcius?
-* Which scenarios include restrictions based on the current temperature?
+* Which scenarios include restrictions based on temperature?
 * What is the current speed of the car?
 
 ### Integrated Datasets
@@ -335,7 +335,7 @@ WHERE {
     FILTER(?celsius > 20)
 }
 ```
-* "Which scenarios include restrictions based on the current temperature?"
+* "Which scenarios include restrictions based on temperature?"
 
 * "What is the current speed of the car?"
 ```
