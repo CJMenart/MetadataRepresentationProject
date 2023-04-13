@@ -41,7 +41,7 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 * What is the average number of cars traveling on the road (based on data in all scenarios)?
 * How many cars are in this scenario?
 * Which scenarios can the car merge to the right/left?
-* Which scenarios have temperatures above 10 degrees Celcius?
+* Which scenarios have temperatures above 20 degrees Celcius?
 * Which scenarios include restrictions based on the current temperature?
 * What is the current speed of the car?
 
@@ -324,17 +324,28 @@ HAVING (?scount>4)
 ```
 * "In which scenarios can the car merge to the right and/or left?"
 
-* "Which scenarios have temperatures above 10 degrees Celsius?"
+* "Which scenarios have temperatures above 20 degrees Celsius?"
 ```
-SELECT (?scenario)
+SELECT (?scenario ?environment ?temp ?celsius)
 WHERE { 
-	----- something ----- 
-	FILTER(?temp > 10)
+    ?scenario a :Scenario .
+    ?scenario :hasEnvironment ?environment .
+    ?environment :hasTemperature ?temp .
+    ?temp :hasValue ?celsius
+    FILTER(?celsius > 20)
 }
 ```
 * "Which scenarios include restrictions based on the current temperature?"
 
 * "What is the current speed of the car?"
-
+```
+SELECT ?scenario ?self ?speed ?mps
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :aboutCar ?self .
+    ?self :hasSpeed ?speed .
+    ?speed :hasValue ?mps .
+}
+```
 
 
