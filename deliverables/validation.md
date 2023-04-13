@@ -330,8 +330,12 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT ?scenario ?self ?speed ?mps
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :aboutCar ?self .
+    ?self :hasSpeed ?speed .
+    ?speed :hasValue ?mps .
 }
 ```
 
