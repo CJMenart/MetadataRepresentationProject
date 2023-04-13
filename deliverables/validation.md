@@ -209,8 +209,61 @@ HAVING (?scount>4)
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT DISTINCT ?scenario ?lane ?lane1
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyLeftOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+    FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
+  UNION
+  {
+      ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyRightOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+  FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
 }
 ```
 
