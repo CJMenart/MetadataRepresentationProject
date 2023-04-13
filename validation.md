@@ -127,27 +127,6 @@ SELECT DISTINCT ?scenario  where {
 | Result |
 | Result |
 
-## Speed Restriction Question
-**Competency Question:** "Is there a current restriction to speed?"
-
-**Bridged Datasets:** dataset 1, dataset 2, ...
-
-**SPARQL Query:**
-```
-SELECT * WHERE {
-	?s ?p ?o .
-}
-```
-
-**Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
-
 ## Railroad-Crossing Question
 **Competency Question:** "In which scenarios is there a railroad-crossing currently closed for train access?"
 
@@ -155,8 +134,14 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT  DISTINCT ?scenario ?lane ?tii ?rail
+WHERE {
+  ?scenario a :Scenario .
+  ?scenario :containsLane ?lane .
+  ?lane a :Lane .
+  ?lane :hasTrafficInstructionIndicator ?tii .
+  ?tii :conveys :TrafficInstruction.RailroadCrossingActive .
+  ?tii :conveys ?rail .
 }
 ```
 
