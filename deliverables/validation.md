@@ -44,7 +44,7 @@ WHERE {
 ## Potential Obstacle Question
 **Competency Question:** "In which scenarios is there an object moving into the lane?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -73,7 +73,7 @@ WHERE {
 ## Number of Lanes Question
 **Competency Question:** "Which scenarios have more than two lanes in the current road?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -91,7 +91,7 @@ HAVING (?scount>2)
 ## Lane Direction Question
 **Competency Question:** "In which scenarios is the current road a one-way street?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -114,7 +114,7 @@ SELECT DISTINCT ?scenario  where {
 ## Railroad-Crossing Question
 **Competency Question:** "In which scenarios is there a railroad-crossing currently closed for train access?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -137,7 +137,7 @@ WHERE {
 ## Average Number of Cars Question
 **Competency Question:** "What is the average number of cars in a scenario?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -157,7 +157,7 @@ SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) a
 ## Number of Cars Question
 **Competency Question:** "Which scenarios contain more than 4 cars?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -177,7 +177,7 @@ HAVING (?scount>4)
 ## Merging Question
 **Competency Question:** "In which scenarios can the car merge to the right and/or left?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -247,7 +247,7 @@ WHERE {
 ## Temperature Question
 **Competency Question:** "Which scenarios have temperatures above 20 degrees Celsius?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -269,7 +269,7 @@ WHERE {
 ## Temperature Restriction Question
 **Competency Question:** "Which scenarios include restrictions based on the temperature?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
@@ -290,7 +290,7 @@ WHERE {
 ## Current Speed Question
 **Competency Question:** "What is the current speed of the car?"
 
-**Bridged Datasets:** dataset 1, dataset 2, ...
+**Bridged Datasets:** Cityscapes and associated manual markup
 
 **SPARQL Query:**
 ```
