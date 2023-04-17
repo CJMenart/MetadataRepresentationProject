@@ -38,14 +38,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
-
+<br>
+<img src="Images/StopOrSlowDown.png" align="center"/> 
+<br><br><br><br>
 ## Potential Obstacle Question
 **Competency Question:** "In which scenarios is there an object moving into the lane?"
 
@@ -71,13 +66,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/PotentialObst.png" align="center"/> 
+<br><br><br><br>
 
 ## Number of Lanes Question
 **Competency Question:** "Which scenarios have more than two lanes in the current road?"
@@ -93,13 +84,9 @@ HAVING (?scount>2)
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/2ormoreLanes.png" align="center"/> 
+<br><br><br><br>
 
 ## Lane Direction Question
 **Competency Question:** "In which scenarios is the current road a one-way street?"
@@ -119,13 +106,10 @@ SELECT DISTINCT ?scenario  where {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/oneWayStreet.png" align="center"/> 
+<br><br><br><br>
+
 
 ## Railroad-Crossing Question
 **Competency Question:** "In which scenarios is there a railroad-crossing currently closed for train access?"
@@ -146,13 +130,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/railroadActive.png" align="center"/> 
+<br><br><br><br>
 
 ## Average Number of Cars Question
 **Competency Question:** "What is the average number of cars in a scenario?"
@@ -170,13 +150,9 @@ SELECT  ?const (COUNT(distinct ?scenario) as ?scene) (COUNT(distinct ?numCars) a
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/avgCars.png" align="center"/> 
+<br><br><br><br>
 
 ## Number of Cars Question
 **Competency Question:** "Which scenarios contain more than 4 cars?"
@@ -194,13 +170,9 @@ HAVING (?scount>4)
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/moreThan4Cars.png" align="center"/> 
+<br><br><br><br>
 
 ## Merging Question
 **Competency Question:** "In which scenarios can the car merge to the right and/or left?"
@@ -268,13 +240,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/mergeLeftRight.png" align="center"/> 
+<br><br><br><br>
 
 ## Temperature Question
 **Competency Question:** "Which scenarios have temperatures above 20 degrees Celsius?"
@@ -294,13 +262,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/temperature20.png" align="center"/> 
+<br><br><br><br>
 
 ## Temperature Restriction Question
 **Competency Question:** "Which scenarios include restrictions based on the temperature?"
@@ -319,13 +283,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/temperatureRestriction.png" align="center"/> 
+<br><br><br><br>
 
 ## Current Speed Question
 **Competency Question:** "What is the current speed of the car?"
@@ -344,10 +304,6 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/currentSpeed.png" align="center"/> 
+<br><br><br><br>
