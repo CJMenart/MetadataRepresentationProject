@@ -292,6 +292,16 @@ SELECT DISTINCT ?scenario (COUNT(?scenario) as ?scount) where {
 HAVING (?scount>2)
 ```
 * "In which scenarios is the current road a one-way street?"
+```
+SELECT DISTINCT ?scenario  where { 
+   ?scenario a :Scenario .
+   FILTER NOT EXISTS {
+   ?scenario :containsLane ?lane .
+      ?lane :touchesIntersection ?touchingIntersection .
+      ?touchingIntersection :hasDirection :Direction.Incoming .
+    }
+} GROUP BY ?scenario
+```
 
 * "In which scenarios is there a railroad-crossing currently closed for train access?"
 ```
@@ -324,6 +334,64 @@ SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where {
 HAVING (?scount>4)
 ```
 * "In which scenarios can the car merge to the right and/or left?"
+```
+SELECT DISTINCT ?scenario ?lane ?lane1
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyLeftOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+    FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
+  UNION
+  {
+      ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyRightOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+  FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
+}
+```
 
 * "Which scenarios have temperatures above 20 degrees Celsius?"
 ```
@@ -337,6 +405,15 @@ WHERE {
 }
 ```
 * "Which scenarios include restrictions based on temperature?"
+```
+SELECT ?scenario ?tii ?warning
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :hasThing ?tii .
+    ?tii :conveys :TrafficInstruction.RoadFreezesWarning .
+    ?tii :conveys ?warning .
+}
+```
 
 * "What is the current speed of the car?"
 ```
