@@ -27,6 +27,8 @@ In addition to traffic signs, our calculations can involve three-dimensional spa
 
 <img src="Images/aachen_000057_000019_disparity.png" width="40%" align="left"/> 
 
+<br>
+<br>
 
 
 _Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras. (This depth map encodes distances for the bridge image directly above.)_
@@ -41,8 +43,8 @@ _Three-dimensional locations can be computed from the data in the machine-learni
 * What is the average number of cars traveling on the road (based on data in all scenarios)?
 * How many cars are in this scenario?
 * Which scenarios can the car merge to the right/left?
-* Which scenarios have temperatures above 10 degrees Celcius?
-* Which scenarios include restrictions based on the current temperature?
+* Which scenarios have temperatures above 20 degrees Celcius?
+* Which scenarios include restrictions based on temperature?
 * What is the current speed of the car?
 
 ### Integrated Datasets
@@ -58,7 +60,6 @@ Over the course of the middle week's of the Self-Driving Ontology's development,
 
 ### References
 * Cordts et al., "The Cityscapes Dataset for Semantic Urban Scene Understanding". *CVPR 2016*. 10.1109/CVPR.2016.350
-* (Should we add any other references? To MODL??)
 
 
 ## Modules
@@ -83,7 +84,7 @@ Theoretically, these could use the Events pattern from MODL, but using Participa
 * Any remarks re: usage
 
 ### Intersection
-**Source Pattern:** Collection
+**Source Pattern:** Collection  
 **Source Data:** Team annotations to the Cityscapes Dataset (found under "Data Wrangling")
 
 #### Description
@@ -291,6 +292,16 @@ SELECT DISTINCT ?scenario (COUNT(?scenario) as ?scount) where {
 HAVING (?scount>2)
 ```
 * "In which scenarios is the current road a one-way street?"
+```
+SELECT DISTINCT ?scenario  where { 
+   ?scenario a :Scenario .
+   FILTER NOT EXISTS {
+   ?scenario :containsLane ?lane .
+      ?lane :touchesIntersection ?touchingIntersection .
+      ?touchingIntersection :hasDirection :Direction.Incoming .
+    }
+} GROUP BY ?scenario
+```
 
 * "In which scenarios is there a railroad-crossing currently closed for train access?"
 ```
@@ -323,18 +334,96 @@ SELECT DISTINCT ?scenario (COUNT(?car) as ?scount) where {
 HAVING (?scount>4)
 ```
 * "In which scenarios can the car merge to the right and/or left?"
-
-* "Which scenarios have temperatures above 10 degrees Celsius?"
 ```
-SELECT (?scenario)
-WHERE { 
-	----- something ----- 
-	FILTER(?temp > 10)
+SELECT DISTINCT ?scenario ?lane ?lane1
+WHERE {
+  {
+  ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyLeftOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+    FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
+  UNION
+  {
+      ?scenario a :Scenario .
+  ?scenario :aboutCar ?self .
+  ?scenario :containsLane ?lane .
+  ?self a :Self .
+  ?self :hasPosition ?position . 
+  ?position :hasRelativity ?rel .
+  ?rel :relToLane ?lane .
+  ?lane a :Lane .
+  ?lane :directlyRightOf ?lane1 .
+  ?lane :touchesIntersection ?touchInter .
+  ?lane1 :touchesIntersection ?touchInter1 .
+  ?intersection a :Intersection .
+  ?intersection :touchesLane ?touchInter .
+  ?intersection :touchesLane ?touchInter1 .
+  ?touchInter :hasDirection ?dir .
+  ?touchInter1 :hasDirection ?dir1 .
+  FILTER(?dir = ?dir1)
+     FILTER NOT EXISTS{
+      ?scenario :hasThing ?thing .
+      ?thing :hasPosition ?position1 . 
+      ?position1 :hasRelativity ?rel1 .
+      ?rel1 :relToLane ?lane1 .
+      ?rel1 :relativity :On-Left-Right.On .
+    }
+  }
 }
 ```
-* "Which scenarios include restrictions based on the current temperature?"
+
+* "Which scenarios have temperatures above 20 degrees Celsius?"
+```
+SELECT (?scenario ?environment ?temp ?celsius)
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :hasEnvironment ?environment .
+    ?environment :hasTemperature ?temp .
+    ?temp :hasValue ?celsius
+    FILTER(?celsius > 20)
+}
+```
+* "Which scenarios include restrictions based on temperature?"
+```
+SELECT ?scenario ?tii ?warning
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :hasThing ?tii .
+    ?tii :conveys :TrafficInstruction.RoadFreezesWarning .
+    ?tii :conveys ?warning .
+}
+```
 
 * "What is the current speed of the car?"
-
+```
+SELECT ?scenario ?self ?speed ?mps
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :aboutCar ?self .
+    ?self :hasSpeed ?speed .
+    ?speed :hasValue ?mps .
+}
+```
 
 

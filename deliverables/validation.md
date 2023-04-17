@@ -277,16 +277,19 @@ WHERE {
 | Result |
 
 ## Temperature Question
-**Competency Question:** "Which scenarios have temperatures above 10 degrees Celsius?"
+**Competency Question:** "Which scenarios have temperatures above 20 degrees Celsius?"
 
 **Bridged Datasets:** dataset 1, dataset 2, ...
 
 **SPARQL Query:**
 ```
-SELECT (?scenario)
+SELECT ?scenario ?environment ?temp ?celsius
 WHERE { 
-	----- something ----- 
-	FILTER(?temp > 10)
+    ?scenario a :Scenario .
+    ?scenario :hasEnvironment ?environment .
+    ?environment :hasTemperature ?temp .
+    ?temp :hasValue ?celsius .
+    FILTER(?celsius > 20)
 }
 ```
 
@@ -300,14 +303,18 @@ WHERE {
 | Result |
 
 ## Temperature Restriction Question
-**Competency Question:** "Which scenarios include restrictions based on the current temperature?"
+**Competency Question:** "Which scenarios include restrictions based on the temperature?"
 
 **Bridged Datasets:** dataset 1, dataset 2, ...
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT ?scenario ?tii ?warning
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :hasThing ?tii .
+    ?tii :conveys :TrafficInstruction.RoadFreezesWarning .
+    ?tii :conveys ?warning .
 }
 ```
 
@@ -327,8 +334,12 @@ SELECT * WHERE {
 
 **SPARQL Query:**
 ```
-SELECT * WHERE {
-	?s ?p ?o .
+SELECT ?scenario ?self ?speed ?mps
+WHERE { 
+    ?scenario a :Scenario .
+    ?scenario :aboutCar ?self .
+    ?self :hasSpeed ?speed .
+    ?speed :hasValue ?mps .
 }
 ```
 
