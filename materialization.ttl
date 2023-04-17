@@ -881,28 +881,38 @@ project:aachen_000014_000019_Self a project:Self ;
 
 project:aachen_000014_000019_env project:hasTemperature project:aachen_000014_000019_tmp .
 
-project:aachen_000014_000019_motion1 project:direction project:Left-Right.Left .
+project:aachen_000014_000019_motion1 project:direction project:Left-Right.Left ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
-project:aachen_000014_000019_motion12 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion12 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadD_LaneA .
 
-project:aachen_000014_000019_motion13 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion13 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadD_LaneA .
 
-project:aachen_000014_000019_motion14 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion14 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadD_LaneA .
 
 project:aachen_000014_000019_motion15 project:direction project:Left-Right.Left ;
-    project:towardsLane project:aachen_000014_000019_RoadD_LaneB,
+    project:towardsLane project:aachen_000014_000019_RoadD_LaneA,
+        project:aachen_000014_000019_RoadD_LaneB,
         project:aachen_000014_000019_RoadD_LaneC,
         project:aachen_000014_000019_RoadD_LaneD .
 
-project:aachen_000014_000019_motion2 project:direction project:Left-Right.Left .
+project:aachen_000014_000019_motion2 project:direction project:Left-Right.Left ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
-project:aachen_000014_000019_motion3 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion3 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
-project:aachen_000014_000019_motion4 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion4 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
-project:aachen_000014_000019_motion5 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion5 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
-project:aachen_000014_000019_motion6 project:direction project:Left-Right.Right .
+project:aachen_000014_000019_motion6 project:direction project:Left-Right.Right ;
+    project:towardsLane project:aachen_000014_000019_RoadA_LaneA .
 
 project:aachen_000014_000019_motion7 project:direction project:Left-Right.Right .
 
@@ -2655,7 +2665,8 @@ project:bremen_000288_000019_Self a project:Self ;
 
 project:bremen_000288_000019_env project:hasTemperature project:bremen_000288_000019_tmp .
 
-project:bremen_000288_000019_motion1 project:direction project:Left-Right.Right .
+project:bremen_000288_000019_motion1 project:direction project:Left-Right.Right ;
+    project:towardsLane project:bremen_000288_000019_RoadB_LaneA .
 
 project:bremen_000288_000019_pos0 a project:Position ;
     project:hasRelativity project:bremen_000288_000019_rel0 .
@@ -3898,10 +3909,6 @@ project:bremen_000288_000019_RoadA_LaneB a project:Lane ;
     project:inRoad project:bremen_000288_000019_RoadA ;
     project:touchesIntersection project:bremen_000288_000019_AB2IntersectionImaginary .
 
-project:bremen_000288_000019_RoadB_LaneA a project:Lane ;
-    project:directlyLeftOf project:bremen_000288_000019_RoadB_LaneB ;
-    project:inRoad project:bremen_000288_000019_RoadB .
-
 project:bremen_000288_000019_RoadB_LaneB a project:Lane ;
     project:directlyRightOf project:bremen_000288_000019_RoadB_LaneA ;
     project:hasTrafficInstructionIndicator project:bremen_000288_000019_1,
@@ -3987,6 +3994,10 @@ project:bremen_000188_000019_RoadC_LaneE a project:Lane ;
         project:bremen_000188_000019_3,
         project:bremen_000188_000019_4 ;
     project:inRoad project:bremen_000188_000019_RoadC .
+
+project:bremen_000288_000019_RoadB_LaneA a project:Lane ;
+    project:directlyLeftOf project:bremen_000288_000019_RoadB_LaneB ;
+    project:inRoad project:bremen_000288_000019_RoadB .
 
 project:bremen_000288_000019_RoadC_LaneA a project:Lane ;
     project:directlyLeftOf project:bremen_000288_000019_RoadC_LaneB ;
@@ -4102,18 +4113,6 @@ project:cologne_000126_000019_RoadA_LaneB a project:Lane ;
     project:inRoad project:cologne_000126_000019_RoadA ;
     project:touchesIntersection project:cologne_000126_000019_AB2IntersectionImaginary .
 
-project:aachen_000014_000019_RoadA_LaneA a project:Lane ;
-    project:hasTrafficInstructionIndicator project:aachen_000014_000019_7 ;
-    project:inRoad project:aachen_000014_000019_RoadA ;
-    project:touchesIntersection project:aachen_000014_000019_AA2IntersectionImaginary .
-
-project:aachen_000014_000019_RoadD_LaneA a project:Lane ;
-    project:directlyLeftOf project:aachen_000014_000019_RoadD_LaneB ;
-    project:hasTrafficInstructionIndicator project:aachen_000014_000019_-1,
-        project:aachen_000014_000019_2,
-        project:aachen_000014_000019_3 ;
-    project:inRoad project:aachen_000014_000019_RoadD .
-
 project:cologne_000126_000019_RoadA_LaneA a project:Lane ;
     project:directlyLeftOf project:cologne_000126_000019_RoadA_LaneB ;
     project:hasTrafficInstructionIndicator project:cologne_000126_000019_2,
@@ -4125,4 +4124,16 @@ project:cologne_000126_000019_RoadA_LaneA a project:Lane ;
 project:bremen_000188_000019_RoadC_LaneA a project:Lane ;
     project:directlyLeftOf project:bremen_000188_000019_RoadC_LaneB ;
     project:inRoad project:bremen_000188_000019_RoadC .
+
+project:aachen_000014_000019_RoadD_LaneA a project:Lane ;
+    project:directlyLeftOf project:aachen_000014_000019_RoadD_LaneB ;
+    project:hasTrafficInstructionIndicator project:aachen_000014_000019_-1,
+        project:aachen_000014_000019_2,
+        project:aachen_000014_000019_3 ;
+    project:inRoad project:aachen_000014_000019_RoadD .
+
+project:aachen_000014_000019_RoadA_LaneA a project:Lane ;
+    project:hasTrafficInstructionIndicator project:aachen_000014_000019_7 ;
+    project:inRoad project:aachen_000014_000019_RoadA ;
+    project:touchesIntersection project:aachen_000014_000019_AA2IntersectionImaginary .
 

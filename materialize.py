@@ -333,7 +333,7 @@ def guess_obstacles(graph, imname):
                 rel = graph.value(pos, pre['hasRelativity'])
                 lane = graph.value(rel, pre['relToLane'])
                 dirRel = pre['directlyRightOf'] if direction == pre['Left-Right.Right'] else pre['directlyLeftOf']
-                lane = graph.value(lane, dirRel)
+                #lane = graph.value(lane, dirRel)
                 while lane is not None:
                     graph.add((motion, pre['towardsLane'], lane))
                     lane = graph.value(lane, dirRel)
