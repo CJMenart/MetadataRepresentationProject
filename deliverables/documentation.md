@@ -27,6 +27,8 @@ In addition to traffic signs, our calculations can involve three-dimensional spa
 
 <img src="Images/aachen_000057_000019_disparity.png" width="40%" align="left"/> 
 
+<br>
+<br>
 
 
 _Three-dimensional locations can be computed from the data in the machine-learning databases from which we are mining our example situations. The "disparity image" here encodes depth information computed from binocular cameras. (This depth map encodes distances for the bridge image directly above.)_
@@ -58,7 +60,6 @@ Over the course of the middle week's of the Self-Driving Ontology's development,
 
 ### References
 * Cordts et al., "The Cityscapes Dataset for Semantic Urban Scene Understanding". *CVPR 2016*. 10.1109/CVPR.2016.350
-* (Should we add any other references? To MODL??)
 
 
 ## Modules
@@ -83,7 +84,7 @@ Theoretically, these could use the Events pattern from MODL, but using Participa
 * Any remarks re: usage
 
 ### Intersection
-**Source Pattern:** Collection
+**Source Pattern:** Collection  
 **Source Data:** Team annotations to the Cityscapes Dataset (found under "Data Wrangling")
 
 #### Description
