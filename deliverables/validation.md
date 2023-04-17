@@ -66,13 +66,9 @@ WHERE {
 ```
 
 **Results:**
-| Header |
-| :----: |
-| Result |
-| Result |
-| Result |
-| Result |
-| Result |
+<br>
+<img src="Images/PotentialObst.png" align="center"/> 
+<br><br><br><br>
 
 ## Number of Lanes Question
 **Competency Question:** "Which scenarios have more than two lanes in the current road?"
