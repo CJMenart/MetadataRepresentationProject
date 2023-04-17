@@ -498,3 +498,86 @@ aachen_000057_000019_leftImg8bit.png
 			Outgoing
 				AA
 				AB
+
+aachen_000014_000019_leftImg8bit.png
+	Road A
+		Lane A
+			Self
+			24011 Left
+			24012 Left
+			24013 Right
+			24014 Right
+			24015 Right
+			L24019 Right
+			25000 Right
+			7 Red Light
+	Road B
+		Lane A
+			R24018
+			R33000	
+			8 Don't Walk Sign
+			10 No Stopping Sign
+			12 No Stopping Sign
+			13 Illegible Sign
+			14 Street Name
+		Lane B
+			9 Facing Away Traffic Light
+	Road C
+		Lane A
+			3 Facing Away Traffic Light
+		Lane B
+			11 Facing Away Traffic Light
+	Road D
+		Lane A
+			L24002
+			L24003
+			L24004 Right
+			24005 Right
+			24006 Right
+			24008 Left
+			L24020
+			2 Facing Away Traffic Light
+			3 Facing Away Traffic Light
+			-1 Turn Or Straight Lane Marking
+		Lane B
+			26004 Stopped
+			26002
+			26003 Stopped
+		Lane C
+			7 Lane Info Sign
+		Lane D
+			R24009
+			R24010
+			26006
+			28000
+			1 Facing Away Traffic Light
+			4 Facing Away Traffic Light
+			5 Red Light
+			6 Illegible Sign
+			15 Illegible Sign
+	Intersection A
+		South
+			Incoming
+				AA
+		West
+			Outgoing
+				BA
+			Incoming
+				BB
+		East
+			Incoming
+				CA
+			Outgoing
+				CB
+		North
+			Incoming
+				DA
+				DB
+				DC
+			Outgoing
+				Dd
+	Intersection Imaginary
+		North
+			Outgoing
+				AA
+	
